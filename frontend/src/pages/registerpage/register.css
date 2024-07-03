@@ -1,0 +1,66 @@
+.register {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+  }
+  
+  .register h1 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #333;
+  }
+  
+  .ant-form-item {
+    margin-bottom: 16px;
+    margin-top: 20px;
+  }
+  
+  .ant-form-item-label > label {
+    font-weight: 600;
+    color: #333;
+  }
+ 
+  .ant-input,
+  .ant-select-selection-item,
+  .ant-checkbox-group-item,
+  .ant-radio-group-item,
+  .ant-textarea,
+  .ant-input-affix-wrapper,
+  .ant-upload-select {
+    border-radius: 5px;
+  }
+  
+  .ant-btn-primary {
+    background-color: #1890ff;
+    border-color: #1890ff;
+    border-radius: 5px;
+  }
+  
+  .ant-btn-primary:hover,
+  .ant-btn-primary:focus {
+    background-color: #40a9ff;
+    border-color: #40a9ff;
+  }
+  
+  img {
+    display: block;
+    margin-top: 10px;
+    max-width: 100px;
+    max-height: 100px;
+  }
+  
+  .upload-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .upload-button .ant-upload-list-item {
+    margin-top: 10px;
+  }
+  

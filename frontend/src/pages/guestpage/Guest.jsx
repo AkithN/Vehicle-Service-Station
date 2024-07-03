@@ -1,5 +1,6 @@
 import React from 'react';
 import Navbar from '../../components/navbar/Navbar';
+import Register from '../registerpage/Register';
 // import Header from '../../components/header/Header';
 
 const Guest = () => {
@@ -7,6 +8,7 @@ const Guest = () => {
     <div>
       <Navbar />
       {/* <Header /> */}
+      <Register />
     </div>
   )
 }
