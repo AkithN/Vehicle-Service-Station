@@ -5,6 +5,18 @@ import './register.css';
 
 const { Option } = Select;
 
+const provinceDistricts = {
+  central: ["Kandy", "Matale", "Nuwara Eliya"],
+  eastern: ["Ampara", "Batticaloa", "Trincomalee"],
+  northern: ["Jaffna", "Kilinochchi", "Mannar", "Mullaitivu", "Vavuniya"],
+  northCentral: ["Anuradhapura", "Polonnaruwa"],
+  northWestern: ["Kurunegala", "Puttalama"],
+  sabaragamuwa: ["Kegalle", "Rathnapura"],
+  southern: ["Galle", "Hambanthota", "Matara"],
+  uva: ["Badulla", "Monaragala"],
+  western: ["Colombo", "Gampaha", "Kaluthara"]
+};
+
 function Register() {
   const [formData, setFormData] = useState({
     username: '',
@@ -32,6 +44,8 @@ function Register() {
     image2: '',
     image3: '',
   });
+  
+  const [districts, setDistricts] = useState([]);
 
   const handleImage = (info) => {
     const { name } = info.file;
@@ -50,6 +64,9 @@ function Register() {
 
   const onChangeHandler = (changedValues, allValues) => {
     setFormData(allValues);
+    if (changedValues.province) {
+      setDistricts(provinceDistricts[changedValues.province] || []);
+    }
   };
 
   const onSubmitHandler = async (values) => {
@@ -87,6 +104,7 @@ function Register() {
       });
       setImages({ image1: '', image2: '', image3: '' });
       setImagePreviews({ image1: '', image2: '', image3: '' });
+      setDistricts([]);
     } catch (error) {
       console.error('Error submitting the form:', error);
     }
@@ -109,44 +127,16 @@ function Register() {
         </Form.Item>
         <Form.Item label="Province" name="province" rules={[{ required: true, message: 'Please select a province' }]}>
           <Select placeholder="-- Select --">
-            <Option value="central">Central Province</Option>
-            <Option value="eastern">Eastern Province</Option>
-            <Option value="northern">Northern Province</Option>
-            <Option value="North central">North Central Province</Option>
-            <Option value="North western">North Western Province</Option>
-            <Option value="sabaragamuwa">Sabaragamuwa Province</Option>
-            <Option value="southern">Southern Province</Option>
-            <Option value="uva">Uva Province</Option>
-            <Option value="western">Western Province</Option>
+            {Object.keys(provinceDistricts).map(province => (
+              <Option key={province} value={province}>{province}</Option>
+            ))}
           </Select>
         </Form.Item>
         <Form.Item label="District" name="district" rules={[{ required: true, message: 'Please select a district' }]}>
           <Select placeholder="-- Select --">
-            <Option value="ampara">Ampara</Option>
-            <Option value="anuradhapura">Anuradhapura</Option>
-            <Option value="badulla">Badulla</Option>
-            <Option value="batticaloa">Batticaloa</Option>
-            <Option value="colombo">Colombo</Option>
-            <Option value="galle">Galle</Option>
-            <Option value="gampaha">Gampaha</Option>
-            <Option value="hambanthota">Hambanthota</Option>
-            <Option value="jaffna">Jaffna</Option>
-            <Option value="kaluthara">Kaluthara</Option>
-            <Option value="kandy">Kandy</Option>
-            <Option value="kegalle">Kegalle</Option>
-            <Option value="kilinochchi">Kilinochchi</Option>
-            <Option value="kurunegala">Kurunegala</Option>
-            <Option value="mannar">Mannar</Option>
-            <Option value="matale">Matale</Option>
-            <Option value="matara">Matara</Option>
-            <Option value="monaragala">Monaragala</Option>
-            <Option value="mullaitivu">Mullaitivu</Option>
-            <Option value="nuwara eliya">Nuwara Eliya</Option>
-            <Option value="polonnaruwa">Polonnaruwa</Option>
-            <Option value="puttalama">Puttalama</Option>
-            <Option value="rathnapura">Rathnapura</Option>
-            <Option value="trincomalee">Trincomalee</Option>
-            <Option value="vavuniya">Vavuniya</Option>
+            {districts.map(district => (
+              <Option key={district} value={district}>{district}</Option>
+            ))}
           </Select>
         </Form.Item>
         <Form.Item label="Contact Number" name="contact" rules={[{ required: true, message: 'Please enter a contact number' }]}>
