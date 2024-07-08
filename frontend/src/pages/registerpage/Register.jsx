@@ -6,15 +6,15 @@ import './register.css';
 const { Option } = Select;
 
 const provinceDistricts = {
-  central: ["Kandy", "Matale", "Nuwara Eliya"],
-  eastern: ["Ampara", "Batticaloa", "Trincomalee"],
-  northern: ["Jaffna", "Kilinochchi", "Mannar", "Mullaitivu", "Vavuniya"],
-  northCentral: ["Anuradhapura", "Polonnaruwa"],
-  northWestern: ["Kurunegala", "Puttalama"],
-  sabaragamuwa: ["Kegalle", "Rathnapura"],
-  southern: ["Galle", "Hambanthota", "Matara"],
-  uva: ["Badulla", "Monaragala"],
-  western: ["Colombo", "Gampaha", "Kaluthara"]
+  Central_Province: ["Kandy", "Matale", "Nuwara Eliya"],
+  Eastern_Province: ["Ampara", "Batticaloa", "Trincomalee"],
+  Northern_Province: ["Jaffna", "Kilinochchi", "Mannar", "Mullaitivu", "Vavuniya"],
+  NorthCentral_Province: ["Anuradhapura", "Polonnaruwa"],
+  NorthWestern_Province: ["Kurunegala", "Puttalama"],
+  Sabaragamuwa_Province: ["Kegalle", "Rathnapura"],
+  Southern_Province: ["Galle", "Hambanthota", "Matara"],
+  Uva_Province: ["Badulla", "Monaragala"],
+  Western_Province: ["Colombo", "Gampaha", "Kaluthara"]
 };
 
 function Register() {
@@ -126,7 +126,7 @@ function Register() {
           <Input />
         </Form.Item>
         <Form.Item label="Province" name="province" rules={[{ required: true, message: 'Please select a province' }]}>
-          <Select placeholder="-- Select --">
+          <Select placeholder="--Select--">
             {Object.keys(provinceDistricts).map(province => (
               <Option key={province} value={province}>{province}</Option>
             ))}

@@ -56,6 +56,10 @@
     .navbar-container {
       display: flex;
     }
+
+    .logo{
+      display: flex;
+    }
   
     .logo img {
       margin-left: -50px;
