@@ -36,7 +36,8 @@ const Navbar = () => {
             </Menu.Item>
           </Menu>
         </div>
-        <Button type="primary" className='navbar-login-button' htmlType="submit"> Login </Button>
+        <Button type="primary" className='navbar-login-button' htmlType="submit"><Link to="/login">Sign in</Link></Button>
+        <Button type="primary" className='navbar-login-button' htmlType="submit"><Link to="/signup">Sign Up</Link></Button>
       </div>
     </Header>
   );
