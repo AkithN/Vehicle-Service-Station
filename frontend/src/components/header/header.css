@@ -1,0 +1,50 @@
+.header-container {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Adjust this value as needed */
+  overflow: hidden;
+}
+
+.header-container video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+
+.header-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 0;
+}
+
+.homeContent-container {
+  position: relative;
+  z-index: 2;
+  text-align: left;
+  padding: 100px;
+}
+
+.home h1 {
+  margin-top: 10%;
+  font-size: 2.5rem;
+  line-height: 1.2;
+  text-decoration: underline;
+  color: #ffffff;
+}
+
+.home h3 {
+  font-size: 1.4rem;
+  font-weight: 300;
+  line-height: 1.5;
+  color: #ffffff;
+}

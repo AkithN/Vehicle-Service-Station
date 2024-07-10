@@ -1,0 +1,143 @@
+.aboutus {
+    width: 100%;
+    padding: 2rem;
+    background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  .about-us-container {
+    max-width: 1500px;
+    max-height: 700px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  }
+  
+  .about-us-container h1 {
+    font-size: 2.5rem;
+    color: #2d3748;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+  
+  .about-us-description {
+    font-size: 1.125rem;
+    color: #4a5568;
+    margin-bottom: 3rem;
+  }
+  
+  .about-us-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .about-us-image {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    margin-bottom: 2rem;
+  }
+  
+  .about-us-text {
+    width: 100%;
+    text-align: left;
+  }
+  
+  .about-us-text h2 {
+    font-size: 2rem;
+    color: #2d3748;
+    margin-bottom: 1rem;
+  }
+  
+  .about-us-text p {
+    font-size: 1.125rem;
+    color: #4a5568;
+    margin-bottom: 1.5rem;
+  }
+  
+  .read-more-button {
+    padding: 0.75rem 1.5rem;
+    color: #ffffff;
+    background-color: #3bb19b;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: background-color 0.3s;
+  }
+  
+  .read-more-button:hover {
+    background-color: #178f79;
+  }
+  
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .modal-description{
+    margin-left: 30px;
+  }
+  .modal-content {
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 10px;
+    max-width: 800px;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    position: relative;
+  }
+
+  .modal-content h2{
+    font-weight: bold;
+    text-decoration: underline;
+  }
+  
+  .close-button {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 1.5rem;
+    color: #333;
+    cursor: pointer;
+  }
+  
+  /* Responsive Design */
+  @media (min-width: 768px) {
+    .about-us-content {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  
+    .about-us-text {
+      flex: 1;
+      margin-left: 2rem;
+    }
+  
+    .about-us-image {
+      flex: 1;
+      margin-bottom: 0;
+    }
+  }
+  
