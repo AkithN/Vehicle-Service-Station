@@ -6,15 +6,17 @@ import AboutBox from '../../container/aboutBox/AboutBox';
 import Contact from '../../components/contact/Contact';
 import Footer from '../../components/footer/Footer';
 import Services from '../../container/services/Services';
+import Features from '../../container/features/Features';
 
 const Guest = () => {
   return (
     <div>
       <Navbar />
       <Header />
-      <Aboutus />
-      <AboutBox />
+      <Aboutus />    
+      <Features />
       <Services />
+      <AboutBox />
       <Contact />
       <Footer />
     </div>

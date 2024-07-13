@@ -1,0 +1,42 @@
+.statistics-section {
+    background: linear-gradient(135deg, rgba(236, 233, 230, 0.4), rgba(255, 255, 255, 0)), url('../../assets/pic5.jpg') no-repeat center center fixed;
+    background-size: cover;
+    padding: 60px 20px;
+    text-align: center;
+  }
+  
+  .statistics-box {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  .statistics-box:hover {
+    transform: translateY(-10px);
+  }
+  
+  .icon {
+    font-size: 40px;
+    color: #007bff;
+    margin-bottom: 10px;
+  }
+  
+  .statistics-box h3 {
+    margin: 10px 0;
+    font-size: 24px;
+    color: #333;
+  }
+  
+  .statistics-box p {
+    font-size: 16px;
+    color: #666;
+  }
+  
+  @media (max-width: 768px) {
+    .statistics-box {
+      margin-bottom: 20px;
+    }
+  }
+  

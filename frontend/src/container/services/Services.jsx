@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Button } from 'antd';
 import './services.css';
 
 function Services() {
@@ -66,7 +67,7 @@ function Services() {
                             <h3>Services for Vehicle Owners</h3>
                             <div className="team-content">
                                 <p className="section-subtitle" dangerouslySetInnerHTML={{__html: vehicleOwnersServices.slice(0, 400) + '...'}}></p>
-                                <button className="btn-read-more" onClick={() => handleReadMoreClick(vehicleOwnersServices)}>Read More</button>
+                                <Button type="primary" className='btn-read-more' htmlType="submit" onClick={() => handleReadMoreClick(serviceStationOwnersServices)}>Read More</Button>
                             </div>
                         </div>
                     </div>
@@ -76,7 +77,7 @@ function Services() {
                             <h3>Services for Service Station Owners</h3>
                             <div className="team-content">
                                 <p className="section-subtitle" dangerouslySetInnerHTML={{__html: serviceStationOwnersServices.slice(0, 400) + '...'}}></p>
-                                <button className="btn-read-more" onClick={() => handleReadMoreClick(serviceStationOwnersServices)}>Read More</button>
+                                <Button type="primary" className='btn-read-more' htmlType="submit" onClick={() => handleReadMoreClick(serviceStationOwnersServices)}>Read More</Button>
                             </div>
                         </div>
                     </div>

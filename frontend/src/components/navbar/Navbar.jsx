@@ -12,7 +12,7 @@ const Navbar = () => {
     <Header className='navbar-header'>
       <div className='navbar-container'>
         <div className="logo">
-          <img src={logo} alt='Logo'/>
+          <img src={logo} alt='Logo' />
         </div>
         <div className='nav-items'>
           <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['sub1']}>
