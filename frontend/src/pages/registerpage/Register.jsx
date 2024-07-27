@@ -44,7 +44,7 @@ function Register() {
     image2: '',
     image3: '',
   });
-  
+
   const [districts, setDistricts] = useState([]);
 
   const handleImage = (info) => {
@@ -196,16 +196,16 @@ function Register() {
           </Form.Item>
         </div>
         <Form.Item label="Website" name="website" rules={[{ required: true, message: 'Please enter a Website Link' }]}>
-          <Input placeholder="Website Link"/>
+          <Input placeholder="Website Link" />
         </Form.Item>
         <Form.Item label="Facebook" name="facebook" rules={[{ required: true, message: 'Please enter a Facebook Link' }]}>
-          <Input placeholder="Facebook Link"/>
+          <Input placeholder="Facebook Link" />
         </Form.Item>
         <Form.Item label="Instagram" name="instagram" rules={[{ required: true, message: 'Please enter a Instagram Link' }]}>
-          <Input placeholder="Instagram Link"/>
+          <Input placeholder="Instagram Link" />
         </Form.Item>
         <Form.Item label="Twitter" name="twitter" rules={[{ required: true, message: 'Please enter a Twitter Link' }]}>
-          <Input placeholder="Twitter Link"/>
+          <Input placeholder="Twitter Link" />
         </Form.Item>
         <Form.Item label="Description Of Service Station" name="description" rules={[{ required: true, message: 'Please enter a Description' }]}>
           <Input.TextArea />
@@ -220,7 +220,7 @@ function Register() {
           >
             <Button icon={<UploadOutlined />}>Upload Image 1</Button>
           </Upload>
-          {imagePreviews.image1 && <img src={imagePreviews.image1} alt="Image 1 Preview" style={{ width: '100px', height: '100px', marginTop: '10px' }} />}
+          {imagePreviews.image1 && <img src={imagePreviews.image1} alt="Reception Area" style={{ width: '100px', height: '100px', marginTop: '10px' }} />}
         </Form.Item>
         <Form.Item label="Image 2" rules={[{ required: true, message: 'Please Upload A Service Station Picture' }]}>
           <Upload
@@ -232,7 +232,7 @@ function Register() {
           >
             <Button icon={<UploadOutlined />}>Upload Image 2</Button>
           </Upload>
-          {imagePreviews.image2 && <img src={imagePreviews.image2} alt="Image 2 Preview" style={{ width: '100px', height: '100px', marginTop: '10px' }} />}
+          {imagePreviews.image2 && <img src={imagePreviews.image2} alt="Service Bays" style={{ width: '100px', height: '100px', marginTop: '10px' }} />}
         </Form.Item>
         <Form.Item label="Image 3">
           <Upload
@@ -244,7 +244,7 @@ function Register() {
           >
             <Button icon={<UploadOutlined />}>Upload Image 3</Button>
           </Upload>
-          {imagePreviews.image3 && <img src={imagePreviews.image3} alt="Image 3 Preview" style={{ width: '100px', height: '100px', marginTop: '10px' }} />}
+          {imagePreviews.image3 && <img src={imagePreviews.image3} alt="Waiting Area" style={{ width: '100px', height: '100px', marginTop: '10px' }} />}
         </Form.Item>
         <Form.Item>
           <Button type="primary" htmlType="submit">

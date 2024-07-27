@@ -1,0 +1,21 @@
+.garage-owner-sider {
+  display: flex;
+  flex-direction: column;
+}
+
+.garage-owner-profile-picture {
+  margin-top: -2rem;
+  margin-left: 30%;
+}
+
+.garage-owner-menu {
+  flex: 1;
+}
+
+.garage-owner-logo img {
+  max-width: 90%;
+}
+
+.garage-owner-logo h3,p{
+  color: white;
+}

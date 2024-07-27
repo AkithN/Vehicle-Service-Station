@@ -7,6 +7,7 @@ import Login from './pages/loginpage/Login';
 import Signup from './pages/signuppage/Signup';
 import Garageowner from './pages/garageownerpage/Garageowner';
 import Vehicleowner from './pages/vehicleownerpage/Vehicleowner';
+import Garageownerprofile from './pages/garageownerpage/Garageowner';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path='/signup' element={< Signup />} />
           <Route path='/garageowner' element={< Garageowner />} />
           <Route path='/vehicleowner' element={< Vehicleowner />} />
+          <Route path='/garageownerprofile' element={< Garageownerprofile />} />
         </Routes>
       </div>
     </Router>
