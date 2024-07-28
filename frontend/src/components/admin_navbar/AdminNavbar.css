@@ -1,0 +1,94 @@
+.admin-navbar {
+  background-color: #333;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 16px;
+}
+
+.admin-navbar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.left-nav {
+  display: flex;
+}
+
+.right-nav {
+  display: flex;
+}
+
+.admin-navbar ul li {
+  float: left;
+}
+
+.admin-navbar ul li a,
+.logout-button {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.admin-navbar ul li a:hover,
+.logout-button:hover {
+  background-color: #111;
+}
+
+.logout-button {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  padding: 14px 16px;
+}
+
+.logout-button:focus {
+  outline: none;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .admin-navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar-box {
+    width: 100%;
+    background-color: #444;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+  }
+
+  .admin-navbar ul {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .left-nav,
+  .right-nav {
+    width: 100%;
+  }
+
+  .admin-navbar ul li {
+    width: 100%;
+  }
+
+  .admin-navbar ul li a,
+  .logout-button {
+    width: 100%;
+    text-align: left;
+    padding: 14px;
+  }
+
+  .logout-button {
+    text-align: left;
+  }
+}
