@@ -3,7 +3,9 @@ import GarageOwnerProfile from '../../components/header/GarageOwnerProfile'
 
 const Garageowner = () => {
   return (
-    < GarageOwnerProfile />
+    <div>
+      < GarageOwnerProfile />  
+    </div>
   )
 }
 

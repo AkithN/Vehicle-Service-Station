@@ -10,7 +10,6 @@ import Typography from '@mui/material/Typography';
 import Divider from '@mui/material/Divider';
 import IconButton from '@mui/material/IconButton';
 import Badge from '@mui/material/Badge';
-import Link from '@mui/material/Link';
 import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import NotificationsIcon from '@mui/icons-material/Notifications';
@@ -22,23 +21,14 @@ import DashboardIcon from '@mui/icons-material/Dashboard';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import PeopleIcon from '@mui/icons-material/People';
 import BarChartIcon from '@mui/icons-material/BarChart';
-import LayersIcon from '@mui/icons-material/Layers';
 import AssignmentIcon from '@mui/icons-material/Assignment';
 import Brightness4Icon from '@mui/icons-material/Brightness4';
 import Brightness7Icon from '@mui/icons-material/Brightness7';
 import useMediaQuery from '@mui/material/useMediaQuery';
-
-function Copyright(props) {
-  return (
-    <Typography variant="body2" color="text.secondary" align="center" {...props}>
-      <Link color="inherit" href="https://mui.com/">
-        Your Website
-      </Link>{' '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
-  );
-}
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import SubscriptionsIcon from '@mui/icons-material/Subscriptions';
+import Calender from '../../container/calender/Calender';
+import './garageOwnerProfile.css';
 
 const drawerWidth = 240;
 
@@ -112,13 +102,14 @@ export default function GarageOwnerProfile() {
   };
 
   const toggleTheme = () => {
-    setMode((prevMode) => (prevMode === 'light' ? 'dark' : 'light'));
+    setMode((prevMode) => (prevMode === 'dark' ? 'light' : 'dark'));
   };
 
   return (
-    <ThemeProvider theme={mode === 'light' ? lightTheme : darkTheme}>
+    <ThemeProvider theme={mode === 'dark' ? lightTheme : darkTheme}>
       <Box sx={{ display: 'flex' }}>
         <CssBaseline />
+
         <AppBar position="absolute" open={open}>
           <Toolbar
             sx={{
@@ -147,12 +138,15 @@ export default function GarageOwnerProfile() {
               Dashboard
             </Typography>
             <IconButton color="inherit" onClick={toggleTheme}>
-              {mode === 'light' ? <Brightness4Icon /> : <Brightness7Icon />}
+              {mode === 'dark' ? <Brightness4Icon /> : <Brightness7Icon />}
             </IconButton>
             <IconButton color="inherit">
               <Badge badgeContent={4} color="secondary">
                 <NotificationsIcon />
               </Badge>
+            </IconButton>
+            <IconButton color="inherit">
+              <AccountCircleIcon />
             </IconButton>
           </Toolbar>
         </AppBar>
@@ -172,63 +166,82 @@ export default function GarageOwnerProfile() {
           <Divider />
           <List component="nav">
             <React.Fragment>
+
               <ListItemButton>
                 <ListItemIcon>
                   <DashboardIcon />
                 </ListItemIcon>
                 <ListItemText primary="Dashboard" />
               </ListItemButton>
+
+              <ListItemButton>
+                <ListItemIcon>
+                  <NotificationsIcon />
+                </ListItemIcon>
+                <ListItemText primary="Notifications" />
+              </ListItemButton>
+
               <ListItemButton>
                 <ListItemIcon>
                   <ShoppingCartIcon />
                 </ListItemIcon>
-                <ListItemText primary="Orders" />
+                <ListItemText primary="Offers" />
               </ListItemButton>
+
               <ListItemButton>
                 <ListItemIcon>
                   <PeopleIcon />
                 </ListItemIcon>
                 <ListItemText primary="Customers" />
               </ListItemButton>
+
               <ListItemButton>
                 <ListItemIcon>
                   <BarChartIcon />
                 </ListItemIcon>
                 <ListItemText primary="Reports" />
               </ListItemButton>
+
               <ListItemButton>
                 <ListItemIcon>
-                  <LayersIcon />
+                  <SubscriptionsIcon />
                 </ListItemIcon>
-                <ListItemText primary="Integrations" />
+                <ListItemText primary="Subscription" />
               </ListItemButton>
             </React.Fragment>
+
             <Divider sx={{ my: 1 }} />
+
             <React.Fragment>
               <ListSubheader component="div" inset>
                 Saved reports
               </ListSubheader>
+
               <ListItemButton>
                 <ListItemIcon>
                   <AssignmentIcon />
                 </ListItemIcon>
                 <ListItemText primary="Current month" />
               </ListItemButton>
+
               <ListItemButton>
                 <ListItemIcon>
                   <AssignmentIcon />
                 </ListItemIcon>
                 <ListItemText primary="Last quarter" />
               </ListItemButton>
+
               <ListItemButton>
                 <ListItemIcon>
                   <AssignmentIcon />
                 </ListItemIcon>
                 <ListItemText primary="Year-end sale" />
               </ListItemButton>
+
             </React.Fragment>
+
           </List>
-        </Drawer>
+        </Drawer >
         <Box
           component="main"
           sx={{
@@ -242,8 +255,9 @@ export default function GarageOwnerProfile() {
           }}
         >
           <Toolbar />
+          <Calender />
         </Box>
-      </Box>
-    </ThemeProvider>
+      </Box >
+    </ThemeProvider >
   );
 }

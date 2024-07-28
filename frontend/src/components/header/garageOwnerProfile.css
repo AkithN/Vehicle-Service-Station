@@ -19,3 +19,192 @@
 .garage-owner-logo h3,p{
   color: white;
 }
+
+/* src/container/calender/Calendar.css */
+
+/* Common styles */
+.rbc-calendar {
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+  margin: 20px;
+}
+
+.rbc-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.rbc-toolbar button {
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.rbc-toolbar button:hover {
+  opacity: 0.8;
+}
+
+.rbc-month-view {
+  border: 1px solid;
+}
+
+.rbc-header {
+  padding: 8px;
+  text-align: center;
+  border-bottom: 1px solid;
+}
+
+.rbc-header + .rbc-header {
+  border-left: 1px solid;
+}
+
+.rbc-month-row {
+  border-bottom: 1px solid;
+}
+
+.rbc-day-bg + .rbc-day-bg {
+  border-left: 1px solid;
+}
+
+.rbc-date-cell {
+  padding: 4px;
+  text-align: right;
+}
+
+.rbc-event {
+  padding: 2px 4px;
+  border-radius: 4px;
+  font-size: 12px;
+}
+
+.rbc-event:hover {
+  opacity: 0.8;
+}
+
+.rbc-selected {
+  background-color: var(--rbc-selected-bg);
+}
+
+.rbc-today {
+  background-color: var(--rbc-today-bg);
+}
+
+.rbc-time-view {
+  border: 1px solid;
+}
+
+.rbc-time-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px;
+  border-bottom: 1px solid;
+}
+
+.rbc-time-content {
+  border-top: 1px solid;
+  position: relative;
+}
+
+.rbc-time-slot {
+  height: 40px;
+}
+
+.rbc-time-gutter {
+  background-color: var(--rbc-time-gutter-bg);
+}
+
+.rbc-day-slot .rbc-time-slot {
+  border-top: 1px solid;
+}
+
+/* Light theme */
+.light-theme {
+  --rbc-bg: #fff;
+  --rbc-border-color: #ddd;
+  --rbc-toolbar-bg: #007bff;
+  --rbc-toolbar-color: #fff;
+  --rbc-selected-bg: #0056b3;
+  --rbc-today-bg: #eaf6ff;
+  --rbc-time-gutter-bg: #f5f5f5;
+}
+
+.light-theme .rbc-calendar {
+  background-color: var(--rbc-bg);
+}
+
+.light-theme .rbc-toolbar button {
+  background-color: var(--rbc-toolbar-bg);
+  color: var(--rbc-toolbar-color);
+}
+
+.light-theme .rbc-month-view,
+.light-theme .rbc-header,
+.light-theme .rbc-month-row,
+.light-theme .rbc-day-bg,
+.light-theme .rbc-time-view,
+.light-theme .rbc-time-header,
+.light-theme .rbc-day-slot .rbc-time-slot {
+  border-color: var(--rbc-border-color);
+}
+
+.light-theme .rbc-day-bg {
+  background-color: #fafafa;
+}
+
+.light-theme .rbc-off-range-bg {
+  background-color: #f9f9f9;
+}
+
+.light-theme .rbc-event {
+  background-color: #007bff;
+  color: #fff;
+}
+
+/* Dark theme */
+.dark-theme {
+  --rbc-bg: #333;
+  --rbc-border-color: #555;
+  --rbc-toolbar-bg: #444;
+  --rbc-toolbar-color: #fff;
+  --rbc-selected-bg: #777;
+  --rbc-today-bg: #444;
+  --rbc-time-gutter-bg: #555;
+}
+
+.dark-theme .rbc-calendar {
+  background-color: var(--rbc-bg);
+}
+
+.dark-theme .rbc-toolbar button {
+  background-color: var(--rbc-toolbar-bg);
+  color: var(--rbc-toolbar-color);
+}
+
+.dark-theme .rbc-month-view,
+.dark-theme .rbc-header,
+.dark-theme .rbc-month-row,
+.dark-theme .rbc-day-bg,
+.dark-theme .rbc-time-view,
+.dark-theme .rbc-time-header,
+.dark-theme .rbc-day-slot .rbc-time-slot {
+  border-color: var(--rbc-border-color);
+}
+
+.dark-theme .rbc-day-bg {
+  background-color: #444;
+}
+
+.dark-theme .rbc-off-range-bg {
+  background-color: #555;
+}
+
+.dark-theme .rbc-event {
+  background-color: #888;
+  color: #fff;
+}
+
