@@ -13,7 +13,6 @@ import ManageGarages from './pages/adminpages/garages/ManageGarages';
 import ManageRoles from './pages/adminpages/roles/ManageRoles';
 import AddRoles from './pages/adminpages/roles/AddRoles';
 import UpdateRoles from './pages/adminpages/roles/UpdateRoles';
-import { NextUIProvider } from '@nextui-org/react';
 
 function App() {
   return (

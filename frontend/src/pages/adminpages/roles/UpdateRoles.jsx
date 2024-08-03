@@ -16,21 +16,20 @@ import {
 } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
-// Custom theme with professional colors and typography
 const theme = createTheme({
   palette: {
     primary: {
-      main: '#1a237e', // Deep Blue
+      main: '#1a237e', 
     },
     secondary: {
-      main: '#ff7043', // Deep Orange
+      main: '#ff7043', 
     },
     error: {
-      main: '#d32f2f', // Red
+      main: '#d32f2f', 
     },
     background: {
-      default: '#cbb9b9', // Light Gray for the page background
-      paper: '#ffffff', // White for form card background
+      default: '#cbb9b9', 
+      paper: '#ffffff',
     },
   },
   typography: {
@@ -51,7 +50,7 @@ const UpdateRoles = () => {
   const location = useLocation();
   const { role } = location.state || { role: {} };
 
-  const [roleId, setRoleId] = useState(role.roleId || '');
+  const [roleId] = useState(role.roleId || '');
   const [roleName, setRoleName] = useState(role.roleName || '');
   const [status, setStatus] = useState(role.status || '');
   const [openSnackbar, setOpenSnackbar] = useState(false);

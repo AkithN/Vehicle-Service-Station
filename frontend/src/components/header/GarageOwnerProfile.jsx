@@ -23,9 +23,6 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import PeopleIcon from '@mui/icons-material/People';
 import BarChartIcon from '@mui/icons-material/BarChart';
 import AssignmentIcon from '@mui/icons-material/Assignment';
-import Brightness4Icon from '@mui/icons-material/Brightness4';
-import Brightness7Icon from '@mui/icons-material/Brightness7';
-import useMediaQuery from '@mui/material/useMediaQuery';
 import SubscriptionsIcon from '@mui/icons-material/Subscriptions';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
@@ -89,27 +86,11 @@ const lightTheme = createTheme({
   },
 });
 
-const darkTheme = createTheme({
-  palette: {
-    mode: 'dark',
-  },
-});
-
 export default function GarageOwnerProfile() {
   const [open, setOpen] = React.useState(true);
-  const [mode, setMode] = React.useState('light');
-  const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
-
-  React.useEffect(() => {
-    setMode(prefersDarkMode ? 'dark' : 'light');
-  }, [prefersDarkMode]);
 
   const toggleDrawer = () => {
     setOpen(!open);
-  };
-
-  const toggleTheme = () => {
-    setMode((prevMode) => (prevMode === 'light' ? 'dark' : 'light'));
   };
 
   const [anchorElUser, setAnchorElUser] = React.useState(null);
@@ -123,7 +104,7 @@ export default function GarageOwnerProfile() {
   };
 
   return (
-    <ThemeProvider theme={mode === 'dark' ? darkTheme : lightTheme}>
+    <ThemeProvider theme={lightTheme}>
       <Box sx={{ display: 'flex' }}>
         <CssBaseline />
 
@@ -137,12 +118,8 @@ export default function GarageOwnerProfile() {
               CarCraft
             </Typography>
 
-            <IconButton color="inherit" onClick={toggleTheme}>
-              {mode === 'dark' ? <Brightness7Icon /> : <Brightness4Icon />}
-            </IconButton>
-
             <IconButton color="inherit">
-              <Badge badgeContent={4} color="secondary">
+              <Badge badgeContent={5} color="secondary">
                 <NotificationsIcon />
               </Badge>
             </IconButton>
@@ -150,11 +127,11 @@ export default function GarageOwnerProfile() {
             <Box sx={{ flexGrow: 0 }}>
               <Tooltip title="Open settings">
                 <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                  <Avatar alt="Remy Sharp" src={ avatar } sx={{ width: 30, height: 30 }} />
+                  <Avatar alt="Remy Sharp" src={avatar} sx={{ width: 30, height: 30 }} />
                 </IconButton>
               </Tooltip>
               <Menu
-                sx={{ mt: '45px'  }}
+                sx={{ mt: '45px' }}
                 id="menu-appbar"
                 anchorEl={anchorElUser}
                 anchorOrigin={{
@@ -170,12 +147,10 @@ export default function GarageOwnerProfile() {
                 onClose={handleCloseUserMenu}
               >
                 {settings.map((setting) => (
-                  <MenuItem 
-                    key={setting} 
-                    onClick={handleCloseUserMenu}
-                    sx={{ color: mode === 'light' ? 'black' : 'primary.main' }}
-                  >
-                    <Typography textAlign="center">{setting}</Typography>
+                  <MenuItem key={setting} onClick={handleCloseUserMenu}>
+                    <Typography textAlign="center" sx={{ color: 'black' }}>
+                      {setting}
+                    </Typography>
                   </MenuItem>
                 ))}
               </Menu>
@@ -192,42 +167,42 @@ export default function GarageOwnerProfile() {
           <Divider />
           <List component="nav">
             <React.Fragment>
-              <ListItemButton>
-                <ListItemIcon>
-                  <DashboardIcon />
-                </ListItemIcon>
-                <ListItemText primary="Dashboard" />
-              </ListItemButton>
-              <ListItemButton>
-                <ListItemIcon>
-                  <NotificationsIcon />
-                </ListItemIcon>
-                <ListItemText primary="Notifications" />
-              </ListItemButton>
-              <ListItemButton>
-                <ListItemIcon>
-                  <ShoppingCartIcon />
-                </ListItemIcon>
-                <ListItemText primary="Offers" />
-              </ListItemButton>
-              <ListItemButton>
-                <ListItemIcon>
-                  <PeopleIcon />
-                </ListItemIcon>
-                <ListItemText primary="Customers" />
-              </ListItemButton>
-              <ListItemButton>
-                <ListItemIcon>
-                  <BarChartIcon />
-                </ListItemIcon>
-                <ListItemText primary="Reports" />
-              </ListItemButton>
-              <ListItemButton>
-                <ListItemIcon>
-                  <SubscriptionsIcon />
-                </ListItemIcon>
-                <ListItemText primary="Subscription" />
-              </ListItemButton>
+                <ListItemButton>
+                  <ListItemIcon>
+                    <DashboardIcon />
+                  </ListItemIcon>
+                  <ListItemText primary="Dashboard" />
+                </ListItemButton>
+                <ListItemButton>
+                  <ListItemIcon>
+                    <NotificationsIcon />
+                  </ListItemIcon>
+                  <ListItemText primary="Notifications" />
+                </ListItemButton>
+                <ListItemButton>
+                  <ListItemIcon>
+                    <ShoppingCartIcon />
+                  </ListItemIcon>
+                  <ListItemText primary="Offers" />
+                </ListItemButton>
+                <ListItemButton>
+                  <ListItemIcon>
+                    <PeopleIcon />
+                  </ListItemIcon>
+                  <ListItemText primary="Customers" />
+                </ListItemButton>
+                <ListItemButton>
+                  <ListItemIcon>
+                    <BarChartIcon />
+                  </ListItemIcon>
+                  <ListItemText primary="Reports" />
+                </ListItemButton>
+                <ListItemButton>
+                  <ListItemIcon>
+                    <SubscriptionsIcon />
+                  </ListItemIcon>
+                  <ListItemText primary="Subscription" />
+                </ListItemButton>
             </React.Fragment>
 
             <Divider sx={{ my: 1 }} />
@@ -257,7 +232,7 @@ export default function GarageOwnerProfile() {
             </React.Fragment>
           </List>
         </Drawer>
-        <Box component="main" sx={{ backgroundColor: (theme) => (theme.palette.mode === 'light' ? theme.palette.grey[100] : theme.palette.grey[900]), flexGrow: 1, height: '100vh', overflow: 'auto' }}>
+        <Box component="main" sx={{ backgroundColor: (theme) => theme.palette.grey[100], flexGrow: 1, height: '100vh', overflow: 'auto' }}>
           <Toolbar />
           <Calender />
           <Notification />
