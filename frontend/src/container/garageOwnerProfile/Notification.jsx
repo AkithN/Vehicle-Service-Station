@@ -41,38 +41,6 @@ const Notification = () => {
                     </>
                 } />
             </Card>
-            <Card ctions={actions} style={{ minWidth: 300, }} >
-                <Card.Meta avatar={<Avatar src="https://api.dicebear.com/7.x/miniavs/svg?seed=5" />} title="Card title" description={
-                    <>
-                        <p>This is the description</p>
-                        <p>This is the description</p>
-                    </>
-                } />
-            </Card>
-            <Card ctions={actions} style={{ minWidth: 300, }} >
-                <Card.Meta avatar={<Avatar src="https://api.dicebear.com/7.x/miniavs/svg?seed=6" />} title="Card title" description={
-                    <>
-                        <p>This is the description</p>
-                        <p>This is the description</p>
-                    </>
-                } />
-            </Card>
-            <Card ctions={actions} style={{ minWidth: 300, }} >
-                <Card.Meta avatar={<Avatar src="https://api.dicebear.com/7.x/miniavs/svg?seed=7" />} title="Card title" description={
-                    <>
-                        <p>This is the description</p>
-                        <p>This is the description</p>
-                    </>
-                } />
-            </Card>
-            <Card ctions={actions} style={{ minWidth: 300, }} >
-                <Card.Meta avatar={<Avatar src="https://api.dicebear.com/7.x/miniavs/svg?seed=8" />} title="Card title" description={
-                    <>
-                        <p>This is the description</p>
-                        <p>This is the description</p>
-                    </>
-                } />
-            </Card>
         </Flex>
     );
 };
