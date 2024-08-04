@@ -1,29 +1,31 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
 import "./login.css";
 
 const Login = () => {
-
-  //hardcoded lines for admin login
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
 
-    // Hardcoded credentials
-    const hardcodedEmail = "admin@example.com";
-    const hardcodedPassword = "password123";
-
-    if (email === hardcodedEmail && password === hardcodedPassword) {
-      // Redirect to the Admin page
-      navigate("/admin");
-    } else {
+    try {
+      const response = await axios.post('http://localhost:5000/api/auth/login', { email, password });
+      const { token, userType } = response.data;
+      localStorage.setItem('token', token);
+      if (userType === 'VehicleOwner') {
+        navigate("/vehicleowner");
+      } else if (userType === 'GarageOwner') {
+        navigate("/garageowner");
+      } else {
+        navigate("/admin");
+      }
+    } catch (error) {
       alert("Invalid credentials. Please try again.");
     }
   };
-  //end of hardcode
 
   return (
     <div className="login_container">
