@@ -12,6 +12,7 @@ import Admin from './pages/adminpages/Admin';
 import ManageUsers from './pages/adminpages/ManageUsers';
 import ManageGarages from './pages/adminpages/ManageGarages';
 import ManageRoles from './pages/adminpages/ManageRoles';
+import VehicleOwnerFeatures from './container/vehicleOwnerProfile/vehicleOwnerFeatures';
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
           <Route path='/admin/manage-users' element={<ManageUsers />} />
           <Route path='/admin/manage-garages' element={<ManageGarages />} />
           <Route path='/admin/manage-roles' element={<ManageRoles />} />
+          <Route path='/features' element={<VehicleOwnerFeatures />} />
         </Routes>
       </div>
     </Router>

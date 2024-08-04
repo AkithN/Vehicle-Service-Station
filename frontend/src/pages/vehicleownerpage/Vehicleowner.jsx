@@ -1,6 +1,6 @@
 import * as React from 'react';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-
 import Box from '@mui/material/Box';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
@@ -12,7 +12,6 @@ import MenuItem from '@mui/material/MenuItem';
 import Drawer from '@mui/material/Drawer';
 import MenuIcon from '@mui/icons-material/Menu';
 import ToggleColorMode from './ToggleColorMode';
-import vehicleOwnerFeatures from '../../container/vehicleOwnerProfile/vehicleOwnerFeatures';
 
 const logoStyle = {
     width: '140px',
@@ -20,25 +19,11 @@ const logoStyle = {
     cursor: 'pointer',
 };
 
-function VehicleOwnerProfile({mode, toggleColorMode}) {
+function VehicleOwnerProfile({ mode, toggleColorMode }) {
     const [open, setOpen] = React.useState(false);
 
     const toggleDrawer = (newOpen) => () => {
         setOpen(newOpen);
-    };
-
-    const scrollToSection = (sectionId) => {
-        const sectionElement = document.getElementById(sectionId);
-        const offset = 128;
-        if (sectionElement) {
-            const targetScroll = sectionElement.offsetTop - offset;
-            sectionElement.scrollIntoView({behavior: 'smooth'});
-            window.scrollTo({
-                top: targetScroll,
-                behavior: 'smooth',
-            });
-            setOpen(false);
-        }
     };
 
     return (
@@ -91,43 +76,28 @@ function VehicleOwnerProfile({mode, toggleColorMode}) {
                                 style={logoStyle}
                                 alt="logo of sitemark"
                             />
-                            <Box sx={{display: {xs: 'none', md: 'flex'}}}>
-                                <MenuItem
-                                    onClick={() => scrollToSection('features')}
-                                    sx={{py: '6px', px: '12px'}}
-                                >
+                            <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
+                                <MenuItem component={Link} to="/features" sx={{ py: '6px', px: '12px' }}>
                                     <Typography variant="body2" color="text.primary">
                                         Features
                                     </Typography>
                                 </MenuItem>
-                                <MenuItem
-                                    onClick={() => scrollToSection('testimonials')}
-                                    sx={{py: '6px', px: '12px'}}
-                                >
+                                <MenuItem sx={{ py: '6px', px: '12px' }}>
                                     <Typography variant="body2" color="text.primary">
                                         Testimonials
                                     </Typography>
                                 </MenuItem>
-                                <MenuItem
-                                    onClick={() => scrollToSection('highlights')}
-                                    sx={{py: '6px', px: '12px'}}
-                                >
+                                <MenuItem sx={{ py: '6px', px: '12px' }}>
                                     <Typography variant="body2" color="text.primary">
                                         Highlights
                                     </Typography>
                                 </MenuItem>
-                                <MenuItem
-                                    onClick={() => scrollToSection('pricing')}
-                                    sx={{py: '6px', px: '12px'}}
-                                >
+                                <MenuItem sx={{ py: '6px', px: '12px' }}>
                                     <Typography variant="body2" color="text.primary">
                                         Pricing
                                     </Typography>
                                 </MenuItem>
-                                <MenuItem
-                                    onClick={() => scrollToSection('faq')}
-                                    sx={{py: '6px', px: '12px'}}
-                                >
+                                <MenuItem sx={{ py: '6px', px: '12px' }}>
                                     <Typography variant="body2" color="text.primary">
                                         FAQ
                                     </Typography>
@@ -136,12 +106,12 @@ function VehicleOwnerProfile({mode, toggleColorMode}) {
                         </Box>
                         <Box
                             sx={{
-                                display: {xs: 'none', md: 'flex'},
+                                display: { xs: 'none', md: 'flex' },
                                 gap: 0.5,
                                 alignItems: 'center',
                             }}
                         >
-                            <ToggleColorMode mode={mode} toggleColorMode={toggleColorMode}/>
+                            <ToggleColorMode mode={mode} toggleColorMode={toggleColorMode} />
                             <Button
                                 color="primary"
                                 variant="text"
@@ -163,15 +133,15 @@ function VehicleOwnerProfile({mode, toggleColorMode}) {
                                 Sign up
                             </Button>
                         </Box>
-                        <Box sx={{display: {sm: '', md: 'none'}}}>
+                        <Box sx={{ display: { sm: '', md: 'none' } }}>
                             <Button
                                 variant="text"
                                 color="primary"
                                 aria-label="menu"
                                 onClick={toggleDrawer(true)}
-                                sx={{minWidth: '30px', p: '4px'}}
+                                sx={{ minWidth: '30px', p: '4px' }}
                             >
-                                <MenuIcon/>
+                                <MenuIcon />
                             </Button>
                             <Drawer anchor="right" open={open} onClose={toggleDrawer(false)}>
                                 <Box
@@ -190,22 +160,22 @@ function VehicleOwnerProfile({mode, toggleColorMode}) {
                                             flexGrow: 1,
                                         }}
                                     >
-                                        <ToggleColorMode mode={mode} toggleColorMode={toggleColorMode}/>
+                                        <ToggleColorMode mode={mode} toggleColorMode={toggleColorMode} />
                                     </Box>
-                                    <MenuItem onClick={() => scrollToSection('features')}>
+                                    <MenuItem component={Link} to="/features">
                                         Features
                                     </MenuItem>
-                                    <MenuItem onClick={() => scrollToSection('testimonials')}>
+                                    <MenuItem>
                                         Testimonials
                                     </MenuItem>
-                                    <MenuItem onClick={() => scrollToSection('highlights')}>
+                                    <MenuItem>
                                         Highlights
                                     </MenuItem>
-                                    <MenuItem onClick={() => scrollToSection('pricing')}>
+                                    <MenuItem>
                                         Pricing
                                     </MenuItem>
-                                    <MenuItem onClick={() => scrollToSection('faq')}>FAQ</MenuItem>
-                                    <Divider/>
+                                    <MenuItem>FAQ</MenuItem>
+                                    <Divider />
 
                                     <MenuItem>
                                         <Button
@@ -214,7 +184,7 @@ function VehicleOwnerProfile({mode, toggleColorMode}) {
                                             component="a"
                                             href="/material-ui/getting-started/templates/sign-up/"
                                             target="_blank"
-                                            sx={{width: '100%'}}
+                                            sx={{ width: '100%' }}
                                         >
                                             Sign up
                                         </Button>
@@ -226,7 +196,7 @@ function VehicleOwnerProfile({mode, toggleColorMode}) {
                                             component="a"
                                             href="/material-ui/getting-started/templates/sign-in/"
                                             target="_blank"
-                                            sx={{width: '100%'}}
+                                            sx={{ width: '100%' }}
                                         >
                                             Sign in
                                         </Button>
@@ -245,6 +215,5 @@ VehicleOwnerProfile.propTypes = {
     mode: PropTypes.oneOf(['dark', 'light']).isRequired,
     toggleColorMode: PropTypes.func.isRequired,
 };
-<vehicleOwnerFeatures/>
 
 export default VehicleOwnerProfile;
