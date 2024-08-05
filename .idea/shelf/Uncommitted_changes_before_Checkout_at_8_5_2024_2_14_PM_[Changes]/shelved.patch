@@ -1,0 +1,229 @@
+Index: frontend/src/container/vehicleOwnerProfile/vehicleOwnerFeatures.jsx
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import React from \"react\";\r\nimport \"./vehicleOwnerFeatures.css\";\r\nimport Footer from \"../../components/footer/Footer\";\r\n\r\nconst VehicleOwnerFeatures = () => {\r\n    return (\r\n        <section className=\"about-area about-one\">\r\n            <div className=\"container\">\r\n                <div className=\"row\">\r\n                    <div className=\"col-lg-12\">\r\n                        <div className=\"about-title text-center\">\r\n                            <h2 className=\"title fw-bold\">Why Choose Us</h2>\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n\r\n                <div className=\"row justify-content-center\">\r\n                    <div className=\"col-md-4 col-sm-8\">\r\n                        <div className=\"single-about-items\">\r\n                            <div className=\"items-icon\">\r\n                                <i className=\"lni lni-bullhorn\"></i>\r\n                            </div>\r\n                            <div className=\"items-content\">\r\n                                <h4 className=\"items-title\">Trained Technicians</h4>\r\n                                <p className=\"text\">\r\n                                    We use the latest diagnostic equipment to guarantee your\r\n                                    vehicle is serviced correctly.\r\n                                </p>\r\n                            </div>\r\n                        </div>\r\n                    </div>\r\n                    <div className=\"col-md-4 col-sm-8\">\r\n                        <div className=\"single-about-items\">\r\n                            <div className=\"items-icon\">\r\n                                <i className=\"lni lni-investment\"></i>\r\n                            </div>\r\n                            <div className=\"items-content\">\r\n                                <h4 className=\"items-title\">Efficiency & Speed</h4>\r\n                                <p className=\"text\">\r\n                                    The car doctor is your best source for professional, reliable,\r\n                                    and efficient auto repair service.\r\n                                </p>\r\n                            </div>\r\n                        </div>\r\n                    </div>\r\n                    <div className=\"col-md-4 col-sm-8\">\r\n                        <div className=\"single-about-items\">\r\n                            <div className=\"items-icon\">\r\n                                <i className=\"lni lni-handshake\"></i>\r\n                            </div>\r\n                            <div className=\"items-content\">\r\n                                <h4 className=\"items-title\">We Have the Technology</h4>\r\n                                <p className=\"text\">\r\n                                    You can be sure that your car will be handled with the latest\r\n                                    diagnostic equipment.\r\n                                </p>\r\n                            </div>\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n            <div>\r\n            <div className=\"col-md-4 col-sm-8\">\r\n                        <div className=\"single-about-items\">\r\n                            <div className=\"items-icon\">\r\n                                <i className=\"lni lni-handshake\"></i>\r\n                            </div>\r\n                            <div className=\"items-content\">\r\n                                <h4 className=\"items-title\">We Have the Technology</h4>\r\n                                <p className=\"text\">\r\n                                    You can be sure that your car will be handled with the latest\r\n                                    diagnostic equipment.\r\n                                </p>\r\n                            </div>\r\n                        </div>\r\n                    </div>\r\n            </div>\r\n            \r\n        </section>\r\n         \r\n\r\n         \r\n    );\r\n\r\n    \r\n};\r\n\r\nexport default VehicleOwnerFeatures;\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/frontend/src/container/vehicleOwnerProfile/vehicleOwnerFeatures.jsx b/frontend/src/container/vehicleOwnerProfile/vehicleOwnerFeatures.jsx
+--- a/frontend/src/container/vehicleOwnerProfile/vehicleOwnerFeatures.jsx	(revision 8406cc58f78920ac9f5f9daa5f25846ff1870bc8)
++++ b/frontend/src/container/vehicleOwnerProfile/vehicleOwnerFeatures.jsx	(date 1722847214066)
+@@ -1,6 +1,6 @@
+ import React from "react";
+ import "./vehicleOwnerFeatures.css";
+-import Footer from "../../components/footer/Footer";
++
+ 
+ const VehicleOwnerFeatures = () => {
+     return (
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"424774fe-d563-4017-948f-a331863295e5\" name=\"Changes\" comment=\"create vehicle owner profile nav bar\">\r\n      <change afterPath=\"$PROJECT_DIR$/frontend/src/container/vehicleOwnerProfile/vehicleOwnerFeatures.css\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/frontend/src/container/vehicleOwnerProfile/vehicleOwnerFeatures.jsx\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/frontend/src/pages/vehicleownerpage/Vehicleowner.jsx\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/frontend/src/pages/vehicleownerpage/Vehicleowner.jsx\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"ComposerSettings\">\r\n    <execution />\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\r\n      <map>\r\n        <entry key=\"$PROJECT_DIR$\" value=\"main\" />\r\n      </map>\r\n    </option>\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;customColor&quot;: &quot;&quot;,\r\n  &quot;associatedIndex&quot;: 6\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"2k0467RpvcETqVi0saYreWRl5yJ\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,\r\n    &quot;git-widget-placeholder&quot;: &quot;oresha&quot;,\r\n    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,\r\n    &quot;last_opened_file_path&quot;: &quot;D:/Projects/Flutter&quot;,\r\n    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,\r\n    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;\r\n  }\r\n}</component>\r\n  <component name=\"SharedIndexes\">\r\n    <attachedChunks>\r\n      <set>\r\n        <option value=\"bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.15989.150\" />\r\n        <option value=\"bundled-js-predefined-1d06a55b98c1-91d5c284f522-JavaScript-IU-241.15989.150\" />\r\n      </set>\r\n    </attachedChunks>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"424774fe-d563-4017-948f-a331863295e5\" name=\"Changes\" comment=\"\" />\r\n      <created>1722406986962</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1722406986962</updated>\r\n      <workItem from=\"1722406990059\" duration=\"4137000\" />\r\n      <workItem from=\"1722527403448\" duration=\"126000\" />\r\n      <workItem from=\"1722578676732\" duration=\"753000\" />\r\n      <workItem from=\"1722583566644\" duration=\"1517000\" />\r\n      <workItem from=\"1722585320050\" duration=\"24000\" />\r\n      <workItem from=\"1722585543700\" duration=\"32000\" />\r\n      <workItem from=\"1722585592790\" duration=\"13000\" />\r\n      <workItem from=\"1722585717525\" duration=\"3811000\" />\r\n      <workItem from=\"1722609135665\" duration=\"47000\" />\r\n      <workItem from=\"1722618271046\" duration=\"849000\" />\r\n      <workItem from=\"1722660086337\" duration=\"5974000\" />\r\n      <workItem from=\"1722668341729\" duration=\"387000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"create new branch oresha\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1722585784087</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1722585784087</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"create new branch oresha\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1722587091855</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1722587091855</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"create vehicle owner profile nav bar\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1722664323954</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1722664323954</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"4\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"create new branch oresha\" />\r\n    <MESSAGE value=\"create vehicle owner profile nav bar\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"create vehicle owner profile nav bar\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 8406cc58f78920ac9f5f9daa5f25846ff1870bc8)
++++ b/.idea/workspace.xml	(date 1722838756005)
+@@ -5,10 +5,7 @@
+   </component>
+   <component name="ChangeListManager">
+     <list default="true" id="424774fe-d563-4017-948f-a331863295e5" name="Changes" comment="create vehicle owner profile nav bar">
+-      <change afterPath="$PROJECT_DIR$/frontend/src/container/vehicleOwnerProfile/vehicleOwnerFeatures.css" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/frontend/src/container/vehicleOwnerProfile/vehicleOwnerFeatures.jsx" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/vehicleownerpage/Vehicleowner.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/vehicleownerpage/Vehicleowner.jsx" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -19,9 +16,22 @@
+     <execution />
+   </component>
+   <component name="Git.Settings">
++    <favorite-branches>
++      <branch-storage>
++        <map>
++          <entry type="LOCAL">
++            <value>
++              <list>
++                <branch-info repo="$PROJECT_DIR$" source="oresha" />
++              </list>
++            </value>
++          </entry>
++        </map>
++      </branch-storage>
++    </favorite-branches>
+     <option name="RECENT_BRANCH_BY_REPOSITORY">
+       <map>
+-        <entry key="$PROJECT_DIR$" value="main" />
++        <entry key="$PROJECT_DIR$" value="oresha" />
+       </map>
+     </option>
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+@@ -39,7 +49,7 @@
+   &quot;keyToString&quot;: {
+     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+     &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
+-    &quot;git-widget-placeholder&quot;: &quot;oresha&quot;,
++    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+     &quot;last_opened_file_path&quot;: &quot;D:/Projects/Flutter&quot;,
+     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+@@ -78,6 +88,8 @@
+       <workItem from="1722618271046" duration="849000" />
+       <workItem from="1722660086337" duration="5974000" />
+       <workItem from="1722668341729" duration="387000" />
++      <workItem from="1722835608072" duration="1453000" />
++      <workItem from="1722837987102" duration="754000" />
+     </task>
+     <task id="LOCAL-00001" summary="create new branch oresha">
+       <option name="closed" value="true" />
+Index: frontend/src/pages/vehicleownerpage/Vehicleowner.jsx
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import * as React from 'react';\r\nimport PropTypes from 'prop-types';\r\n\r\nimport Box from '@mui/material/Box';\r\nimport AppBar from '@mui/material/AppBar';\r\nimport Toolbar from '@mui/material/Toolbar';\r\nimport Button from '@mui/material/Button';\r\nimport Container from '@mui/material/Container';\r\nimport Divider from '@mui/material/Divider';\r\nimport Typography from '@mui/material/Typography';\r\nimport MenuItem from '@mui/material/MenuItem';\r\nimport Drawer from '@mui/material/Drawer';\r\nimport MenuIcon from '@mui/icons-material/Menu';\r\nimport ToggleColorMode from './ToggleColorMode';\r\n\r\n\r\nconst logoStyle = {\r\n    width: '140px',\r\n    height: 'auto',\r\n    cursor: 'pointer',\r\n};\r\n\r\nfunction VehicleOwnerProfile({ mode, toggleColorMode }) {\r\n    const [open, setOpen] = React.useState(false);\r\n\r\n    const toggleDrawer = (newOpen) => () => {\r\n        setOpen(newOpen);\r\n    };\r\n\r\n    const scrollToSection = (sectionId) => {\r\n        const sectionElement = document.getElementById(sectionId);\r\n        const offset = 128;\r\n        if (sectionElement) {\r\n            const targetScroll = sectionElement.offsetTop - offset;\r\n            sectionElement.scrollIntoView({ behavior: 'smooth' });\r\n            window.scrollTo({\r\n                top: targetScroll,\r\n                behavior: 'smooth',\r\n            });\r\n            setOpen(false);\r\n        }\r\n    };\r\n\r\n    return (\r\n        <div>\r\n            <AppBar\r\n                position=\"fixed\"\r\n                sx={{\r\n                    boxShadow: 0,\r\n                    bgcolor: 'transparent',\r\n                    backgroundImage: 'none',\r\n                    mt: 2,\r\n                }}\r\n            >\r\n                <Container maxWidth=\"lg\">\r\n                    <Toolbar\r\n                        variant=\"regular\"\r\n                        sx={(theme) => ({\r\n                            display: 'flex',\r\n                            alignItems: 'center',\r\n                            justifyContent: 'space-between',\r\n                            flexShrink: 0,\r\n                            borderRadius: '999px',\r\n                            bgcolor:\r\n                                theme.palette.mode === 'light'\r\n                                    ? 'rgba(255, 255, 255, 0.4)'\r\n                                    : 'rgba(0, 0, 0, 0.4)',\r\n                            backdropFilter: 'blur(24px)',\r\n                            maxHeight: 40,\r\n                            border: '1px solid',\r\n                            borderColor: 'divider',\r\n                            boxShadow:\r\n                                theme.palette.mode === 'light'\r\n                                    ? `0 0 1px rgba(85, 166, 246, 0.1), 1px 1.5px 2px -1px rgba(85, 166, 246, 0.15), 4px 4px 12px -2.5px rgba(85, 166, 246, 0.15)`\r\n                                    : '0 0 1px rgba(2, 31, 59, 0.7), 1px 1.5px 2px -1px rgba(2, 31, 59, 0.65), 4px 4px 12px -2.5px rgba(2, 31, 59, 0.65)',\r\n                        })}\r\n                    >\r\n                        <Box\r\n                            sx={{\r\n                                flexGrow: 1,\r\n                                display: 'flex',\r\n                                alignItems: 'center',\r\n                                ml: '-18px',\r\n                                px: 0,\r\n                            }}\r\n                        >\r\n                            <img\r\n                                src={\r\n                                    'https://assets-global.website-files.com/61ed56ae9da9fd7e0ef0a967/61f12e6faf73568658154dae_SitemarkDefault.svg'\r\n                                }\r\n                                style={logoStyle}\r\n                                alt=\"logo of sitemark\"\r\n                            />\r\n                            <Box sx={{ display: { xs: 'none', md: 'flex' } }}>\r\n                                <MenuItem\r\n                                    onClick={() => scrollToSection('features')}\r\n                                    sx={{ py: '6px', px: '12px' }}\r\n                                >\r\n                                    <Typography variant=\"body2\" color=\"text.primary\">\r\n                                        Features\r\n                                    </Typography>\r\n                                </MenuItem>\r\n                                <MenuItem\r\n                                    onClick={() => scrollToSection('testimonials')}\r\n                                    sx={{ py: '6px', px: '12px' }}\r\n                                >\r\n                                    <Typography variant=\"body2\" color=\"text.primary\">\r\n                                        Testimonials\r\n                                    </Typography>\r\n                                </MenuItem>\r\n                                <MenuItem\r\n                                    onClick={() => scrollToSection('highlights')}\r\n                                    sx={{ py: '6px', px: '12px' }}\r\n                                >\r\n                                    <Typography variant=\"body2\" color=\"text.primary\">\r\n                                        Highlights\r\n                                    </Typography>\r\n                                </MenuItem>\r\n                                <MenuItem\r\n                                    onClick={() => scrollToSection('pricing')}\r\n                                    sx={{ py: '6px', px: '12px' }}\r\n                                >\r\n                                    <Typography variant=\"body2\" color=\"text.primary\">\r\n                                        Pricing\r\n                                    </Typography>\r\n                                </MenuItem>\r\n                                <MenuItem\r\n                                    onClick={() => scrollToSection('faq')}\r\n                                    sx={{ py: '6px', px: '12px' }}\r\n                                >\r\n                                    <Typography variant=\"body2\" color=\"text.primary\">\r\n                                        FAQ\r\n                                    </Typography>\r\n                                </MenuItem>\r\n                            </Box>\r\n                        </Box>\r\n                        <Box\r\n                            sx={{\r\n                                display: { xs: 'none', md: 'flex' },\r\n                                gap: 0.5,\r\n                                alignItems: 'center',\r\n                            }}\r\n                        >\r\n                            <ToggleColorMode mode={mode} toggleColorMode={toggleColorMode} />\r\n                            <Button\r\n                                color=\"primary\"\r\n                                variant=\"text\"\r\n                                size=\"small\"\r\n                                component=\"a\"\r\n                                href=\"/material-ui/getting-started/templates/sign-in/\"\r\n                                target=\"_blank\"\r\n                            >\r\n                                Sign in\r\n                            </Button>\r\n                            <Button\r\n                                color=\"primary\"\r\n                                variant=\"contained\"\r\n                                size=\"small\"\r\n                                component=\"a\"\r\n                                href=\"/material-ui/getting-started/templates/sign-up/\"\r\n                                target=\"_blank\"\r\n                            >\r\n                                Sign up\r\n                            </Button>\r\n                        </Box>\r\n                        <Box sx={{ display: { sm: '', md: 'none' } }}>\r\n                            <Button\r\n                                variant=\"text\"\r\n                                color=\"primary\"\r\n                                aria-label=\"menu\"\r\n                                onClick={toggleDrawer(true)}\r\n                                sx={{ minWidth: '30px', p: '4px' }}\r\n                            >\r\n                                <MenuIcon />\r\n                            </Button>\r\n                            <Drawer anchor=\"right\" open={open} onClose={toggleDrawer(false)}>\r\n                                <Box\r\n                                    sx={{\r\n                                        minWidth: '60dvw',\r\n                                        p: 2,\r\n                                        backgroundColor: 'background.paper',\r\n                                        flexGrow: 1,\r\n                                    }}\r\n                                >\r\n                                    <Box\r\n                                        sx={{\r\n                                            display: 'flex',\r\n                                            flexDirection: 'column',\r\n                                            alignItems: 'end',\r\n                                            flexGrow: 1,\r\n                                        }}\r\n                                    >\r\n                                        <ToggleColorMode mode={mode} toggleColorMode={toggleColorMode} />\r\n                                    </Box>\r\n                                    <MenuItem onClick={() => scrollToSection('features')}>\r\n                                        Features\r\n                                    </MenuItem>\r\n                                    <MenuItem onClick={() => scrollToSection('testimonials')}>\r\n                                        Testimonials\r\n                                    </MenuItem>\r\n                                    <MenuItem onClick={() => scrollToSection('highlights')}>\r\n                                        Highlights\r\n                                    </MenuItem>\r\n                                    <MenuItem onClick={() => scrollToSection('pricing')}>\r\n                                        Pricing\r\n                                    </MenuItem>\r\n                                    <MenuItem onClick={() => scrollToSection('faq')}>FAQ</MenuItem>\r\n                                    \r\n                                    <Divider />\r\n\r\n                                    <MenuItem>\r\n                                        <Button\r\n                                            color=\"primary\"\r\n                                            variant=\"contained\"\r\n                                            component=\"a\"\r\n                                            href=\"/material-ui/getting-started/templates/sign-up/\"\r\n                                            target=\"_blank\"\r\n                                            sx={{ width: '100%' }}\r\n                                        >\r\n                                            Sign up\r\n                                        </Button>\r\n                                    </MenuItem>\r\n                                    <MenuItem>\r\n                                        <Button\r\n                                            color=\"primary\"\r\n                                            variant=\"outlined\"\r\n                                            component=\"a\"\r\n                                            href=\"/material-ui/getting-started/templates/sign-in/\"\r\n                                            target=\"_blank\"\r\n                                            sx={{ width: '100%' }}\r\n                                        >\r\n                                            Sign in\r\n                                        </Button>\r\n                                    </MenuItem>\r\n                                </Box>\r\n                            </Drawer>\r\n                        </Box>\r\n                    </Toolbar>\r\n                </Container>\r\n            </AppBar>\r\n        </div>\r\n    );\r\n}\r\n\r\nVehicleOwnerProfile.propTypes = {\r\n    mode: PropTypes.oneOf(['dark', 'light']).isRequired,\r\n    toggleColorMode: PropTypes.func.isRequired,\r\n};\r\n\r\nexport default VehicleOwnerProfile;\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/frontend/src/pages/vehicleownerpage/Vehicleowner.jsx b/frontend/src/pages/vehicleownerpage/Vehicleowner.jsx
+--- a/frontend/src/pages/vehicleownerpage/Vehicleowner.jsx	(revision 8406cc58f78920ac9f5f9daa5f25846ff1870bc8)
++++ b/frontend/src/pages/vehicleownerpage/Vehicleowner.jsx	(date 1722846345280)
+@@ -1,6 +1,6 @@
+ import * as React from 'react';
++import { Link } from 'react-router-dom';
+ import PropTypes from 'prop-types';
+-
+ import Box from '@mui/material/Box';
+ import AppBar from '@mui/material/AppBar';
+ import Toolbar from '@mui/material/Toolbar';
+@@ -12,7 +12,7 @@
+ import Drawer from '@mui/material/Drawer';
+ import MenuIcon from '@mui/icons-material/Menu';
+ import ToggleColorMode from './ToggleColorMode';
+-
++import VehicleOwnerFeatures from '../../container/vehicleOwnerProfile/vehicleOwnerFeatures';
+ 
+ const logoStyle = {
+     width: '140px',
+@@ -27,20 +27,6 @@
+         setOpen(newOpen);
+     };
+ 
+-    const scrollToSection = (sectionId) => {
+-        const sectionElement = document.getElementById(sectionId);
+-        const offset = 128;
+-        if (sectionElement) {
+-            const targetScroll = sectionElement.offsetTop - offset;
+-            sectionElement.scrollIntoView({ behavior: 'smooth' });
+-            window.scrollTo({
+-                top: targetScroll,
+-                behavior: 'smooth',
+-            });
+-            setOpen(false);
+-        }
+-    };
+-
+     return (
+         <div>
+             <AppBar
+@@ -92,42 +78,27 @@
+                                 alt="logo of sitemark"
+                             />
+                             <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
+-                                <MenuItem
+-                                    onClick={() => scrollToSection('features')}
+-                                    sx={{ py: '6px', px: '12px' }}
+-                                >
++                                <MenuItem component={Link} to="/features" sx={{ py: '6px', px: '12px' }}>
+                                     <Typography variant="body2" color="text.primary">
+                                         Features
+                                     </Typography>
+                                 </MenuItem>
+-                                <MenuItem
+-                                    onClick={() => scrollToSection('testimonials')}
+-                                    sx={{ py: '6px', px: '12px' }}
+-                                >
++                                <MenuItem sx={{ py: '6px', px: '12px' }}>
+                                     <Typography variant="body2" color="text.primary">
+                                         Testimonials
+                                     </Typography>
+                                 </MenuItem>
+-                                <MenuItem
+-                                    onClick={() => scrollToSection('highlights')}
+-                                    sx={{ py: '6px', px: '12px' }}
+-                                >
++                                <MenuItem sx={{ py: '6px', px: '12px' }}>
+                                     <Typography variant="body2" color="text.primary">
+                                         Highlights
+                                     </Typography>
+                                 </MenuItem>
+-                                <MenuItem
+-                                    onClick={() => scrollToSection('pricing')}
+-                                    sx={{ py: '6px', px: '12px' }}
+-                                >
++                                <MenuItem sx={{ py: '6px', px: '12px' }}>
+                                     <Typography variant="body2" color="text.primary">
+                                         Pricing
+                                     </Typography>
+                                 </MenuItem>
+-                                <MenuItem
+-                                    onClick={() => scrollToSection('faq')}
+-                                    sx={{ py: '6px', px: '12px' }}
+-                                >
++                                <MenuItem sx={{ py: '6px', px: '12px' }}>
+                                     <Typography variant="body2" color="text.primary">
+                                         FAQ
+                                     </Typography>
+@@ -192,20 +163,19 @@
+                                     >
+                                         <ToggleColorMode mode={mode} toggleColorMode={toggleColorMode} />
+                                     </Box>
+-                                    <MenuItem onClick={() => scrollToSection('features')}>
++                                    <MenuItem component={Link} to="/features">
+                                         Features
+                                     </MenuItem>
+-                                    <MenuItem onClick={() => scrollToSection('testimonials')}>
++                                    <MenuItem>
+                                         Testimonials
+                                     </MenuItem>
+-                                    <MenuItem onClick={() => scrollToSection('highlights')}>
++                                    <MenuItem>
+                                         Highlights
+                                     </MenuItem>
+-                                    <MenuItem onClick={() => scrollToSection('pricing')}>
++                                    <MenuItem>
+                                         Pricing
+                                     </MenuItem>
+-                                    <MenuItem onClick={() => scrollToSection('faq')}>FAQ</MenuItem>
+-                                    
++                                    <MenuItem>FAQ</MenuItem>
+                                     <Divider />
+ 
+                                     <MenuItem>
+Index: frontend/src/App.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import React from 'react';\r\nimport { BrowserRouter as Router, Routes, Route } from 'react-router-dom';\r\nimport './App.css';\r\nimport Home from './pages/guestpage/Guest';\r\nimport RegisterForm from './pages/registerpage/Register';\r\nimport Login from './pages/loginpage/Login';\r\nimport Signup from './pages/signuppage/Signup';\r\nimport Garageowner from './pages/garageownerpage/Garageowner';\r\nimport Vehicleowner from './pages/vehicleownerpage/Vehicleowner';\r\nimport Admin from './pages/adminpages/Admin';\r\nimport ManageUsers from './pages/adminpages/users/ManageUsers';\r\nimport ManageGarages from './pages/adminpages/garages/ManageGarages';\r\nimport ManageRoles from './pages/adminpages/roles/ManageRoles';\r\nimport AddRoles from './pages/adminpages/roles/AddRoles';\r\nimport UpdateRoles from './pages/adminpages/roles/UpdateRoles';\r\n\r\nfunction App() {\r\n  return (\r\n    <Router>\r\n      <div className='App'>\r\n        <Routes>\r\n          <Route path='/' element={<Home />} />\r\n          <Route path='/RegisterForm' element={< RegisterForm />} />\r\n          <Route path='/login' element={< Login />} />\r\n          <Route path='/signup' element={< Signup />} />\r\n          <Route path='/admin' element={< Admin />} />\r\n          <Route path='/garageowner' element={< Garageowner />} />\r\n          <Route path='/vehicleowner' element={< Vehicleowner />} />\r\n          <Route path='/admin/manage-users' element={<ManageUsers />} />\r\n          <Route path='/admin/manage-garages' element={<ManageGarages />} />\r\n          <Route path='/admin/manage-roles' element={<ManageRoles />} />\r\n          <Route path='/admin/add-roles' element={<AddRoles />} />\r\n          <Route path='/admin/update-roles' element={<UpdateRoles />} />\r\n        </Routes>\r\n      </div>\r\n    </Router>\r\n  );\r\n}\r\n\r\nexport default App;\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/frontend/src/App.js b/frontend/src/App.js
+--- a/frontend/src/App.js	(revision 8406cc58f78920ac9f5f9daa5f25846ff1870bc8)
++++ b/frontend/src/App.js	(date 1722846184214)
+@@ -13,6 +13,7 @@
+ import ManageRoles from './pages/adminpages/roles/ManageRoles';
+ import AddRoles from './pages/adminpages/roles/AddRoles';
+ import UpdateRoles from './pages/adminpages/roles/UpdateRoles';
++import VehicleOwnerFeatures from './container/vehicleOwnerProfile/vehicleOwnerFeatures';
+ 
+ function App() {
+   return (
+@@ -31,6 +32,7 @@
+           <Route path='/admin/manage-roles' element={<ManageRoles />} />
+           <Route path='/admin/add-roles' element={<AddRoles />} />
+           <Route path='/admin/update-roles' element={<UpdateRoles />} />
++          <Route path='/features' element={<vehicleOwnerFeatures />} />
+         </Routes>
+       </div>
+     </Router>
