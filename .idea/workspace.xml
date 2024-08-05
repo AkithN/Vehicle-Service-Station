@@ -5,6 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="424774fe-d563-4017-948f-a331863295e5" name="Changes" comment="update vehicle owner page">
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/expert-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/expert-2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/expert-3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/expert-4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/expert-5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/expert-6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/container/vehicleOwnerProfile/Expert.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/container/vehicleOwnerProfile/Expert.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/container/vehicleOwnerProfile/Experts.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/container/vehicleOwnerProfile/Experts.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_8_5_2024_2_17_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_8_5_2024_2_17_PM__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/pages/vehicleownerpage/Vehicleowner.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/vehicleownerpage/Vehicleowner.jsx" afterDir="false" />
@@ -53,7 +64,7 @@
     &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Projects/Flutter&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Projects/Vehicle-Service-Station/frontend/src/assets&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -62,6 +73,11 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Projects\Vehicle-Service-Station\frontend\src\assets" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -92,6 +108,8 @@
       <workItem from="1722668341729" duration="387000" />
       <workItem from="1722835608072" duration="1453000" />
       <workItem from="1722837987102" duration="754000" />
+      <workItem from="1722873775981" duration="3041000" />
+      <workItem from="1722877417401" duration="9000" />
     </task>
     <task id="LOCAL-00001" summary="create new branch oresha">
       <option name="closed" value="true" />
