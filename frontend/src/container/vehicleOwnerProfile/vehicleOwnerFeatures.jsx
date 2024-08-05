@@ -1,5 +1,6 @@
 import React from "react";
 import "./vehicleOwnerFeatures.css";
+import Footer from "../../components/footer/Footer";
 
 const VehicleOwnerFeatures = () => {
     return (
@@ -58,8 +59,30 @@ const VehicleOwnerFeatures = () => {
                     </div>
                 </div>
             </div>
+            <div>
+            <div className="col-md-4 col-sm-8">
+                        <div className="single-about-items">
+                            <div className="items-icon">
+                                <i className="lni lni-handshake"></i>
+                            </div>
+                            <div className="items-content">
+                                <h4 className="items-title">We Have the Technology</h4>
+                                <p className="text">
+                                    You can be sure that your car will be handled with the latest
+                                    diagnostic equipment.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+            
         </section>
+         
+
+         
     );
+
+    
 };
 
 export default VehicleOwnerFeatures;
