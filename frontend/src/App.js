@@ -13,6 +13,7 @@ import ManageGarages from './pages/adminpages/garages/ManageGarages';
 import ManageRoles from './pages/adminpages/roles/ManageRoles';
 import AddRoles from './pages/adminpages/roles/AddRoles';
 import UpdateRoles from './pages/adminpages/roles/UpdateRoles';
+import VehicleOwnerFeatures from './container/vehicleOwnerProfile/vehicleOwnerFeatures';
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
           <Route path='/admin/manage-roles' element={<ManageRoles />} />
           <Route path='/admin/add-roles' element={<AddRoles />} />
           <Route path='/admin/update-roles' element={<UpdateRoles />} />
+          <Route path='/features' element={<VehicleOwnerFeatures />} />
         </Routes>
       </div>
     </Router>

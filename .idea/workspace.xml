@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="424774fe-d563-4017-948f-a331863295e5" name="Changes" comment="create vehicle owner profile nav bar">
-      <change afterPath="$PROJECT_DIR$/frontend/src/container/vehicleOwnerProfile/vehicleOwnerFeatures.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/container/vehicleOwnerProfile/vehicleOwnerFeatures.jsx" afterDir="false" />
+    <list default="true" id="424774fe-d563-4017-948f-a331863295e5" name="Changes" comment="update vehicle owner page">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/pages/vehicleownerpage/Vehicleowner.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/vehicleownerpage/Vehicleowner.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -19,9 +18,22 @@
     <execution />
   </component>
   <component name="Git.Settings">
+    <favorite-branches>
+      <branch-storage>
+        <map>
+          <entry type="LOCAL">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="oresha" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </favorite-branches>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="oresha" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -39,7 +51,7 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;oresha&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;D:/Projects/Flutter&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
@@ -78,6 +90,8 @@
       <workItem from="1722618271046" duration="849000" />
       <workItem from="1722660086337" duration="5974000" />
       <workItem from="1722668341729" duration="387000" />
+      <workItem from="1722835608072" duration="1453000" />
+      <workItem from="1722837987102" duration="754000" />
     </task>
     <task id="LOCAL-00001" summary="create new branch oresha">
       <option name="closed" value="true" />

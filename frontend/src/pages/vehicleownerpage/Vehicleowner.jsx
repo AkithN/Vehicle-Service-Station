@@ -1,6 +1,6 @@
 import * as React from 'react';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-
 import Box from '@mui/material/Box';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
@@ -13,7 +13,6 @@ import Drawer from '@mui/material/Drawer';
 import MenuIcon from '@mui/icons-material/Menu';
 import ToggleColorMode from './ToggleColorMode';
 
-
 const logoStyle = {
     width: '140px',
     height: 'auto',
@@ -25,20 +24,6 @@ function VehicleOwnerProfile({ mode, toggleColorMode }) {
 
     const toggleDrawer = (newOpen) => () => {
         setOpen(newOpen);
-    };
-
-    const scrollToSection = (sectionId) => {
-        const sectionElement = document.getElementById(sectionId);
-        const offset = 128;
-        if (sectionElement) {
-            const targetScroll = sectionElement.offsetTop - offset;
-            sectionElement.scrollIntoView({ behavior: 'smooth' });
-            window.scrollTo({
-                top: targetScroll,
-                behavior: 'smooth',
-            });
-            setOpen(false);
-        }
     };
 
     return (
@@ -92,42 +77,27 @@ function VehicleOwnerProfile({ mode, toggleColorMode }) {
                                 alt="logo of sitemark"
                             />
                             <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-                                <MenuItem
-                                    onClick={() => scrollToSection('features')}
-                                    sx={{ py: '6px', px: '12px' }}
-                                >
+                                <MenuItem component={Link} to="/features" sx={{ py: '6px', px: '12px' }}>
                                     <Typography variant="body2" color="text.primary">
                                         Features
                                     </Typography>
                                 </MenuItem>
-                                <MenuItem
-                                    onClick={() => scrollToSection('testimonials')}
-                                    sx={{ py: '6px', px: '12px' }}
-                                >
+                                <MenuItem sx={{ py: '6px', px: '12px' }}>
                                     <Typography variant="body2" color="text.primary">
                                         Testimonials
                                     </Typography>
                                 </MenuItem>
-                                <MenuItem
-                                    onClick={() => scrollToSection('highlights')}
-                                    sx={{ py: '6px', px: '12px' }}
-                                >
+                                <MenuItem sx={{ py: '6px', px: '12px' }}>
                                     <Typography variant="body2" color="text.primary">
                                         Highlights
                                     </Typography>
                                 </MenuItem>
-                                <MenuItem
-                                    onClick={() => scrollToSection('pricing')}
-                                    sx={{ py: '6px', px: '12px' }}
-                                >
+                                <MenuItem sx={{ py: '6px', px: '12px' }}>
                                     <Typography variant="body2" color="text.primary">
                                         Pricing
                                     </Typography>
                                 </MenuItem>
-                                <MenuItem
-                                    onClick={() => scrollToSection('faq')}
-                                    sx={{ py: '6px', px: '12px' }}
-                                >
+                                <MenuItem sx={{ py: '6px', px: '12px' }}>
                                     <Typography variant="body2" color="text.primary">
                                         FAQ
                                     </Typography>
@@ -192,20 +162,19 @@ function VehicleOwnerProfile({ mode, toggleColorMode }) {
                                     >
                                         <ToggleColorMode mode={mode} toggleColorMode={toggleColorMode} />
                                     </Box>
-                                    <MenuItem onClick={() => scrollToSection('features')}>
+                                    <MenuItem component={Link} to="/features">
                                         Features
                                     </MenuItem>
-                                    <MenuItem onClick={() => scrollToSection('testimonials')}>
+                                    <MenuItem>
                                         Testimonials
                                     </MenuItem>
-                                    <MenuItem onClick={() => scrollToSection('highlights')}>
+                                    <MenuItem>
                                         Highlights
                                     </MenuItem>
-                                    <MenuItem onClick={() => scrollToSection('pricing')}>
+                                    <MenuItem>
                                         Pricing
                                     </MenuItem>
-                                    <MenuItem onClick={() => scrollToSection('faq')}>FAQ</MenuItem>
-                                    
+                                    <MenuItem>FAQ</MenuItem>
                                     <Divider />
 
                                     <MenuItem>

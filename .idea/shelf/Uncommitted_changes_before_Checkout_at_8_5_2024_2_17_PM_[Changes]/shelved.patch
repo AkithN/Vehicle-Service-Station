@@ -1,0 +1,102 @@
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"424774fe-d563-4017-948f-a331863295e5\" name=\"Changes\" comment=\"create vehicle owner profile nav bar\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"ComposerSettings\">\r\n    <execution />\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <favorite-branches>\r\n      <branch-storage>\r\n        <map>\r\n          <entry type=\"LOCAL\">\r\n            <value>\r\n              <list>\r\n                <branch-info repo=\"$PROJECT_DIR$\" source=\"oresha\" />\r\n              </list>\r\n            </value>\r\n          </entry>\r\n        </map>\r\n      </branch-storage>\r\n    </favorite-branches>\r\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\r\n      <map>\r\n        <entry key=\"$PROJECT_DIR$\" value=\"oresha\" />\r\n      </map>\r\n    </option>\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;customColor&quot;: &quot;&quot;,\r\n  &quot;associatedIndex&quot;: 6\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"2k0467RpvcETqVi0saYreWRl5yJ\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,\r\n    &quot;git-widget-placeholder&quot;: &quot;main&quot;,\r\n    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,\r\n    &quot;last_opened_file_path&quot;: &quot;D:/Projects/Flutter&quot;,\r\n    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,\r\n    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;\r\n  }\r\n}</component>\r\n  <component name=\"SharedIndexes\">\r\n    <attachedChunks>\r\n      <set>\r\n        <option value=\"bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.15989.150\" />\r\n        <option value=\"bundled-js-predefined-1d06a55b98c1-91d5c284f522-JavaScript-IU-241.15989.150\" />\r\n      </set>\r\n    </attachedChunks>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"424774fe-d563-4017-948f-a331863295e5\" name=\"Changes\" comment=\"\" />\r\n      <created>1722406986962</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1722406986962</updated>\r\n      <workItem from=\"1722406990059\" duration=\"4137000\" />\r\n      <workItem from=\"1722527403448\" duration=\"126000\" />\r\n      <workItem from=\"1722578676732\" duration=\"753000\" />\r\n      <workItem from=\"1722583566644\" duration=\"1517000\" />\r\n      <workItem from=\"1722585320050\" duration=\"24000\" />\r\n      <workItem from=\"1722585543700\" duration=\"32000\" />\r\n      <workItem from=\"1722585592790\" duration=\"13000\" />\r\n      <workItem from=\"1722585717525\" duration=\"3811000\" />\r\n      <workItem from=\"1722609135665\" duration=\"47000\" />\r\n      <workItem from=\"1722618271046\" duration=\"849000\" />\r\n      <workItem from=\"1722660086337\" duration=\"5974000\" />\r\n      <workItem from=\"1722668341729\" duration=\"387000\" />\r\n      <workItem from=\"1722835608072\" duration=\"1453000\" />\r\n      <workItem from=\"1722837987102\" duration=\"754000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"create new branch oresha\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1722585784087</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1722585784087</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"create new branch oresha\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1722587091855</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1722587091855</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"create vehicle owner profile nav bar\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1722664323954</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1722664323954</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"4\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"create new branch oresha\" />\r\n    <MESSAGE value=\"create vehicle owner profile nav bar\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"create vehicle owner profile nav bar\" />\r\n  </component>\r\n</project>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 9d2eb58e586d70c5943d9c718236e42a67f6fa25)
++++ b/.idea/workspace.xml	(date 1722847621415)
+@@ -4,9 +4,7 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="424774fe-d563-4017-948f-a331863295e5" name="Changes" comment="create vehicle owner profile nav bar">
+-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-    </list>
++    <list default="true" id="424774fe-d563-4017-948f-a331863295e5" name="Changes" comment="update vehicle owner page" />
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+@@ -31,7 +29,7 @@
+     </favorite-branches>
+     <option name="RECENT_BRANCH_BY_REPOSITORY">
+       <map>
+-        <entry key="$PROJECT_DIR$" value="oresha" />
++        <entry key="$PROJECT_DIR$" value="main" />
+       </map>
+     </option>
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+@@ -45,21 +43,21 @@
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+   </component>
+-  <component name="PropertiesComponent">{
+-  &quot;keyToString&quot;: {
+-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+-    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
+-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+-    &quot;last_opened_file_path&quot;: &quot;D:/Projects/Flutter&quot;,
+-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
++  <component name="PropertiesComponent"><![CDATA[{
++  "keyToString": {
++    "RunOnceActivity.ShowReadmeOnStart": "true",
++    "dart.analysis.tool.window.visible": "false",
++    "git-widget-placeholder": "oresha",
++    "kotlin-language-version-configured": "true",
++    "last_opened_file_path": "D:/Projects/Flutter",
++    "node.js.detected.package.eslint": "true",
++    "node.js.detected.package.tslint": "true",
++    "node.js.selected.package.eslint": "(autodetect)",
++    "node.js.selected.package.tslint": "(autodetect)",
++    "nodejs_package_manager_path": "npm",
++    "vue.rearranger.settings.migration": "true"
+   }
+-}</component>
++}]]></component>
+   <component name="SharedIndexes">
+     <attachedChunks>
+       <set>
+@@ -90,6 +88,7 @@
+       <workItem from="1722668341729" duration="387000" />
+       <workItem from="1722835608072" duration="1453000" />
+       <workItem from="1722837987102" duration="754000" />
++      <workItem from="1722847318054" duration="300000" />
+     </task>
+     <task id="LOCAL-00001" summary="create new branch oresha">
+       <option name="closed" value="true" />
+@@ -115,7 +114,15 @@
+       <option name="project" value="LOCAL" />
+       <updated>1722664323954</updated>
+     </task>
+-    <option name="localTasksCounter" value="4" />
++    <task id="LOCAL-00004" summary="update vehicle owner page">
++      <option name="closed" value="true" />
++      <created>1722847540612</created>
++      <option name="number" value="00004" />
++      <option name="presentableId" value="LOCAL-00004" />
++      <option name="project" value="LOCAL" />
++      <updated>1722847540613</updated>
++    </task>
++    <option name="localTasksCounter" value="5" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+@@ -135,6 +142,7 @@
+   <component name="VcsManagerConfiguration">
+     <MESSAGE value="create new branch oresha" />
+     <MESSAGE value="create vehicle owner profile nav bar" />
+-    <option name="LAST_COMMIT_MESSAGE" value="create vehicle owner profile nav bar" />
++    <MESSAGE value="update vehicle owner page" />
++    <option name="LAST_COMMIT_MESSAGE" value="update vehicle owner page" />
+   </component>
+-</project>
++</project>
+\ No newline at end of file
