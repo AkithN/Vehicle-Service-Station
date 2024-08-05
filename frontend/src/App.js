@@ -7,12 +7,12 @@ import Login from './pages/loginpage/Login';
 import Signup from './pages/signuppage/Signup';
 import Garageowner from './pages/garageownerpage/Garageowner';
 import Vehicleowner from './pages/vehicleownerpage/Vehicleowner';
-import Garageownerprofile from './pages/garageownerpage/Garageowner';
 import Admin from './pages/adminpages/Admin';
-import ManageUsers from './pages/adminpages/ManageUsers';
-import ManageGarages from './pages/adminpages/ManageGarages';
-import ManageRoles from './pages/adminpages/ManageRoles';
-import VehicleOwnerFeatures from './container/vehicleOwnerProfile/vehicleOwnerFeatures';
+import ManageUsers from './pages/adminpages/users/ManageUsers';
+import ManageGarages from './pages/adminpages/garages/ManageGarages';
+import ManageRoles from './pages/adminpages/roles/ManageRoles';
+import AddRoles from './pages/adminpages/roles/AddRoles';
+import UpdateRoles from './pages/adminpages/roles/UpdateRoles';
 
 function App() {
   return (
@@ -26,11 +26,11 @@ function App() {
           <Route path='/admin' element={< Admin />} />
           <Route path='/garageowner' element={< Garageowner />} />
           <Route path='/vehicleowner' element={< Vehicleowner />} />
-          <Route path='/garageownerprofile' element={< Garageownerprofile />} />
           <Route path='/admin/manage-users' element={<ManageUsers />} />
           <Route path='/admin/manage-garages' element={<ManageGarages />} />
           <Route path='/admin/manage-roles' element={<ManageRoles />} />
-          <Route path='/features' element={<VehicleOwnerFeatures />} />
+          <Route path='/admin/add-roles' element={<AddRoles />} />
+          <Route path='/admin/update-roles' element={<UpdateRoles />} />
         </Routes>
       </div>
     </Router>
