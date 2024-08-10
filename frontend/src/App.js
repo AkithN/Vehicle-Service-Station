@@ -42,7 +42,5 @@ function App() {
 }
 
 export default App;
-///hello
-//hello
-//akith
+
 //no
