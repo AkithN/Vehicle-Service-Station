@@ -83,9 +83,9 @@ function VehicleOwner({ mode, toggleColorMode }) {
                                         Features
                                     </Typography>
                                 </MenuItem>
-                                <MenuItem sx={{ py: '6px', px: '12px' }}>
+                                <MenuItem component={Link} to="/experts" sx={{ py: '6px', px: '12px' }}>
                                     <Typography variant="body2" color="text.primary">
-                                        Testimonials
+                                        Experts
                                     </Typography>
                                 </MenuItem>
                                 <MenuItem sx={{ py: '6px', px: '12px' }}>
