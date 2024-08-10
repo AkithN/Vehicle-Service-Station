@@ -12,6 +12,7 @@ import MenuItem from '@mui/material/MenuItem';
 import Drawer from '@mui/material/Drawer';
 import MenuIcon from '@mui/icons-material/Menu';
 import ToggleColorMode from './ToggleColorMode';
+import VehicleOwnerFeatures from '../../container/vehicleOwnerProfile/vehicleOwnerFeatures';
 
 const logoStyle = {
     width: '140px',
@@ -19,7 +20,7 @@ const logoStyle = {
     cursor: 'pointer',
 };
 
-function VehicleOwnerProfile({ mode, toggleColorMode }) {
+function VehicleOwner({ mode, toggleColorMode }) {
     const [open, setOpen] = React.useState(false);
 
     const toggleDrawer = (newOpen) => () => {
@@ -82,9 +83,9 @@ function VehicleOwnerProfile({ mode, toggleColorMode }) {
                                         Features
                                     </Typography>
                                 </MenuItem>
-                                <MenuItem component={Link} to="/experts" sx={{ py: '6px', px: '12px' }}>
+                                <MenuItem sx={{ py: '6px', px: '12px' }}>
                                     <Typography variant="body2" color="text.primary">
-                                        Experts
+                                        Testimonials
                                     </Typography>
                                 </MenuItem>
                                 <MenuItem sx={{ py: '6px', px: '12px' }}>
@@ -165,8 +166,8 @@ function VehicleOwnerProfile({ mode, toggleColorMode }) {
                                     <MenuItem component={Link} to="/features">
                                         Features
                                     </MenuItem>
-                                    <MenuItem component={Link} to="/experts">
-                                        Experts
+                                    <MenuItem>
+                                        Testimonials
                                     </MenuItem>
                                     <MenuItem>
                                         Highlights
@@ -211,9 +212,9 @@ function VehicleOwnerProfile({ mode, toggleColorMode }) {
     );
 }
 
-VehicleOwnerProfile.propTypes = {
+VehicleOwner.propTypes = {
     mode: PropTypes.oneOf(['dark', 'light']).isRequired,
     toggleColorMode: PropTypes.func.isRequired,
 };
 
-export default VehicleOwnerProfile;
+export default VehicleOwner;

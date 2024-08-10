@@ -14,7 +14,6 @@ import ManageRoles from './pages/adminpages/roles/ManageRoles';
 import AddRoles from './pages/adminpages/roles/AddRoles';
 import UpdateRoles from './pages/adminpages/roles/UpdateRoles';
 import VehicleOwnerFeatures from './container/vehicleOwnerProfile/vehicleOwnerFeatures';
-import Experts from "./container/vehicleOwnerProfile/Experts";
 
 function App() {
   return (
@@ -34,7 +33,6 @@ function App() {
           <Route path='/admin/add-roles' element={<AddRoles />} />
           <Route path='/admin/update-roles' element={<UpdateRoles />} />
           <Route path='/features' element={<VehicleOwnerFeatures />} />
-          <Route path='/experts' element={<Experts />} />
         </Routes>
       </div>
     </Router>
@@ -44,3 +42,7 @@ function App() {
 export default App;
 
 //no
+//hello
+//akith
+//no
+
