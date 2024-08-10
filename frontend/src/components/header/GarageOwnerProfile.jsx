@@ -28,9 +28,8 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import Avatar from '@mui/material/Avatar';
 import Menu from '@mui/material/Menu';
-import Calender from '../../container/garageOwnerProfile/Calender';
-import './garageOwnerProfile.css';
 import Notification from '../../container/garageOwnerProfile/Notification';
+import './garageOwnerProfile.css';
 
 const drawerWidth = 240;
 
@@ -118,7 +117,7 @@ export default function GarageOwnerProfile() {
               CarCraft
             </Typography>
 
-            <IconButton color="inherit">
+            <IconButton color="inherit" sx={{ marginRight: '16px' }}>
               <Badge badgeContent={5} color="secondary">
                 <NotificationsIcon />
               </Badge>
@@ -234,8 +233,7 @@ export default function GarageOwnerProfile() {
         </Drawer>
         <Box component="main" sx={{ backgroundColor: (theme) => theme.palette.grey[100], flexGrow: 1, height: '100vh', overflow: 'auto' }}>
           <Toolbar />
-          <Calender />
-          <Notification />
+          < Notification/>
         </Box>
       </Box>
     </ThemeProvider>
