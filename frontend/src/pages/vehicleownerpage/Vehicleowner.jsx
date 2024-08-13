@@ -88,9 +88,9 @@ function VehicleOwner({ mode, toggleColorMode }) {
                                         Experts
                                     </Typography>
                                 </MenuItem>
-                                <MenuItem sx={{ py: '6px', px: '12px' }}>
+                                <MenuItem component={Link} to="/aboutus" sx={{ py: '6px', px: '12px' }}>
                                     <Typography variant="body2" color="text.primary">
-                                        Highlights
+                                        About Us 
                                     </Typography>
                                 </MenuItem>
                                 <MenuItem sx={{ py: '6px', px: '12px' }}>
@@ -105,35 +105,7 @@ function VehicleOwner({ mode, toggleColorMode }) {
                                 </MenuItem>
                             </Box>
                         </Box>
-                        <Box
-                            sx={{
-                                display: { xs: 'none', md: 'flex' },
-                                gap: 0.5,
-                                alignItems: 'center',
-                            }}
-                        >
-                            <ToggleColorMode mode={mode} toggleColorMode={toggleColorMode} />
-                            <Button
-                                color="primary"
-                                variant="text"
-                                size="small"
-                                component="a"
-                                href="/material-ui/getting-started/templates/sign-in/"
-                                target="_blank"
-                            >
-                                Sign in
-                            </Button>
-                            <Button
-                                color="primary"
-                                variant="contained"
-                                size="small"
-                                component="a"
-                                href="/material-ui/getting-started/templates/sign-up/"
-                                target="_blank"
-                            >
-                                Sign up
-                            </Button>
-                        </Box>
+                        
                         <Box sx={{ display: { sm: '', md: 'none' } }}>
                             <Button
                                 variant="text"

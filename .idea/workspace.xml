@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="424774fe-d563-4017-948f-a331863295e5" name="Changes" comment="update vehicle owner page">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/vehicleownerpage/Vehicleowner.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/vehicleownerpage/Vehicleowner.jsx" afterDir="false" />
-    </list>
+    <list default="true" id="424774fe-d563-4017-948f-a331863295e5" name="Changes" comment="update vehicle owner page" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
