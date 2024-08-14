@@ -16,6 +16,7 @@ import UpdateRoles from './pages/adminpages/roles/UpdateRoles';
 import VehicleOwnerFeatures from './container/vehicleOwnerProfile/vehicleOwnerFeatures';
 import Experts from "./container/vehicleOwnerProfile/Experts";
 import Aboutus from './components/aboutus/Aboutus';
+import Contact from './components/contact/Contact';
 
 function App() {
   return (
@@ -37,6 +38,7 @@ function App() {
           <Route path='/features' element={<VehicleOwnerFeatures />} />
           <Route path='/experts' element={<Experts />} />
           <Route path='/aboutus' element={<Aboutus/>}/>
+          <Route path='/contactus' element={<Contact/>}/>
         </Routes>
       </div>
     </Router>
