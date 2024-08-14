@@ -1,3 +1,4 @@
+
 import * as React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
@@ -13,18 +14,13 @@ import Drawer from '@mui/material/Drawer';
 import MenuIcon from '@mui/icons-material/Menu';
 import ToggleColorMode from './ToggleColorMode';
 
-import VehicleOwnerFeatures from '../../container/vehicleOwnerProfile/vehicleOwnerFeatures';
-
-
 const logoStyle = {
     width: '140px',
     height: 'auto',
     cursor: 'pointer',
 };
 
-function VehicleOwnerProfile({ mode, toggleColorMode }) {
 function VehicleOwner({ mode, toggleColorMode }) {
-
     const [open, setOpen] = React.useState(false);
 
     const toggleDrawer = (newOpen) => () => {
@@ -96,50 +92,41 @@ function VehicleOwner({ mode, toggleColorMode }) {
                                 alt="logo of sitemark"
                             />
                             <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-
                                 <MenuItem
                                     onClick={() => scrollToSection('features')}
                                     sx={{ py: '6px', px: '12px' }}
+                                    component={Link} to="/features"
                                 >
-
-                                <MenuItem component={Link} to="/features" sx={{ py: '6px', px: '12px' }}>
-
                                     <Typography variant="body2" color="text.primary">
                                         Features
                                     </Typography>
                                 </MenuItem>
 
                                 <MenuItem
-                                    onClick={() => scrollToSection('testimonials')}
+                                    onClick={() => scrollToSection('experts')}
                                     sx={{ py: '6px', px: '12px' }}
+                                    component={Link} to="/experts"
                                 >
-
-                                <MenuItem component={Link} to="/experts" sx={{ py: '6px', px: '12px' }}>
-
                                     <Typography variant="body2" color="text.primary">
                                         Experts
                                     </Typography>
                                 </MenuItem>
 
                                 <MenuItem
-                                    onClick={() => scrollToSection('highlights')}
+                                    onClick={() => scrollToSection('aboutus')}
                                     sx={{ py: '6px', px: '12px' }}
+                                    component={Link} to="/aboutus"
                                 >
-
-                                <MenuItem component={Link} to="/aboutus" sx={{ py: '6px', px: '12px' }}>
-
                                     <Typography variant="body2" color="text.primary">
-                                        About Us 
+                                        About Us
                                     </Typography>
                                 </MenuItem>
 
                                 <MenuItem
-                                    onClick={() => scrollToSection('pricing')}
+                                    onClick={() => scrollToSection('contactus')}
                                     sx={{ py: '6px', px: '12px' }}
+                                    component={Link} to="/contactus"
                                 >
-
-                                <MenuItem component={Link} to="/contactus" sx={{ py: '6px', px: '12px' }}>
-
                                     <Typography variant="body2" color="text.primary">
                                         Contact Us
                                     </Typography>
@@ -149,9 +136,6 @@ function VehicleOwner({ mode, toggleColorMode }) {
                                     onClick={() => scrollToSection('faq')}
                                     sx={{ py: '6px', px: '12px' }}
                                 >
-
-                                <MenuItem sx={{ py: '6px', px: '12px' }}>
-
                                     <Typography variant="body2" color="text.primary">
                                         FAQ
                                     </Typography>
@@ -166,30 +150,9 @@ function VehicleOwner({ mode, toggleColorMode }) {
                                 alignItems: 'center',
                             }}
                         >
-                            <ToggleColorMode mode={mode} toggleColorMode={toggleColorMode} />
-                            <Button
-                                color="primary"
-                                variant="text"
-                                size="small"
-                                component="a"
-                                href="/material-ui/getting-started/templates/sign-in/"
-                                target="_blank"
-                            >
-                                Sign in
-                            </Button>
-                            <Button
-                                color="primary"
-                                variant="contained"
-                                size="small"
-                                component="a"
-                                href="/material-ui/getting-started/templates/sign-up/"
-                                target="_blank"
-                            >
-                                Sign up
-                            </Button>
+                            
+                            
                         </Box>
-
-                        
 
                         <Box sx={{ display: { sm: '', md: 'none' } }}>
                             <Button
@@ -234,9 +197,6 @@ function VehicleOwner({ mode, toggleColorMode }) {
                                     </MenuItem>
 
                                     <MenuItem onClick={() => scrollToSection('faq')}>FAQ</MenuItem>
-                                    
-
-                                    <MenuItem>FAQ</MenuItem>
 
                                     <Divider />
 
@@ -280,3 +240,4 @@ VehicleOwner.propTypes = {
 };
 
 export default VehicleOwner;
+
