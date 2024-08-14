@@ -12,7 +12,9 @@ import MenuItem from '@mui/material/MenuItem';
 import Drawer from '@mui/material/Drawer';
 import MenuIcon from '@mui/icons-material/Menu';
 import ToggleColorMode from './ToggleColorMode';
+
 import VehicleOwnerFeatures from '../../container/vehicleOwnerProfile/vehicleOwnerFeatures';
+
 
 const logoStyle = {
     width: '140px',
@@ -20,11 +22,27 @@ const logoStyle = {
     cursor: 'pointer',
 };
 
+function VehicleOwnerProfile({ mode, toggleColorMode }) {
 function VehicleOwner({ mode, toggleColorMode }) {
+
     const [open, setOpen] = React.useState(false);
 
     const toggleDrawer = (newOpen) => () => {
         setOpen(newOpen);
+    };
+
+    const scrollToSection = (sectionId) => {
+        const sectionElement = document.getElementById(sectionId);
+        const offset = 128;
+        if (sectionElement) {
+            const targetScroll = sectionElement.offsetTop - offset;
+            sectionElement.scrollIntoView({ behavior: 'smooth' });
+            window.scrollTo({
+                top: targetScroll,
+                behavior: 'smooth',
+            });
+            setOpen(false);
+        }
     };
 
     return (
@@ -78,34 +96,101 @@ function VehicleOwner({ mode, toggleColorMode }) {
                                 alt="logo of sitemark"
                             />
                             <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
+
+                                <MenuItem
+                                    onClick={() => scrollToSection('features')}
+                                    sx={{ py: '6px', px: '12px' }}
+                                >
+
                                 <MenuItem component={Link} to="/features" sx={{ py: '6px', px: '12px' }}>
+
                                     <Typography variant="body2" color="text.primary">
                                         Features
                                     </Typography>
                                 </MenuItem>
+
+                                <MenuItem
+                                    onClick={() => scrollToSection('testimonials')}
+                                    sx={{ py: '6px', px: '12px' }}
+                                >
+
                                 <MenuItem component={Link} to="/experts" sx={{ py: '6px', px: '12px' }}>
+
                                     <Typography variant="body2" color="text.primary">
                                         Experts
                                     </Typography>
                                 </MenuItem>
+
+                                <MenuItem
+                                    onClick={() => scrollToSection('highlights')}
+                                    sx={{ py: '6px', px: '12px' }}
+                                >
+
                                 <MenuItem component={Link} to="/aboutus" sx={{ py: '6px', px: '12px' }}>
+
                                     <Typography variant="body2" color="text.primary">
                                         About Us 
                                     </Typography>
                                 </MenuItem>
+
+                                <MenuItem
+                                    onClick={() => scrollToSection('pricing')}
+                                    sx={{ py: '6px', px: '12px' }}
+                                >
+
                                 <MenuItem component={Link} to="/contactus" sx={{ py: '6px', px: '12px' }}>
+
                                     <Typography variant="body2" color="text.primary">
                                         Contact Us
                                     </Typography>
                                 </MenuItem>
+
+                                <MenuItem
+                                    onClick={() => scrollToSection('faq')}
+                                    sx={{ py: '6px', px: '12px' }}
+                                >
+
                                 <MenuItem sx={{ py: '6px', px: '12px' }}>
+
                                     <Typography variant="body2" color="text.primary">
                                         FAQ
                                     </Typography>
                                 </MenuItem>
                             </Box>
                         </Box>
+
+                        <Box
+                            sx={{
+                                display: { xs: 'none', md: 'flex' },
+                                gap: 0.5,
+                                alignItems: 'center',
+                            }}
+                        >
+                            <ToggleColorMode mode={mode} toggleColorMode={toggleColorMode} />
+                            <Button
+                                color="primary"
+                                variant="text"
+                                size="small"
+                                component="a"
+                                href="/material-ui/getting-started/templates/sign-in/"
+                                target="_blank"
+                            >
+                                Sign in
+                            </Button>
+                            <Button
+                                color="primary"
+                                variant="contained"
+                                size="small"
+                                component="a"
+                                href="/material-ui/getting-started/templates/sign-up/"
+                                target="_blank"
+                            >
+                                Sign up
+                            </Button>
+                        </Box>
+
                         
+
                         <Box sx={{ display: { sm: '', md: 'none' } }}>
                             <Button
                                 variant="text"
@@ -147,7 +232,12 @@ function VehicleOwner({ mode, toggleColorMode }) {
                                     <MenuItem>
                                         Pricing
                                     </MenuItem>
+
+                                    <MenuItem onClick={() => scrollToSection('faq')}>FAQ</MenuItem>
+                                    
+
                                     <MenuItem>FAQ</MenuItem>
+
                                     <Divider />
 
                                     <MenuItem>
