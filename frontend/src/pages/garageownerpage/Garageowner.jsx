@@ -4,11 +4,10 @@ import Calender from '../../container/garageOwnerProfile/Calender'
 
 const Garageowner = () => {
   return (
-    <div>
-      < GarageOwnerProfile />
+    <GarageOwnerProfile>
       <Calender />
-    </div>
-  )
-}
+    </GarageOwnerProfile>
+  );
+};
 
 export default Garageowner

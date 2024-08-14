@@ -6,6 +6,15 @@ import RegisterForm from './pages/registerpage/Register';
 import Login from './pages/loginpage/Login';
 import Signup from './pages/signuppage/Signup';
 import Garageowner from './pages/garageownerpage/Garageowner';
+import GarageOffers from './pages/garageownerpage/GarageOffers';
+import GarageNotification from './pages/garageownerpage/GarageNotification';
+import GarageCustomer from './pages/garageownerpage/GarageCustomer';
+import GarageSubscription from './pages/garageownerpage/GarageSubscription';
+import GarageReports from './pages/garageownerpage/GarageReports';
+import GarageMonthlyReport from './pages/garageownerpage/GarageMonthlyReport';
+import GarageQuarterReport from './pages/garageownerpage/GarageQuarterReport';
+import GarageYearReport from './pages/garageownerpage/GarageYearReport';
+import ProfileManagement from './container/garageOwnerProfile/ProfileManagement';
 import Vehicleowner from './pages/vehicleownerpage/Vehicleowner';
 import Admin from './pages/adminpages/Admin';
 import ManageUsers from './pages/adminpages/users/ManageUsers';
@@ -29,6 +38,15 @@ function App() {
           <Route path='/signup' element={< Signup />} />
           <Route path='/admin' element={< Admin />} />
           <Route path='/garageowner' element={< Garageowner />} />
+          <Route path='/garageoffers' element={< GarageOffers />} />
+          <Route path='/garagenotification' element={< GarageNotification />} />
+          <Route path='/garagecustomer' element={< GarageCustomer />} />
+          <Route path='/garagesubscription' element={< GarageSubscription />} />
+          <Route path='/garagereports' element={< GarageReports />} />  
+          <Route path='/garagemonthlyreport' element={< GarageMonthlyReport />} />
+          <Route path='/garagequarterreport' element={< GarageQuarterReport />} />
+          <Route path='/garageyearreport' element={< GarageYearReport />} />
+          <Route path='/profilemanagement' element={< ProfileManagement />} />
           <Route path='/vehicleowner' element={< Vehicleowner />} />
           <Route path='/admin/manage-users' element={<ManageUsers />} />
           <Route path='/admin/manage-garages' element={<ManageGarages />} />

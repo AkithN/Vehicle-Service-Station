@@ -1,7 +1,6 @@
 import React from 'react';
 import { EditOutlined, EllipsisOutlined, SettingOutlined } from '@ant-design/icons';
 import { Avatar, Card, Row, Col } from 'antd';
-import GarageOwnerProfile from '../../components/header/GarageOwnerProfile';
 
 const actions = [
     <EditOutlined key="edit" />,
@@ -12,7 +11,6 @@ const actions = [
 const Notification = () => {
     return (
         <>
-            <GarageOwnerProfile />
             <Row gutter={[16, 16]}>
                 <Col span={6}>
                     <Card actions={actions} style={{ minWidth: 300 }}>
