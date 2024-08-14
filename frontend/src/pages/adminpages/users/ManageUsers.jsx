@@ -1,5 +1,5 @@
 import React from 'react';
-import AdminNavbar from '../../components/admin_navbar/AdminNavbar';
+import AdminNavbar from '../../../components/admin_navbar/AdminNavbar';
 
 const ManageUsers = () => {
   return (

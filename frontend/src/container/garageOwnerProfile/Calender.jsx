@@ -6,7 +6,7 @@ import 'react-big-calendar/lib/css/react-big-calendar.css';
 const localizer = momentLocalizer(moment);
 
 const MyCalendar = () => {
-  const [events, setEvents] = useState([
+  const [events] = useState([
     {
       title: 'Meeting with John',
       start: new Date(2024, 6, 30, 10, 0),

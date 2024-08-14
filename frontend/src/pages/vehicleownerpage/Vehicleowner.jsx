@@ -1,6 +1,6 @@
 import * as React from 'react';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-
 import Box from '@mui/material/Box';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
@@ -13,6 +13,8 @@ import Drawer from '@mui/material/Drawer';
 import MenuIcon from '@mui/icons-material/Menu';
 import ToggleColorMode from './ToggleColorMode';
 
+import VehicleOwnerFeatures from '../../container/vehicleOwnerProfile/vehicleOwnerFeatures';
+
 
 const logoStyle = {
     width: '140px',
@@ -21,6 +23,8 @@ const logoStyle = {
 };
 
 function VehicleOwnerProfile({ mode, toggleColorMode }) {
+function VehicleOwner({ mode, toggleColorMode }) {
+
     const [open, setOpen] = React.useState(false);
 
     const toggleDrawer = (newOpen) => () => {
@@ -92,48 +96,69 @@ function VehicleOwnerProfile({ mode, toggleColorMode }) {
                                 alt="logo of sitemark"
                             />
                             <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
+
                                 <MenuItem
                                     onClick={() => scrollToSection('features')}
                                     sx={{ py: '6px', px: '12px' }}
                                 >
+
+                                <MenuItem component={Link} to="/features" sx={{ py: '6px', px: '12px' }}>
+
                                     <Typography variant="body2" color="text.primary">
                                         Features
                                     </Typography>
                                 </MenuItem>
+
                                 <MenuItem
                                     onClick={() => scrollToSection('testimonials')}
                                     sx={{ py: '6px', px: '12px' }}
                                 >
+
+                                <MenuItem component={Link} to="/experts" sx={{ py: '6px', px: '12px' }}>
+
                                     <Typography variant="body2" color="text.primary">
-                                        Testimonials
+                                        Experts
                                     </Typography>
                                 </MenuItem>
+
                                 <MenuItem
                                     onClick={() => scrollToSection('highlights')}
                                     sx={{ py: '6px', px: '12px' }}
                                 >
+
+                                <MenuItem component={Link} to="/aboutus" sx={{ py: '6px', px: '12px' }}>
+
                                     <Typography variant="body2" color="text.primary">
-                                        Highlights
+                                        About Us 
                                     </Typography>
                                 </MenuItem>
+
                                 <MenuItem
                                     onClick={() => scrollToSection('pricing')}
                                     sx={{ py: '6px', px: '12px' }}
                                 >
+
+                                <MenuItem component={Link} to="/contactus" sx={{ py: '6px', px: '12px' }}>
+
                                     <Typography variant="body2" color="text.primary">
-                                        Pricing
+                                        Contact Us
                                     </Typography>
                                 </MenuItem>
+
                                 <MenuItem
                                     onClick={() => scrollToSection('faq')}
                                     sx={{ py: '6px', px: '12px' }}
                                 >
+
+                                <MenuItem sx={{ py: '6px', px: '12px' }}>
+
                                     <Typography variant="body2" color="text.primary">
                                         FAQ
                                     </Typography>
                                 </MenuItem>
                             </Box>
                         </Box>
+
                         <Box
                             sx={{
                                 display: { xs: 'none', md: 'flex' },
@@ -163,6 +188,9 @@ function VehicleOwnerProfile({ mode, toggleColorMode }) {
                                 Sign up
                             </Button>
                         </Box>
+
+                        
+
                         <Box sx={{ display: { sm: '', md: 'none' } }}>
                             <Button
                                 variant="text"
@@ -192,20 +220,24 @@ function VehicleOwnerProfile({ mode, toggleColorMode }) {
                                     >
                                         <ToggleColorMode mode={mode} toggleColorMode={toggleColorMode} />
                                     </Box>
-                                    <MenuItem onClick={() => scrollToSection('features')}>
+                                    <MenuItem component={Link} to="/features">
                                         Features
                                     </MenuItem>
-                                    <MenuItem onClick={() => scrollToSection('testimonials')}>
+                                    <MenuItem>
                                         Testimonials
                                     </MenuItem>
-                                    <MenuItem onClick={() => scrollToSection('highlights')}>
+                                    <MenuItem>
                                         Highlights
                                     </MenuItem>
-                                    <MenuItem onClick={() => scrollToSection('pricing')}>
+                                    <MenuItem>
                                         Pricing
                                     </MenuItem>
+
                                     <MenuItem onClick={() => scrollToSection('faq')}>FAQ</MenuItem>
                                     
+
+                                    <MenuItem>FAQ</MenuItem>
+
                                     <Divider />
 
                                     <MenuItem>
@@ -242,9 +274,9 @@ function VehicleOwnerProfile({ mode, toggleColorMode }) {
     );
 }
 
-VehicleOwnerProfile.propTypes = {
+VehicleOwner.propTypes = {
     mode: PropTypes.oneOf(['dark', 'light']).isRequired,
     toggleColorMode: PropTypes.func.isRequired,
 };
 
-export default VehicleOwnerProfile;
+export default VehicleOwner;

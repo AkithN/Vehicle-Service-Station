@@ -1,0 +1,46 @@
+/* Experts.css */
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-primary {
+    color: #007bff;
+}
+
+.mt-5 {
+    margin-top: 3rem;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center align the items */
+}
+
+.expert {
+    flex: 1 1 30%; /* Adjust this value for different column widths */
+    margin: 15px;
+    text-align: center;
+}
+
+.expert img {
+    width: 100%;
+    height: auto;
+    border-radius: 50%; /* Optional: make the images circular */
+    max-width: 200px; /* Set a max width for the images */
+    margin: 0 auto; /* Center the images horizontally */
+    display: block; /* Ensures margin auto works */
+}
+
+.expert h3 {
+    margin-top: 15px;
+    font-size: 1.2rem;
+    color: #333;
+}
