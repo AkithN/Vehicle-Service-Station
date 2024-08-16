@@ -18,6 +18,7 @@ import ProfileManagement from './container/garageOwnerProfile/ProfileManagement'
 import Vehicleowner from './pages/vehicleownerpage/Vehicleowner';
 import Admin from './pages/adminpages/Admin';
 import ManageUsers from './pages/adminpages/users/ManageUsers';
+import UpdateUsers from './pages/adminpages/users/UpdateUsers';
 import ManageGarages from './pages/adminpages/garages/ManageGarages';
 import ManageRoles from './pages/adminpages/roles/ManageRoles';
 import AddRoles from './pages/adminpages/roles/AddRoles';
@@ -49,6 +50,7 @@ function App() {
           <Route path='/profilemanagement' element={< ProfileManagement />} />
           <Route path='/vehicleowner' element={< Vehicleowner />} />
           <Route path='/admin/manage-users' element={<ManageUsers />} />
+          <Route path='/admin/update-users' element={<UpdateUsers />} />
           <Route path='/admin/manage-garages' element={<ManageGarages />} />
           <Route path='/admin/manage-roles' element={<ManageRoles />} />
           <Route path='/admin/add-roles' element={<AddRoles />} />
