@@ -105,9 +105,9 @@ const ManageUsers = () => {
           </Typography>
           <Box sx={{ display: 'flex', justifyContent: 'flex-end', mb: 2 }}>
             <Link to="/admin/add-users" style={{ textDecoration: 'none' }}>
-              <Button variant="contained" color="primary">
+              {/* <Button variant="contained" color="primary">
                 New User
-              </Button>
+              </Button> */}
             </Link>
           </Box>
           <TableContainer component={Paper}>
