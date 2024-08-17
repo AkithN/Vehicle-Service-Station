@@ -11,60 +11,88 @@ const actions = [
 const Notification = () => {
     return (
         <>
-            <Row gutter={[16, 16]}>
-                <Col span={6}>
+            <Row gutter={[18, 18]}>
+                <Col span={7}>
                     <Card actions={actions} style={{ minWidth: 300 }}>
-                        <Card.Meta 
-                            avatar={<Avatar src="https://api.dicebear.com/7.x/miniavs/svg?seed=1" />} 
-                            title="Card title" 
+                        <Card.Meta
+                            avatar={<Avatar src="https://api.dicebear.com/7.x/miniavs/svg?seed=1" />}
+                            title="Card title"
                             description={
                                 <>
                                     <p>This is the description</p>
                                     <p>This is the description</p>
                                 </>
-                            } 
+                            }
                         />
                     </Card>
                 </Col>
-                <Col span={6}>
+                <Col span={7}>
                     <Card actions={actions} style={{ minWidth: 300 }}>
-                        <Card.Meta 
-                            avatar={<Avatar src="https://api.dicebear.com/7.x/miniavs/svg?seed=2" />} 
-                            title="Card title" 
+                        <Card.Meta
+                            avatar={<Avatar src="https://api.dicebear.com/7.x/miniavs/svg?seed=2" />}
+                            title="Card title"
                             description={
                                 <>
                                     <p>This is the description</p>
                                     <p>This is the description</p>
                                 </>
-                            } 
+                            }
                         />
                     </Card>
                 </Col>
-                <Col span={6}>
+                <Col span={7}>
                     <Card actions={actions} style={{ minWidth: 300 }}>
-                        <Card.Meta 
-                            avatar={<Avatar src="https://api.dicebear.com/7.x/miniavs/svg?seed=3" />} 
-                            title="Card title" 
+                        <Card.Meta
+                            avatar={<Avatar src="https://api.dicebear.com/7.x/miniavs/svg?seed=3" />}
+                            title="Card title"
                             description={
                                 <>
                                     <p>This is the description</p>
                                     <p>This is the description</p>
                                 </>
-                            } 
+                            }
                         />
                     </Card>
                 </Col>
-                <Col span={6}>
+                <Col span={7}>
                     <Card actions={actions} style={{ minWidth: 300 }}>
-                        <Card.Meta 
-                            avatar={<Avatar src="https://api.dicebear.com/7.x/miniavs/svg?seed=4" />} 
-                            title="Card title" 
+                        <Card.Meta
+                            avatar={<Avatar src="https://api.dicebear.com/7.x/miniavs/svg?seed=1" />}
+                            title="Card title"
                             description={
                                 <>
                                     <p>This is the description</p>
                                     <p>This is the description</p>
                                 </>
-                            } 
+                            }
+                        />
+                    </Card>
+                </Col>
+                <Col span={7}>
+                    <Card actions={actions} style={{ minWidth: 300 }}>
+                        <Card.Meta
+                            avatar={<Avatar src="https://api.dicebear.com/7.x/miniavs/svg?seed=2" />}
+                            title="Card title"
+                            description={
+                                <>
+                                    <p>This is the description</p>
+                                    <p>This is the description</p>
+                                </>
+                            }
+                        />
+                    </Card>
+                </Col>
+                <Col span={7}>
+                    <Card actions={actions} style={{ minWidth: 300 }}>
+                        <Card.Meta
+                            avatar={<Avatar src="https://api.dicebear.com/7.x/miniavs/svg?seed=3" />}
+                            title="Card title"
+                            description={
+                                <>
+                                    <p>This is the description</p>
+                                    <p>This is the description</p>
+                                </>
+                            }
                         />
                     </Card>
                 </Col>

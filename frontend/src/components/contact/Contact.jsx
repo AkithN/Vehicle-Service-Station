@@ -1,31 +1,32 @@
 import React, { useRef } from "react";
-import emailjs from "@emailjs/browser";
 import './contact.css';
 import ContactUs from '../../assets/contact.jpg';
 import { Container, Box, Grid, Typography, TextField, Button } from "@mui/material";
+import axios from 'axios';
 
 const Contact = () => {
   const formRef = useRef();
 
-  const sendEmail = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
 
-    emailjs
-      .sendForm(
-        "replace with service id",
-        "replace with template id",
-        formRef.current,
-        "replace with user id"
-      )
-      .then(
-        (result) => {
-          console.log(result.text);
-          console.log("message sent");
-        },
-        (error) => {
-          console.log(error.text);
-        }
-      );
+    const formData = new FormData(formRef.current);
+    const data = {
+      user_name: formData.get('name'),
+      user_email: formData.get('email'),
+      message: formData.get('message'),
+    };
+
+    axios.post('http://localhost:5000/api/contact', data)
+      .then(response => {
+        console.log("Data saved to database:", response.data);
+        
+        formRef.current.reset();
+      })
+      .catch(error => {
+        console.error('Error saving data to database:', error);
+        alert("There was an error submitting the form. Please try again later.");
+      });
   };
 
   return (
@@ -38,13 +39,13 @@ const Contact = () => {
             </Box>
           </Grid>
           <Grid item xs={12} md={6}>
-            <form ref={formRef} onSubmit={sendEmail} className="contact-form">
+            <form ref={formRef} onSubmit={handleSubmit} className="contact-form">
               <Typography variant="h4" component="h2" gutterBottom>
                 Contact Us
               </Typography>
               <TextField 
                 label="Name" 
-                name="user_name" 
+                name="name" 
                 fullWidth 
                 margin="normal" 
                 variant="outlined"
@@ -52,7 +53,7 @@ const Contact = () => {
               />
               <TextField 
                 label="Email" 
-                name="user_email" 
+                name="email" 
                 fullWidth 
                 margin="normal" 
                 variant="outlined"
@@ -86,5 +87,3 @@ const Contact = () => {
 };
 
 export default Contact;
-
-
