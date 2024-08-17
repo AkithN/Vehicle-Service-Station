@@ -11,10 +11,11 @@ import IconButton from '@mui/material/IconButton';
 import Container from '@mui/material/Container';
 import Divider from '@mui/material/Divider';
 import MenuIcon from '@mui/icons-material/Menu';
-import { styled, alpha } from '@mui/material/styles';
+import { styled } from '@mui/material/styles';
 import InputBase from '@mui/material/InputBase';
-import SearchIcon from '@mui/icons-material/Search';
 import ToggleColorMode from './ToggleColorMode';
+import MediaCard from '../../container/vehicleOwnerProfile/MediaCard';
+import Grid from '@mui/material/Grid';
 
 const logoStyle = {
   width: '140px',
@@ -220,11 +221,10 @@ function VehicleOwner({ mode, toggleColorMode }) {
         </Container>
       </AppBar>
 
-      {/* Search Bar Below AppBar */}
-      <Container maxWidth="lg" sx={{ mt: 8, padding:10}}>
+      <Container maxWidth="lg" sx={{ mt: 8, padding: 5 }}>
         <SearchContainer>
-          <SearchHeader>
-            Please Select A Dealership To View All Offers
+          <SearchHeader fontSize={50} fontWeight={10}>
+            Find A Dealer
           </SearchHeader>
           <SearchFilters>
             <FilterTextField
@@ -245,12 +245,42 @@ function VehicleOwner({ mode, toggleColorMode }) {
           </SearchFilters>
         </SearchContainer>
       </Container>
+
+      {/* Container for the cards */}
+      <Box sx={{ flexGrow: 1, mt: 1, paddingBottom:5, paddingTop:2,  margin: 10 }}>
+  <Grid container spacing={8}>
+    <Grid item xs={12} sm={6} md={3}>
+      <MediaCard />
+    </Grid>
+    <Grid item xs={12} sm={6} md={3}>
+      <MediaCard />
+    </Grid>
+    <Grid item xs={12} sm={6} md={3}>
+      <MediaCard />
+    </Grid>
+    <Grid item xs={12} sm={6} md={3}>
+      <MediaCard />
+    </Grid>
+    <Grid item xs={12} sm={6} md={3}>
+      <MediaCard />
+    </Grid>
+    <Grid item xs={12} sm={6} md={3}>
+      <MediaCard />
+    </Grid>
+    <Grid item xs={12} sm={6} md={3}>
+      <MediaCard />
+    </Grid>
+    <Grid item xs={12} sm={6} md={3}>
+      <MediaCard />
+    </Grid>
+  </Grid>
+</Box>
     </div>
   );
 }
 
 VehicleOwner.propTypes = {
-  mode: PropTypes.oneOf(['dark', 'light']).isRequired,
+  mode: PropTypes.string.isRequired,
   toggleColorMode: PropTypes.func.isRequired,
 };
 
