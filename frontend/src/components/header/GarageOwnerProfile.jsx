@@ -30,7 +30,7 @@ import MenuItem from '@mui/material/MenuItem';
 import Avatar from '@mui/material/Avatar';
 import Menu from '@mui/material/Menu';
 import Paper from '@mui/material/Paper';
-import moment from 'moment'; // Import moment for time calculation
+import moment from 'moment';
 
 import './garageOwnerProfile.css';
 
@@ -38,7 +38,6 @@ const drawerWidth = 240;
 
 const settings = ['Profile', 'Account', 'Logout'];
 
-// Updated notifications array with timestamps
 const notifications = [
   { id: 1, message: "New customer booked a service.", time: moment().subtract(2, 'hours') },
   { id: 2, message: "Subscription payment is due.", time: moment().subtract(1, 'day') },
@@ -297,19 +296,19 @@ export default function GarageOwnerProfile({ children }) {
           <ListSubheader component="div" inset>
             Saved reports
           </ListSubheader>
-          <ListItemButton>
+          <ListItemButton onClick={() => handleNavigation('/garagemonthlyreport')}>
             <ListItemIcon>
               <AssignmentIcon />
             </ListItemIcon>
             <ListItemText primary="Current month" />
           </ListItemButton>
-          <ListItemButton>
+          <ListItemButton onClick={() => handleNavigation('/garagequarterreport')}>
             <ListItemIcon>
               <AssignmentIcon />
             </ListItemIcon>
             <ListItemText primary="Last quarter" />
           </ListItemButton>
-          <ListItemButton>
+          <ListItemButton onClick={() => handleNavigation('/garageyearreport')}>
             <ListItemIcon>
               <AssignmentIcon />
             </ListItemIcon>
