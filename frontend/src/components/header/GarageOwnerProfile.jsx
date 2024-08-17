@@ -143,7 +143,7 @@ export default function GarageOwnerProfile({ children }) {
       <CssBaseline />
 
       <AppBar position="absolute" open={open}>
-        <Toolbar sx={{ pr: '24px' }}>
+      <Toolbar sx={{ pr: '24px' }}>
           <IconButton
             edge="start"
             color="inherit"
@@ -324,6 +324,7 @@ export default function GarageOwnerProfile({ children }) {
           flexGrow: 1,
           height: '100vh',
           overflow: 'auto',
+          marginTop: '50px',
         }}
       >
         <Toolbar />
