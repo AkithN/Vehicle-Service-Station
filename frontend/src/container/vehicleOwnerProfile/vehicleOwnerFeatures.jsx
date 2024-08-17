@@ -12,9 +12,9 @@ const VehicleOwnerFeatures = () => {
                             <h2 className="title fw-bold">Why Choose Us</h2>
                         </div>
                     </div>
-                </div>
+                 </div>
 
-                <div className="row justify-content-center">
+                 <div className="row justify-content-center">
                     <div className="col-md-4 col-sm-8">
                         <div className="single-about-items">
                             <div className="items-icon">
@@ -29,26 +29,32 @@ const VehicleOwnerFeatures = () => {
                             </div>
                         </div>
                     </div>
+                   
+                   
+                </div>
+            
+            
+            <div className="col-md-4 col-sm-8">
+                        <div className="single-about-items">
+                            <div className="items-icon">
+                                <i className="lni lni-investment"></i>
+                            </div>
+                            <div className="items-content">
+                                <h4 className="items-title">We Have the Technology</h4>
+                                <p className="text">
+                                    You can be sure that your car will be handled with the latest
+                                    diagnostic equipment.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
                     <div className="col-md-4 col-sm-8">
                         <div className="single-about-items">
                             <div className="items-icon">
                                 <i className="lni lni-investment"></i>
                             </div>
                             <div className="items-content">
-                                <h4 className="items-title">Efficiency & Speed</h4>
-                                <p className="text">
-                                    The car doctor is your best source for professional, reliable,
-                                    and efficient auto repair service.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="col-md-4 col-sm-8">
-                        <div className="single-about-items">
-                            <div className="items-icon">
-                                <i className="lni lni-handshake"></i>
-                            </div>
-                            <div className="items-content">
                                 <h4 className="items-title">We Have the Technology</h4>
                                 <p className="text">
                                     You can be sure that your car will be handled with the latest
@@ -57,24 +63,7 @@ const VehicleOwnerFeatures = () => {
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-            <div>
-            <div className="col-md-4 col-sm-8">
-                        <div className="single-about-items">
-                            <div className="items-icon">
-                                <i className="lni lni-handshake"></i>
-                            </div>
-                            <div className="items-content">
-                                <h4 className="items-title">We Have the Technology</h4>
-                                <p className="text">
-                                    You can be sure that your car will be handled with the latest
-                                    diagnostic equipment.
-                                </p>
-                            </div>
-                        </div>
                     </div>
-            </div>
             
         </section>
          
