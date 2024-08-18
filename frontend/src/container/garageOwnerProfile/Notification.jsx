@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { EditOutlined, EllipsisOutlined, SettingOutlined } from '@ant-design/icons';
-import { Avatar, Card, Row, Col } from 'antd';
+import { Card, Row, Col } from 'antd';
+import axios from 'axios';
 
 const actions = [
     <EditOutlined key="edit" />,
@@ -9,95 +10,31 @@ const actions = [
 ];
 
 const Notification = () => {
+    const [notifications, setNotifications] = useState([]);
+
+    useEffect(() => {
+        axios.get('http://localhost:5000/api/inquiries')
+            .then(response => {
+                setNotifications(response.data);
+            })
+            .catch(error => {
+                console.error('Error fetching notifications:', error);
+            });
+    }, []);
+
     return (
-        <>
-            <Row gutter={[18, 18]}>
-                <Col span={7}>
+        <Row gutter={[18, 18]}>
+            {notifications.map((notification) => (
+                <Col span={7} key={notification.inquiry_id}>
                     <Card actions={actions} style={{ minWidth: 300 }}>
                         <Card.Meta
-                            avatar={<Avatar src="https://api.dicebear.com/7.x/miniavs/svg?seed=1" />}
-                            title="Card title"
-                            description={
-                                <>
-                                    <p>This is the description</p>
-                                    <p>This is the description</p>
-                                </>
-                            }
+                            title={notification.subject || 'No Subject'}
+                            description={<p>{notification.message}</p>}
                         />
                     </Card>
                 </Col>
-                <Col span={7}>
-                    <Card actions={actions} style={{ minWidth: 300 }}>
-                        <Card.Meta
-                            avatar={<Avatar src="https://api.dicebear.com/7.x/miniavs/svg?seed=2" />}
-                            title="Card title"
-                            description={
-                                <>
-                                    <p>This is the description</p>
-                                    <p>This is the description</p>
-                                </>
-                            }
-                        />
-                    </Card>
-                </Col>
-                <Col span={7}>
-                    <Card actions={actions} style={{ minWidth: 300 }}>
-                        <Card.Meta
-                            avatar={<Avatar src="https://api.dicebear.com/7.x/miniavs/svg?seed=3" />}
-                            title="Card title"
-                            description={
-                                <>
-                                    <p>This is the description</p>
-                                    <p>This is the description</p>
-                                </>
-                            }
-                        />
-                    </Card>
-                </Col>
-                <Col span={7}>
-                    <Card actions={actions} style={{ minWidth: 300 }}>
-                        <Card.Meta
-                            avatar={<Avatar src="https://api.dicebear.com/7.x/miniavs/svg?seed=1" />}
-                            title="Card title"
-                            description={
-                                <>
-                                    <p>This is the description</p>
-                                    <p>This is the description</p>
-                                </>
-                            }
-                        />
-                    </Card>
-                </Col>
-                <Col span={7}>
-                    <Card actions={actions} style={{ minWidth: 300 }}>
-                        <Card.Meta
-                            avatar={<Avatar src="https://api.dicebear.com/7.x/miniavs/svg?seed=2" />}
-                            title="Card title"
-                            description={
-                                <>
-                                    <p>This is the description</p>
-                                    <p>This is the description</p>
-                                </>
-                            }
-                        />
-                    </Card>
-                </Col>
-                <Col span={7}>
-                    <Card actions={actions} style={{ minWidth: 300 }}>
-                        <Card.Meta
-                            avatar={<Avatar src="https://api.dicebear.com/7.x/miniavs/svg?seed=3" />}
-                            title="Card title"
-                            description={
-                                <>
-                                    <p>This is the description</p>
-                                    <p>This is the description</p>
-                                </>
-                            }
-                        />
-                    </Card>
-                </Col>
-            </Row>
-        </>
+            ))}
+        </Row>
     );
 };
 

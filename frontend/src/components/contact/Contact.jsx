@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import ContactUs from '../../assets/contact.jpg';
 import './contact.css';
 
@@ -7,11 +6,6 @@ const Contact = () => {
   const [userName, setUserName] = useState('');
   const [userEmail, setUserEmail] = useState('');
   const [message, setMessage] = useState('');
-  const [snackbarMessage, setSnackbarMessage] = useState('');
-  const [snackbarVisible, setSnackbarVisible] = useState(false);
-  const [snackbarSeverity, setSnackbarSeverity] = useState('success');
-
-  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -27,35 +21,23 @@ const Contact = () => {
       });
 
       if (response.ok) {
-        setSnackbarMessage('Message sent successfully!');
-        setSnackbarSeverity('success');
         setUserName('');
         setUserEmail('');
         setMessage('');
-      } else {
-        setSnackbarMessage('Error sending message!');
-        setSnackbarSeverity('error');
+        alert('Message sent successfully!');
       }
     } catch (error) {
       console.error('Error sending message:', error);
-      setSnackbarMessage('Error sending message!');
-      setSnackbarSeverity('error');
-    } finally {
-      setSnackbarVisible(true);
-    }
-  };
-
-  const handleSnackbarClose = () => {
-    setSnackbarVisible(false);
-  };
+    };
+  }
 
   return (
     <section className="contact">
       <div className="contact-form-container">
         <div className="contact-image">
-          <img 
-            src={ContactUs} 
-            alt="Contact Us" 
+          <img
+            src={ContactUs}
+            alt="Contact Us"
           />
         </div>
         <form onSubmit={handleSubmit} className="contact-form">
@@ -102,13 +84,6 @@ const Contact = () => {
           </button>
         </form>
       </div>
-
-      {snackbarVisible && (
-        <div className={`snackbar ${snackbarSeverity}`}>
-          <span>{snackbarMessage}</span>
-          <button onClick={handleSnackbarClose}>&times;</button>
-        </div>
-      )}
     </section>
   );
 };
