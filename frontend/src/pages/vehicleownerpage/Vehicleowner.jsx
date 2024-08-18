@@ -16,6 +16,7 @@ import InputBase from '@mui/material/InputBase';
 import ToggleColorMode from './ToggleColorMode';
 import MediaCard from '../../container/vehicleOwnerProfile/MediaCard';
 import Grid from '@mui/material/Grid';
+import header from '../../assets/vehiOwner.jpg';
 
 const logoStyle = {
   width: '140px',
@@ -90,14 +91,24 @@ function VehicleOwner({ mode, toggleColorMode }) {
   };
 
   return (
-    <div>
+    <div className='contain-wrap'   style={{
+
+      width: '100%',
+      height: '100',
+    
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    backgroundRepeat: 'no-repeat',
+    
+    backgroundImage: `url(${header})`,
+          }}      >
       <AppBar
         position="fixed"
         sx={{
           boxShadow: 0,
           bgcolor: 'transparent',
           backgroundImage: 'none',
-          mt: 2,
+          mt: 0,
         }}
       >
         <Container maxWidth="lg">
@@ -191,7 +202,7 @@ function VehicleOwner({ mode, toggleColorMode }) {
                 sx={{ mr: 2 }}
                 onClick={toggleDrawer(true)}
               >
-                <MenuIcon />
+              
               </IconButton>
               <Drawer anchor="right" open={open} onClose={toggleDrawer(false)}>
                 <Box
@@ -220,6 +231,10 @@ function VehicleOwner({ mode, toggleColorMode }) {
           </Toolbar>
         </Container>
       </AppBar>
+
+      <Container maxWidth="lg" sx={{ mt: 8, padding: 1 }}>
+     
+      </Container>
 
       <Container maxWidth="lg" sx={{ mt: 8, padding: 5 }}>
         <SearchContainer>
