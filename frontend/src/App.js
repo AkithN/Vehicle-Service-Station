@@ -21,6 +21,7 @@ import ManageUsers from './pages/adminpages/users/ManageUsers';
 import UpdateUsers from './pages/adminpages/users/UpdateUsers';
 import ManageGarages from './pages/adminpages/garages/ManageGarages';
 import ManageRoles from './pages/adminpages/roles/ManageRoles';
+import ManageContacts from './pages/adminpages/contact/ManageContacts';
 import AddRoles from './pages/adminpages/roles/AddRoles';
 import UpdateRoles from './pages/adminpages/roles/UpdateRoles';
 import VehicleOwnerFeatures from './container/vehicleOwnerProfile/vehicleOwnerFeatures';
@@ -55,6 +56,7 @@ function App() {
           <Route path='/admin/update-users' element={<UpdateUsers />} />
           <Route path='/admin/manage-garages' element={<ManageGarages />} />
           <Route path='/admin/manage-roles' element={<ManageRoles />} />
+          <Route path='/admin/manage-contacts' element={<ManageContacts />} />
           <Route path='/admin/add-roles' element={<AddRoles />} />
           <Route path='/admin/update-roles' element={<UpdateRoles />} />
           <Route path='/features' element={<VehicleOwnerFeatures />} />
