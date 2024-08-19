@@ -70,7 +70,7 @@ const MyCalendar = () => {
   ]);
 
   return (
-    <div style={{ height: '500px' }}>
+    <div style={{ height: '900px',marginBottom: '20px' }}>
       <Calendar
         localizer={localizer}
         events={events}

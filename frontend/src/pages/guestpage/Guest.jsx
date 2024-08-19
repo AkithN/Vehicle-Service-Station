@@ -16,7 +16,7 @@ const Guest = () => {
       <Aboutus />    
       <Features />
       <Services />
-      {/* <AboutBox /> */}
+      <AboutBox />
       <Contact />
       <Footer />
     </div>
