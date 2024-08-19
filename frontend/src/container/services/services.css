@@ -1,167 +1,4 @@
-/* .section-white {
-    background: #fff;
-    padding: 70px 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    height: 100vh;
-    background: url('../../assets/pic4.jpg') no-repeat center center/cover;
-}
-
-.container h1{
-    font-size: 50px;
-    text-align: center;
-}
-
-.team-item {
-    background: #f4f5f6;
-    text-align: center;
-    margin: 20px 0;
-    padding: 20px;
-    border-radius: 8px;
-    transition: all 0.25s ease-in-out;
-    height: 400px;
-    width: 100%;
-    max-width: 600px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    background: rgba(255, 255, 255, 0.4);
-}
-
-.team-item:hover {
-    background: lightseagreen;
-    color: white;
-}
-
-.team-item h3 {
-    margin: 20px 0 1px 0 !important;
-    color: #454545;
-    font-size: 18px;
-    font-weight: 700;
-    text-transform: uppercase;
-    transition: all 0.25s ease-in-out;
-}
-
-.team-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 100%;
-}
-
-.section-subtitle {
-    white-space: pre-line;
-    font-size: 20px;
-    text-align: center;
-    max-width: 800px;
-}
-
-.team-item:hover h3 {
-    color: #ddd;
-}
-
-.team-info {
-    display: block;
-    margin-bottom: 0;
-}
-
-.team-info p {
-    color: #acacac;
-    font-style: italic;
-}
-
-.team-info::after {
-    background: #008aff;
-    background: -webkit-linear-gradient(135deg, #6B02FF 0%, #985BEF 100%);
-    background: -o-linear-gradient(bottom right, #6B02FF, #985BEF);
-    background: -moz-linear-gradient(bottom right, #008aff, #1ad2fd);
-    background: linear-gradient(135deg, #6B02FF 0%, #985BEF 100%);
-    display: inline-block;
-    vertical-align: middle;
-    content: "";
-    width: 50px;
-    height: 3px;
-}
-
-.container {
-    width: 100%;
-    max-width: 1200px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background: rgba(255, 255, 255, 0.4);
-}
-
-.row {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-}
-
-.btn-read-more, .btn-read-more1 {
-    padding: 0.75rem 0.75rem;
-    color: #ffffff;
-    background-color: #3bb19b;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1rem;
-    font-weight: 600;
-    transition: background-color 0.3s;
-    margin-top: 20px;
-}
-
-.btn-read-more:hover, .btn-read-more1:hover {
-    background-color: #178f79;
-    color: white;
-}
-
-.popup-message {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 999;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.popup-content {
-    background-color: white;
-    padding: 20px;
-    border-radius: 8px;
-    width: 80%;
-    max-width: 600px;
-    position: relative;
-}
-
-.popup-content p {
-    font-size: 16px;
-    line-height: 1.5;
-}
-
-.close {
-    position: absolute;
-    top: 10px;
-    right: 15px;
-    font-size: 24px;
-    cursor: pointer;
-    color: #aaa;
-}
-
-.close:hover,
-.close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-} */
-
-
+/* 
 .section-white {
     background: #fff;
     padding: 10px 0;
@@ -197,7 +34,7 @@
 }
 
 .team-item:hover {
-    background: lightseagreen;
+    background: rgb(14, 11, 158);
     color: white;
 }
 
@@ -269,7 +106,7 @@
 .btn-read-more, .btn-read-more1 {
     padding: 0.75rem 0.75rem;
     color: #ffffff;
-    background-color: #3bb19b;
+    background-color: #3e5eec;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -280,7 +117,7 @@
 }
 
 .btn-read-more:hover, .btn-read-more1:hover {
-    background-color: #178f79;
+    background-color: #5caaf3;
     color: white;
 }
 
@@ -299,7 +136,7 @@
 }
 
 .popup-content {
-    background-color: white;
+    background-color: rgb(134, 178, 245);
     padding: 20px;
     border-radius: 8px;
     width: 80%;
@@ -351,5 +188,113 @@
 
     .popup-content {
         width: 90%;
+    }
+} */
+
+
+.section-white {
+    background: #fff;
+    padding: 10px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    min-height: 120vh;
+    background: url('../../assets/pic4.jpg') no-repeat center center/cover;
+    margin-bottom: 100px;
+}
+
+.container h1 {
+    font-size: 50px;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.services-cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: nowrap; /* Ensures that the cards are aligned horizontally */
+}
+
+.team-item {
+    background: #f4f5f6;
+    text-align: center;
+    padding: 20px;
+    border-radius: 8px;
+    transition: all 0.25s ease-in-out;
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: rgba(255, 255, 255, 0.4);
+    height: auto; /* Removed fixed height */
+}
+
+.team-item:hover {
+    background: rgb(14, 11, 158);
+    color: white;
+}
+
+.team-item h3 {
+    margin: 20px 0 1px 0 !important;
+    color: #454545;
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: all 0.25s ease-in-out;
+}
+
+.team-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.section-subtitle {
+    white-space: pre-line;
+    font-size: 16px;
+    text-align: left;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.team-item:hover h3 {
+    color: #ddd;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.4);
+}
+
+
+@media only screen and (max-width: 768px) {
+    .services-cards {
+        flex-direction: column; /* Stack cards vertically on smaller screens */
+    }
+
+    .team-item {
+        max-width: 100%;
+        padding: 50px;
+        height: auto;
+    }
+
+    .team-content {
+        height: auto;
+    }
+
+    .container {
+        padding: 20px;
+    }
+
+    .section-subtitle {
+        font-size: 14px;
     }
 }
