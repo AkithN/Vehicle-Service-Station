@@ -27,6 +27,9 @@ const AdminNavbar = () => {
         <li>
           <Link to="/admin/manage-roles">Manage Roles</Link>
         </li>
+        <li>
+          <Link to="/admin/manage-contacts">Manage Contacts</Link>
+        </li>
       </ul>
 
       <ul className="right-nav">

@@ -1,177 +1,91 @@
-// import React, { useRef } from "react";
-// import emailjs from "@emailjs/browser";
-// import './contact.css';
-// import ContactUs from '../../assets/contact.jpg';
-// import Footer from "../footer/Footer";
-// import { Container } from "@mui/material";
-
-// const Contact = () => {
-//   const formRef = useRef();
-
-//   const sendEmail = (e) => {
-//     e.preventDefault();
-
-//     emailjs
-//       .sendForm(
-//         "replace with service id",
-//         "replace with template id",
-//         formRef.current,
-//         "replace with user id"
-//       )
-//       .then(
-//         (result) => {
-//           console.log(result.text);
-//           console.log("message sent");
-//         },
-//         (error) => {
-//           console.log(error.text);
-//         }
-//       );
-//   };
-
-//   return (
-//     <section className="contact">
-//       <div className="contact-form-container">
-//         <div className="contact-image">
-//           <img src={ContactUs} alt="Contact Us" />
-//         </div>
-//         <form ref={formRef} onSubmit={sendEmail} className="contact-form">
-//           <h2 className="contact-title">Contact Us</h2>
-//           <label className="contact-label">Name</label>
-//           <input type="text" className="contact-input" name="user_name" placeholder="Your Name" />
-//           <label className="contact-label">Email</label>
-//           <input type="email" className="contact-input" name="user_email" placeholder="Your Email" />
-//           <label className="contact-label">Message</label>
-//           <textarea name="message" className="contact-textarea" placeholder="Your Message" />
-//           <input type="submit" value="Send" className="contact-submit" />
-//         </form>
-//       </div>
-//       <div className="contactus-footer">
-//     <Container 
-//         sx={{
-//             width: '100%', // or any specific width you need, e.g., '80%', '1200px'
-//             height: '300px', // or any specific height you need
-//             backgroundColor: 'lightgrey', // optional: to visualize the container's area
-//             display: 'flex', // optional: to center content
-//             justifyContent: 'center', // optional: to center content horizontally
-//             alignItems: 'center', // optional: to center content vertically
-//         }}
-//     >
-//         <Footer />
-//     </Container>
-// </div>
-
-//     </section>
-    
-//   );
-// };
-
-// export default Contact;
-
-import React, { useRef } from "react";
-import emailjs from "@emailjs/browser";
-import './contact.css';
+import React, { useState } from 'react';
 import ContactUs from '../../assets/contact.jpg';
-import Footer from "../footer/Footer";
-import { Container, Box, Grid, Typography, TextField, Button } from "@mui/material";
+import './contact.css';
 
 const Contact = () => {
-  const formRef = useRef();
+  const [userName, setUserName] = useState('');
+  const [userEmail, setUserEmail] = useState('');
+  const [message, setMessage] = useState('');
 
-  const sendEmail = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    const contactData = { user_name: userName, user_email: userEmail, message };
 
-    emailjs
-      .sendForm(
-        "replace with service id",
-        "replace with template id",
-        formRef.current,
-        "replace with user id"
-      )
-      .then(
-        (result) => {
-          console.log(result.text);
-          console.log("message sent");
+    try {
+      const response = await fetch('http://localhost:5000/api/contactus', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
         },
-        (error) => {
-          console.log(error.text);
-        }
-      );
-  };
+        body: JSON.stringify(contactData),
+      });
+
+      if (response.ok) {
+        setUserName('');
+        setUserEmail('');
+        setMessage('');
+        alert('Message sent successfully!');
+      }
+    } catch (error) {
+      console.error('Error sending message:', error);
+    };
+  }
 
   return (
     <section className="contact">
-      <Container maxWidth="lg">
-        <Grid container spacing={4} alignItems="center" justifyContent="center">
-          <Grid item xs={12} md={6} className="contact-image">
-            <Box sx={{ display: 'flex', justifyContent: 'center' }}>
-              <img src={ContactUs} alt="Contact Us" style={{ width: '100%', borderRadius: '8px', boxShadow: '0px 4px 20px rgba(0, 0, 0, 0.1)' }} />
-            </Box>
-          </Grid>
-          <Grid item xs={12} md={6}>
-            <form ref={formRef} onSubmit={sendEmail} className="contact-form">
-              <Typography variant="h4" component="h2" gutterBottom>
-                Contact Us
-              </Typography>
-              <TextField 
-                label="Name" 
-                name="user_name" 
-                fullWidth 
-                margin="normal" 
-                variant="outlined"
-                placeholder="Your Name"
-              />
-              <TextField 
-                label="Email" 
-                name="user_email" 
-                fullWidth 
-                margin="normal" 
-                variant="outlined"
-                placeholder="Your Email"
-              />
-              <TextField 
-                label="Message" 
-                name="message" 
-                fullWidth 
-                multiline 
-                rows={4} 
-                margin="normal" 
-                variant="outlined"
-                placeholder="Your Message"
-              />
-              <Button 
-                type="submit" 
-                variant="contained" 
-                color="primary" 
-                fullWidth 
-                sx={{ mt: 2 }}
-              >
-                Send
-              </Button>
-            </form>
-          </Grid>
-        </Grid>
-      </Container>
+      <div className="contact-form-container">
+        <div className="contact-image">
+          <img
+            src={ContactUs}
+            alt="Contact Us"
+          />
+        </div>
+        <form onSubmit={handleSubmit} className="contact-form">
+          <h2 className="contact-title">Contact Us</h2>
 
-      {/* <Box 
-        sx={{ 
-          width: '100%', 
-          backgroundColor: '#333', 
-          mt: 8, 
-          py: 4, 
-          color: '#fff', 
-          display: 'flex', 
-          justifyContent: 'center' 
-        }}
-      >
-        {/* <Container>
-          <Footer />
-        </Container> */}
-      {/* </Box> */} 
+          <label htmlFor="user_name" className="contact-label">Name</label>
+          <input
+            type="text"
+            id="user_name"
+            name="user_name"
+            value={userName}
+            onChange={(e) => setUserName(e.target.value)}
+            className="contact-input"
+            placeholder="Your Name"
+            required
+          />
+
+          <label htmlFor="user_email" className="contact-label">Email</label>
+          <input
+            type="email"
+            id="user_email"
+            name="user_email"
+            value={userEmail}
+            onChange={(e) => setUserEmail(e.target.value)}
+            className="contact-input"
+            placeholder="Your Email"
+            required
+          />
+
+          <label htmlFor="message" className="contact-label">Message</label>
+          <textarea
+            id="message"
+            name="message"
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
+            className="contact-textarea"
+            placeholder="Your Message"
+            rows="4"
+            required
+          />
+
+          <button type="submit" className="contact-submit">
+            Send
+          </button>
+        </form>
+      </div>
     </section>
   );
 };
 
 export default Contact;
-
-
