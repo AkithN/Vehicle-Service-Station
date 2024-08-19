@@ -153,7 +153,7 @@ const Contact = () => {
         </Grid>
       </Container>
 
-      <Box 
+      {/* <Box 
         sx={{ 
           width: '100%', 
           backgroundColor: '#333', 
@@ -164,10 +164,10 @@ const Contact = () => {
           justifyContent: 'center' 
         }}
       >
-        <Container>
+        {/* <Container>
           <Footer />
-        </Container>
-      </Box>
+        </Container> */}
+      {/* </Box> */} 
     </section>
   );
 };
