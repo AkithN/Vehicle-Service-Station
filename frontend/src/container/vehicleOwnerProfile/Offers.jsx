@@ -24,7 +24,7 @@ const dummyOffers = [
     id: 4,
     title: 'Exclusive 20% Discount for Members',
     description: 'Members get an exclusive 20% discount on all products.',
-    image: URL('../assets/pic5.jpg'),
+    image: 'https://via.placeholder.com/300x150',
   },
 ];
 
