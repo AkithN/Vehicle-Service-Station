@@ -1,13 +1,12 @@
-
 .section-white {
     background: #fff;
-    padding: 10px 10px;
+    padding: 10px 0;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    min-height: 120vh;
-    background: url('../../assets/pic4.jpg') no-repeat center center/cover;
+    min-height: 100vh;
+    background: url('../../assets/vehiOwner.jpg') no-repeat center center/cover;
     margin-bottom: 100px;
 }
 
@@ -15,7 +14,6 @@
     font-size: 50px;
     text-align: center;
     margin-top: 50px;
-    
 }
 
 .services-cards {
@@ -82,6 +80,23 @@
     background: rgba(255, 255, 255, 0.4);
 }
 
+.btn-read-more {
+    padding: 0.75rem 0.75rem;
+    color: #ffffff;
+    background-color: #3e5eec;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: background-color 0.3s;
+    margin-top: 20px;
+}
+
+.btn-read-more:hover {
+    background-color: #5caaf3;
+    color: white;
+}
 
 @media only screen and (max-width: 768px) {
     .services-cards {
