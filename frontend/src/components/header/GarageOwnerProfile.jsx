@@ -25,6 +25,7 @@ import BarChartIcon from '@mui/icons-material/BarChart';
 import AssignmentIcon from '@mui/icons-material/Assignment';
 import SubscriptionsIcon from '@mui/icons-material/Subscriptions';
 import LocalOfferRoundedIcon from '@mui/icons-material/LocalOfferRounded';
+import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import Avatar from '@mui/material/Avatar';
@@ -55,6 +56,7 @@ const AppBar = styled(MuiAppBar, {
   shouldForwardProp: (prop) => prop !== 'open',
 })(({ theme, open }) => ({
   zIndex: theme.zIndex.drawer + 1,
+  backgroundColor: '#001529',
   transition: theme.transitions.create(['width', 'margin'], {
     easing: theme.transitions.easing.sharp,
     duration: theme.transitions.duration.leavingScreen,
@@ -143,7 +145,7 @@ export default function GarageOwnerProfile({ children }) {
       <CssBaseline />
 
       <AppBar position="absolute" open={open}>
-      <Toolbar sx={{ pr: '24px' }}>
+        <Toolbar sx={{ pr: '24px' }}>
           <IconButton
             edge="start"
             color="inherit"
@@ -159,12 +161,13 @@ export default function GarageOwnerProfile({ children }) {
             variant="h6"
             color="inherit"
             noWrap
-            sx={{ flexGrow: 1 }}
+            sx={{ flexGrow: 1 }}         
           >
             CarCraft
           </Typography>
-
+        
           <Box sx={{ flexGrow: 0 }}>
+            <Button onClick={() => handleNavigation('/RegisterForm')} variant="contained">Register Form</Button>
             <Tooltip title="Open notifications">
               <IconButton
                 color="inherit"
@@ -200,7 +203,7 @@ export default function GarageOwnerProfile({ children }) {
                   <MenuItem
                     key={notification.id}
                     onClick={handleCloseNotificationsMenu}
-                    sx={{ display: index < 0 ? 'flex' : 'block' }} 
+                    sx={{ display: index < 0 ? 'flex' : 'block' }}
                   >
                     <Typography variant="body2" sx={{ marginRight: '10px' }}>
                       {notification.message}

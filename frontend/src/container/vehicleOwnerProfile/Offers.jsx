@@ -31,7 +31,8 @@ const dummyOffers = [
 const Offers = () => {
   return (
     <Container>
-      <Typography variant="h4" gutterBottom>Special Offers</Typography>
+      <Typography variant="h4" gutterBottom>ADDITIONAL OFFERS & REBATES</Typography>
+      <p>Want even more ways to save? Explore these limited-time rebates and offers on tires and more.</p>
       <Grid container spacing={3}>
         {dummyOffers.map((offer) => (
           <Grid item xs={12} sm={6} md={4} key={offer.id}>

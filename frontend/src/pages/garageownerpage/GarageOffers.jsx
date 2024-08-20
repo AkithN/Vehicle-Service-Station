@@ -1,13 +1,14 @@
 import React from 'react'
 import GarageOwnerProfile from '../../components/header/GarageOwnerProfile'
-import Offers from '../../container/garageOwnerProfile/Offers'
+import Footer from '../../components/footer/Footer'
 
 const GarageOffers = () => {
   return (
     <div>
         <GarageOwnerProfile>
-        < Offers />
+          
         </GarageOwnerProfile>
+        <Footer />
     </div>
   )
 }
