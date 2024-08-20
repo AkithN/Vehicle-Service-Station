@@ -5,10 +5,12 @@ import Footer from '../../components/footer/Footer';
 
 const Garageowner = () => {
   return (
-    <GarageOwnerProfile>
-      <Calender />
+    <div>
+      <GarageOwnerProfile>
+        <Calender />
+      </GarageOwnerProfile>
       <Footer />
-    </GarageOwnerProfile>
+    </div>
   );
 };
 

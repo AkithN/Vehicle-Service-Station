@@ -8,8 +8,9 @@ const GarageSubscription = () => {
     <div>
         <GarageOwnerProfile>
             <Subscription />
-            < Footer />
+            
         </GarageOwnerProfile>
+        < Footer />
     </div>
   )
 }

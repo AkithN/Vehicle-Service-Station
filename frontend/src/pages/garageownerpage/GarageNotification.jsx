@@ -8,8 +8,8 @@ const GarageNotification = () => {
     <div>
       <GarageOwnerProfile>
         < Notification />
-        < Footer />
       </GarageOwnerProfile>
+      < Footer />
     </div>
   )
 }

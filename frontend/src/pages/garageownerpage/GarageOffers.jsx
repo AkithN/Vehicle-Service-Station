@@ -6,8 +6,9 @@ const GarageOffers = () => {
   return (
     <div>
         <GarageOwnerProfile>
-          <Footer />
+          
         </GarageOwnerProfile>
+        <Footer />
     </div>
   )
 }

@@ -8,8 +8,8 @@ const GarageMonthlyReport = () => {
         <div>
           <GarageOwnerProfile>
             < MonthlyReport />
-            < Footer />
           </GarageOwnerProfile>
+          < Footer />
         </div>
       )
     }
