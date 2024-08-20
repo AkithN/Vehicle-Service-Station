@@ -1,48 +1,47 @@
 import React from 'react';
 import './Experts.css';
-import experts1 from '../../assets/expert-1.jpg';
-import experts2 from '../../assets/expert-2.jpg';
-import experts3 from '../../assets/expert-3.jpg';
-import experts4 from '../../assets/expert-4.jpg';
-import experts5 from '../../assets/expert-5.jpg';
-import experts6 from '../../assets/expert-6.png';
+import expert1 from '../../assets/expert-1.jpg';
+import expert2 from '../../assets/expert-2.jpg';
+import expert3 from '../../assets/expert-3.jpg';
+import expert4 from '../../assets/expert-4.jpg';
+import expert5 from '../../assets/expert-5.jpg';
+import expert6 from '../../assets/expert-6.png';
 
-const experts = [
-    { id: 1, name: 'Will Smith', img: experts1 },
-    { id: 2, name: 'Rock', img: experts2 },
-    { id: 3, name: 'Chris', img: experts3 },
-    { id: 4, name: 'Merara', img: experts4 },
-    { id: 5, name: 'Jibon', img: experts5 },
-    { id: 6, name: 'Smith', img: experts6 }
+const expertData = [
+    { id: 1, name: 'Will Smith', img: expert1 },
+    { id: 2, name: 'Rock', img: expert2 },
+    { id: 3, name: 'Chris', img: expert3 },
+    { id: 4, name: 'Merara', img: expert4 },
+    { id: 5, name: 'Jibon', img: expert5 },
+    { id: 6, name: 'Smith', img: expert6 }
 ];
 
 const Experts = () => {
     return (
-        <div id='experts' className='container'>
-            <h1 className='text-primary text-center mt-5'>Our Experts</h1>
-            <div className='row'>
-                {experts.map(expert => (
-                    <Expert key={expert.id} expert={expert} />
+        <section id='experts' className='experts-container'>
+            <h1 className='title text-center margin-top-large'>Our Experts</h1>
+            <div className='experts-grid'>
+                {expertData.map(expert => (
+                    <ExpertCard key={expert.id} expert={expert} />
                 ))}
             </div>
-        </div>
+        </section>
     );
 };
 
-const Expert = ({ expert }) => {
+const ExpertCard = ({ expert }) => {
     const { name, img } = expert;
     return (
-        <div className="g-5 gx-5 mb-5 col-sm-12 col-md-6 col-lg-4 text-center">
-            <div className="card mx-auto" style={{ width: "18rem" }}>
-                <img src={img} className="card-img-top w-100" alt={name} />
+        <div className="expert-card">
+            <div className="card-content">
+                <img src={img} className="card-image" alt={name} />
                 <div className="card-body">
                     <h5 className="card-title">{name}</h5>
-                    <p className="card-text">
-                        Some quick example text to build on the card title and make up the
-                        bulk of the card's content.
+                    <p className="card-description">
+                        "Professional expertise in various fields with years of experience."
                     </p>
-                    <a href="/expertsDetails" className="btn btn-primary">
-                        Go somewhere
+                    <a href="/expertsDetails" className="card-button">
+                        Learn More
                     </a>
                 </div>
             </div>

@@ -28,9 +28,6 @@ function VehicleOwner() {
               <MenuItem component={Link} to="/vehicleowner">
                   <Typography className="vehicle-owner-menu-item">Home</Typography>
                 </MenuItem>
-                <MenuItem component={Link} to="/dealer">
-                  <Typography className="vehicle-owner-menu-item">Find A Dealer</Typography>
-                </MenuItem>
                 <MenuItem component={Link} to="/vehicleoffers">
                   <Typography className="vehicle-owner-menu-item">Offers</Typography>
                 </MenuItem>
@@ -39,6 +36,9 @@ function VehicleOwner() {
                 </MenuItem>
                 <MenuItem component={Link} to="/features">
                   <Typography className="vehicle-owner-menu-item">Features</Typography>
+                </MenuItem>
+                <MenuItem component={Link} to="/dealer">
+                  <Typography className="vehicle-owner-menu-item">Find A Dealer</Typography>
                 </MenuItem>
                 <MenuItem component={Link} to="/contactus">
                   <Typography className="vehicle-owner-menu-item">Contact Us</Typography>

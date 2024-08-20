@@ -1,44 +1,80 @@
-.container {
-    max-width: 1200px;
+.experts-container {
     margin: 4% auto;
     padding: 0 15px;
+}
+
+.title {
+    color: #001529;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
 }
 
 .text-center {
     text-align: center;
 }
 
-.text-primary {
-    color: #007bff;
-}
-
-.mt-5 {
-    margin-top: 3rem;
-}
-
-.row {
+.experts-grid {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center; /* Center align the items */
+    justify-content: center;
 }
 
-.expert {
-    flex: 1 1 30%; /* Adjust this value for different column widths */
+.expert-card {
+    flex: 1 1 30%;
     margin: 15px;
     text-align: center;
+    transition: transform 0.3s ease-in-out;
 }
 
-.expert img {
+.expert-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card-content {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    padding: 20px;
+}
+
+.card-content:hover {
+    transform: scale(1.05);
+}
+
+.card-image {
     width: 100%;
-    height: auto;
-    border-radius: 50%; /* Optional: make the images circular */
-    max-width: 200px; /* Set a max width for the images */
-    margin: 0 auto; /* Center the images horizontally */
-    display: block; /* Ensures margin auto works */
+    max-height: 300px;
+    border-radius: 50%;
+    max-width: 300px;
+    margin: 0 auto;
+    display: block;
 }
 
-.expert h3 {
+.card-title {
+    font-size: 1.25rem;
     margin-top: 15px;
-    font-size: 1.2rem;
-    color: #333;
+    font-weight: bold;
+}
+
+.card-description {
+    color: #555;
+    margin-top: 10px;
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+}
+
+.card-button {
+    background-color: #001529;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.card-button:hover {
+    background-color: #0056b3;
 }

@@ -1,0 +1,6 @@
+.contactus-header-container{
+    height: 70vh;
+    background-image: url('../../assets/conntactusheader.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}

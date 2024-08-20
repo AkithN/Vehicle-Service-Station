@@ -3,7 +3,7 @@ import VehicleOwnerNavbar from '../../components/navbar/VehicleOwnerNavbar';
 import VehicleOwnerHeader from '../../components/header/VehicleOwnerHeader';
 import FindDealer from '../../container/vehicleOwnerProfile/FindDealer';
 import Garages from '../../container/vehicleOwnerProfile/Garages';
-import Offers from '../../container/vehicleOwnerProfile/Offers';
+import TopOffers from '../../container/vehicleOwnerProfile/TopOffers';
 import Footer from '../../components/footer/Footer';
 
 function VehicleOwner() {
@@ -13,7 +13,7 @@ function VehicleOwner() {
       <VehicleOwnerHeader />
       <FindDealer />
       <Garages />
-      <Offers />
+      <TopOffers />
       <Footer />
     </div>
   );

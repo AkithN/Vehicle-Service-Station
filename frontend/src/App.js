@@ -16,6 +16,7 @@ import GarageQuarterReport from './pages/garageownerpage/GarageQuarterReport';
 import GarageYearReport from './pages/garageownerpage/GarageYearReport';
 import ProfileManagement from './container/garageOwnerProfile/ProfileManagement';
 import Vehicleowner from './pages/vehicleownerpage/Vehicleowner';
+import VehicleOffers from './pages/vehicleownerpage/Offers';
 import Admin from './pages/adminpages/Admin';
 import ManageUsers from './pages/adminpages/users/ManageUsers';
 import UpdateUsers from './pages/adminpages/users/UpdateUsers';
@@ -27,8 +28,9 @@ import UpdateRoles from './pages/adminpages/roles/UpdateRoles';
 import VehicleOwnerFeatures from './pages/vehicleownerpage/Features';
 import Experts from "./pages/vehicleownerpage/Experts";
 import Aboutus from './components/aboutus/Aboutus';
-import Contact from './components/contact/Contact';
+import VContact from './pages/vehicleownerpage/Contact';
 import BookingForm from './container/vehicleOwnerProfile/InquiryForm';
+import Dealer from './pages/vehicleownerpage/FindDealer';
 
 function App() {
   return (
@@ -49,7 +51,8 @@ function App() {
           <Route path='/garagemonthlyreport' element={< GarageMonthlyReport />} />
           <Route path='/garagequarterreport' element={< GarageQuarterReport />} />
           <Route path='/garageyearreport' element={< GarageYearReport />} />
-          {/* <Route path='/vehicleoffers' element={< VehicleOffers />} /> */}
+          <Route path='/vehicleoffers' element={< VehicleOffers />} />
+          <Route path='/dealer' element={< Dealer />} />
           <Route path='/profilemanagement' element={< ProfileManagement />} />
           <Route path='/vehicleowner' element={< Vehicleowner />} />
           <Route path='/admin/manage-users' element={<ManageUsers />} />
@@ -62,7 +65,7 @@ function App() {
           <Route path='/features' element={<VehicleOwnerFeatures />} />
           <Route path='/experts' element={<Experts />} />
           <Route path='/aboutus' element={<Aboutus/>}/>
-          <Route path='/contactus' element={<Contact/>}/>
+          <Route path='/contactus' element={<VContact/>}/>
           <Route path='/BookingForm' element={<BookingForm />} />
         </Routes>
       </div>

@@ -20,7 +20,7 @@ const VehicleOwnerHeader = () => {
                         <h2>GET GREAT DEALS ON GREAT SERVICE</h2>
                     </Typography>
                     <Typography variant="body2" className="vehicle-owner-card-content">
-                        <p>Check out available Mopar service coupons to make taking care of your vehicle as easy as possible. With oil change coupons, tire coupons and more, you can take advantage of our factory-trained technicians to make sure your vehicle is running at its best while saving at the same time.</p>
+                        <p>Check out available CarCraft service coupons to make taking care of your vehicle as easy as possible. With oil change coupons, tire coupons and more, you can take advantage of our factory-trained technicians to make sure your vehicle is running at its best while saving at the same time.</p>
                     </Typography>
                     <Button
                         onClick={() => handleNavigation('/vehicleoffers')}
