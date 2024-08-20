@@ -156,11 +156,18 @@ function Services() {
     return (
         <section className="section-white" >
             <div className="container">
+<<<<<<< Updated upstream
                 <div className="row">
                     <div className="col-12 text-center" >
                         <h1 className="font-bold text-3xl pb-4">Our Services</h1>
                         <p className="section-subtitle pb-4">{introMessage}</p>
                     </div>
+=======
+                <div className="row text-center">
+                    <h1 className="font-bold text-3xl pb-4 font-align-center" >Our Services</h1>
+                    <br></br>
+                    {/* <p className="section-subtitle pb-4">{introMessage}</p> */}
+>>>>>>> Stashed changes
                 </div>
                 <div className="row">
                     <div className="col-md-6 margin-top-20">
