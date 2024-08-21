@@ -27,7 +27,11 @@ import AddRoles from './pages/adminpages/roles/AddRoles';
 import UpdateRoles from './pages/adminpages/roles/UpdateRoles';
 import VehicleOwnerFeatures from './pages/vehicleownerpage/Features';
 import Experts from "./pages/vehicleownerpage/Experts";
-import Aboutus from './components/aboutus/Aboutus';
+import Aboutus from './pages/guestpage/Aboutus';
+import Services from './pages/guestpage/Services';
+import Packages from './pages/guestpage/Packages';
+import News from './pages/guestpage/News';
+import Contactus from './pages/guestpage/Contactus';
 import VContact from './pages/vehicleownerpage/Contact';
 import BookingForm from './container/vehicleOwnerProfile/InquiryForm';
 import Dealer from './pages/vehicleownerpage/FindDealer';
@@ -65,6 +69,10 @@ function App() {
           <Route path='/features' element={<VehicleOwnerFeatures />} />
           <Route path='/experts' element={<Experts />} />
           <Route path='/aboutus' element={<Aboutus/>}/>
+          <Route path='/services' element={<Services/>}/>
+          <Route path='/packages' element={<Packages/>}/>
+          <Route path='/news' element={<News/>}/>
+          <Route path='/contact' element={<Contactus/>}/>
           <Route path='/contactus' element={<VContact/>}/>
           <Route path='/BookingForm' element={<BookingForm />} />
         </Routes>

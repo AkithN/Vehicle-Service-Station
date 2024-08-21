@@ -8,6 +8,7 @@ import Footer from '../../components/footer/Footer';
 import Services from '../../container/services/Services';
 import Reviews from '../../container/reviews/CustomerReviews';
 import Features from '../../container/features/Features';
+import GuestNews from '../../container/News/GuestNews';
 
 const Guest = () => {
   return (
@@ -19,6 +20,7 @@ const Guest = () => {
       <AboutBox />
       <Services />
       <Reviews />
+      <GuestNews />
       <Contact />
       <Footer />
     </div>

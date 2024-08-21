@@ -1,0 +1,6 @@
+.services-header-container{
+    height: 70vh;
+    background-image: url('../../assets/servicesheader.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}

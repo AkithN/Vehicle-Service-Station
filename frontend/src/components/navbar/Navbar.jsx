@@ -20,7 +20,7 @@ const Navbar = () => {
               <Link to="/">Home</Link>
             </Menu.Item>
             <Menu.Item key="sub2" icon={<GlobalOutlined />}>
-              <Link to="/about">About Us</Link>
+              <Link to="/aboutus">About Us</Link>
             </Menu.Item>
             <Menu.Item key="sub3" icon={<ToolOutlined />}>
               <Link to="/services">Services</Link>

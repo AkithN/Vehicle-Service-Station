@@ -66,7 +66,7 @@
   overflow: hidden;
 }
 
-.icon {
+.review-container .icon {
   font-size: 40px;
   cursor: pointer;
   position: absolute;
@@ -76,12 +76,12 @@
   color: white;
 }
 
-.icon.left {
+.review-container .icon.left {
   left: 500px;
   background: none;
 }
 
-.icon.right {
+.review-container .icon.right {
   right: 500px;
   background: none;
 }
