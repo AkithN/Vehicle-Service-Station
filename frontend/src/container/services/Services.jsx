@@ -2,7 +2,6 @@ import React from "react";
 import './services.css';
 
 function Services() {
-    const introMessage = `At CarCraft, we provide an integrated platform that caters to both vehicle owners and service station owners, ensuring a seamless and efficient experience for all users.`;
 
     const vehicleOwnersServices = `
         <strong>Services for Vehicle Owners</strong>

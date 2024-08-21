@@ -6,6 +6,7 @@ import AboutBox from '../../container/aboutBox/AboutBox';
 import Contact from '../../components/contact/Contact';
 import Footer from '../../components/footer/Footer';
 import Services from '../../container/services/Services';
+import Reviews from '../../container/reviews/CustomerReviews';
 import Features from '../../container/features/Features';
 
 const Guest = () => {
@@ -15,8 +16,9 @@ const Guest = () => {
       <Header />
       <Aboutus />    
       <Features />
-      <Services />
       <AboutBox />
+      <Services />
+      <Reviews />
       <Contact />
       <Footer />
     </div>

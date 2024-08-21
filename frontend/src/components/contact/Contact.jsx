@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import ContactUs from '../../assets/contact.jpg';
 import './contact.css';
 
 const Contact = () => {
@@ -33,13 +32,6 @@ const Contact = () => {
 
   return (
     <section className="contact">
-      <div className="contact-form-container">
-        <div className="contact-image">
-          <img
-            src={ContactUs}
-            alt="Contact Us"
-          />
-        </div>
         <form onSubmit={handleSubmit} className="contact-form">
           <h2 className="contact-title">Contact Us</h2>
 
@@ -83,7 +75,6 @@ const Contact = () => {
             Send
           </button>
         </form>
-      </div>
     </section>
   );
 };

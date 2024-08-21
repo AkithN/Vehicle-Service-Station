@@ -1,14 +1,14 @@
 import React from 'react';
 import { Row, Col } from 'antd';
-import { LineChartOutlined, SmileOutlined, GlobalOutlined, CalendarOutlined, TeamOutlined } from '@ant-design/icons';
+import { CarOutlined, SmileOutlined, MoneyCollectOutlined, CalendarOutlined, TeamOutlined } from '@ant-design/icons';
 import './aboutbox.css';
 
 const statisticsData = [
-  { icon: <LineChartOutlined />, value: "500+", label: "Projects Finished" },
   { icon: <SmileOutlined />, value: "400+", label: "Satisfied Customers" },
-  { icon: <GlobalOutlined />, value: "10", label: "Countries Served" },
-  { icon: <CalendarOutlined />, value: "14", label: "Years In Business" },
-  { icon: <TeamOutlined />, value: "70+", label: "Employees" },
+  { icon: <CarOutlined />, value: "100+", label: "Registered Garages" },
+  { icon: <MoneyCollectOutlined />, value: "10", label: "Income Leads in LKR" },
+  { icon: <CalendarOutlined />, value: "4", label: "Years Of Trust" },
+  { icon: <TeamOutlined />, value: "70+", label: "Partners" },
 ];
 
 const AboutBox = () => {

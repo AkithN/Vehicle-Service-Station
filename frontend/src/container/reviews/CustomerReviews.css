@@ -1,0 +1,124 @@
+.scroll-container {
+  background-color: white;
+  position: relative;
+  margin-top: -80px;
+  overflow: hidden;
+}
+
+.scroll-content {
+  display: flex;
+  animation: logo-slider 25s linear infinite;
+}
+
+.scroll-content img {
+  min-height: 150px;
+  min-width: 150px;
+  margin: 30px 70px;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+
+.scroll-content img:hover {
+  transform: scale(1.1);
+}
+
+@keyframes logo-slider {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.scroll-container:hover .scroll-content {
+  animation-play-state: paused;
+}
+
+.scroll-container::before,
+.scroll-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 100px;
+  height: 100%;
+  z-index: 1000;
+}
+
+.scroll-container::before {
+  left: 0;
+  background: linear-gradient(to right, white, transparent);
+}
+
+.scroll-container::after {
+  right: 0;
+  background: linear-gradient(to left, white, transparent);
+}
+
+.review-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #001529;
+  height: 60vh;
+  overflow: hidden;
+}
+
+.icon {
+  font-size: 40px;
+  cursor: pointer;
+  position: absolute;
+  top: 45%;
+  transform: translateY(-50%);
+  z-index: 1000;
+  color: white;
+}
+
+.icon.left {
+  left: 500px;
+  background: none;
+}
+
+.icon.right {
+  right: 500px;
+  background: none;
+}
+
+.review-box {
+  flex: 0 0 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.review-box img {
+  border-radius: 50%;
+  min-width: 150px;
+  min-height: 150px;
+  object-fit: cover;
+  margin-bottom: 30px;
+  margin-top: -40px;
+}
+
+.review-box p {
+  font-size: 20px;
+  color: #fff;
+  margin-top: 20px;
+}
+
+.review-box h1 {
+  font-size: 40px;
+  margin: 5px 0;
+  color: rgb(243, 243, 75);
+  font-weight: 600;
+}
+
+.review-box h2 {
+  font-size: 22px;
+  color: #fff;
+  margin-bottom: 10px;
+  font-weight: 400;
+}
