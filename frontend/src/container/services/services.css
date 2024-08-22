@@ -20,7 +20,7 @@
     display: flex;
     justify-content: center;
     gap: 20px;
-    flex-wrap: nowrap; /* Ensures that the cards are aligned horizontally */
+    flex-wrap: nowrap; 
 }
 
 .team-item {
@@ -35,7 +35,7 @@
     flex-direction: column;
     justify-content: space-between;
     background: rgba(255, 255, 255, 0.4);
-    height: auto; /* Removed fixed height */
+    height: auto; 
 }
 
 .team-item:hover {
@@ -100,7 +100,7 @@
 
 @media only screen and (max-width: 768px) {
     .services-cards {
-        flex-direction: column; /* Stack cards vertically on smaller screens */
+        flex-direction: column; 
     }
 
     .team-item {
