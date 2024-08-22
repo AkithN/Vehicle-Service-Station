@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Form, Input, Select, Checkbox, Radio, Button, Upload } from 'antd';
 import { UploadOutlined } from '@ant-design/icons';
+import axios from 'axios';
 import './register.css';
 
 const { Option } = Select;
@@ -19,26 +20,26 @@ const provinceDistricts = {
 
 function Register() {
   const [formData, setFormData] = useState({
-    username: '',
-    address: '',
+    garageName: '',
+    garageAddress: '',
     district: '',
     province: '',
-    contact: '',
-    contact1: '',
+    workNum: '',
+    mobileNum: '',
     services: [],
-    description: '',
-    time: '',
-    wtime: '',
-    ptime: '',
-    etime: '',
-    scale: '',
+    garageDescription: '',
+    operatingHoursWeek: '',
+    operatingHoursWeekend: '',
+    publicHoliday: '',
+    emergencyService: '',
+    serviceScale: '',
     website: '',
     facebook: '',
     instagram: '',
     twitter: '',
   });
 
-  const [image, setImages] = useState({ image1: '', image2: '', image3: '' });
+  const [images, setImages] = useState({ image1: null, image2: null, image3: null });
   const [imagePreviews, setImagePreviews] = useState({
     image1: '',
     image2: '',
@@ -69,44 +70,52 @@ function Register() {
     }
   };
 
-  const onSubmitHandler = async (values) => {
+  const onSubmitHandler = async () => {
     try {
       const formDataWithImages = new FormData();
-      for (const key in values) {
+      for (const key in formData) {
         if (key === 'services') {
-          formDataWithImages.append(key, values[key].join(','));
+          formDataWithImages.append(key, formData[key].join(','));
         } else {
-          formDataWithImages.append(key, values[key]);
+          formDataWithImages.append(key, formData[key]);
         }
       }
-      for (const key in image) {
-        formDataWithImages.append(key, image[key]);
+      for (const key in images) {
+        formDataWithImages.append(key, images[key]);
       }
 
-      setFormData({
-        username: '',
-        address: '',
-        district: '',
-        province: '',
-        contact: '',
-        contact1: '',
-        services: [],
-        description: '',
-        time: '',
-        wtime: '',
-        ptime: '',
-        etime: '',
-        scale: '',
-        website: '',
-        facebook: '',
-        instagram: '',
-        twitter: '',
+      const response = await axios.post('http://localhost:5000/api/garages', formDataWithImages, {
+        headers: { 'Content-Type': 'multipart/form-data' },
       });
-      setImages({ image1: '', image2: '', image3: '' });
-      setImagePreviews({ image1: '', image2: '', image3: '' });
-      setDistricts([]);
+
+      if (response.status === 201) {
+        alert('Garage registered successfully!');
+        setFormData({
+          garageName: '',
+          garageAddress: '',
+          district: '',
+          province: '',
+          workNum: '',
+          mobileNum: '',
+          services: [],
+          garageDescription: '',
+          operatingHoursWeek: '',
+          operatingHoursWeekend: '',
+          publicHoliday: '',
+          emergencyService: '',
+          serviceScale: '',
+          website: '',
+          facebook: '',
+          instagram: '',
+          twitter: '',
+        });
+        setImages({ image1: null, image2: null, image3: null });
+        setImagePreviews({ image1: '', image2: '', image3: '' });
+        setDistricts([]);
+      }
     } catch (error) {
       console.error('Error submitting the form:', error);
+      alert('Failed to register garage. Please try again.');
     }
   };
 
@@ -119,10 +128,10 @@ function Register() {
         onFinish={onSubmitHandler}
         layout="vertical"
       >
-        <Form.Item label="Name Of Service Center" name="username" rules={[{ required: true, message: 'Please enter the service center name' }]}>
+        <Form.Item label="Name Of Service Center" name="garageName" rules={[{ required: true, message: 'Please enter the service center name' }]}>
           <Input />
         </Form.Item>
-        <Form.Item label="Address" name="address" rules={[{ required: true, message: 'Please enter the address' }]}>
+        <Form.Item label="Address" name="garageAddress" rules={[{ required: true, message: 'Please enter the address' }]}>
           <Input />
         </Form.Item>
         <Form.Item label="Province" name="province" rules={[{ required: true, message: 'Please select a province' }]}>
@@ -139,14 +148,14 @@ function Register() {
             ))}
           </Select>
         </Form.Item>
-        <Form.Item label="Contact Number" name="contact" rules={[{ required: true, message: 'Please enter a contact number' }]}>
+        <Form.Item label="Contact Number" name="workNum" rules={[{ required: true, message: 'Please enter a contact number' }]}>
           <Input placeholder="Work" />
         </Form.Item>
-        <Form.Item label="Mobile Number" name="contact1" rules={[{ required: true, message: 'Please enter a contact number' }]}>
+        <Form.Item label="Mobile Number" name="mobileNum" rules={[{ required: true, message: 'Please enter a contact number' }]}>
           <Input placeholder="Mobile" />
         </Form.Item>
         <div className='form-group'>
-          <Form.Item label="Types Of Services" name="services" rules={[{ required: true, message: 'Please Select Service' }]}>
+          <Form.Item label="Types Of Services" name="services" rules={[{ required: true, message: 'Please select service' }]}>
             <Checkbox.Group>
               <Checkbox value="maintenance">Maintenance Services</Checkbox>
               <Checkbox value="repair">Repair Services</Checkbox>
@@ -157,7 +166,7 @@ function Register() {
               <Checkbox value="convenience">Convenience Services</Checkbox>
             </Checkbox.Group>
           </Form.Item>
-          <Form.Item label="Operating Hours (Weekdays)" name="time" rules={[{ required: true, message: 'Please Select Time' }]}>
+          <Form.Item label="Operating Hours (Weekdays)" name="operatingHoursWeek" rules={[{ required: true, message: 'Please select time' }]}>
             <Radio.Group>
               <Radio value="8-5">8.00 AM - 5.00 PM</Radio>
               <Radio value="8-6">8.00 AM - 6.00 PM</Radio>
@@ -166,7 +175,7 @@ function Register() {
               <Radio value="9-10">9.00 AM - 10.00 PM</Radio>
             </Radio.Group>
           </Form.Item>
-          <Form.Item label="Operating Hours (Weekends)" name="wtime" rules={[{ required: true, message: 'Please Select Time' }]}>
+          <Form.Item label="Operating Hours (Weekends)" name="operatingHoursWeekend" rules={[{ required: true, message: 'Please select time' }]}>
             <Radio.Group>
               <Radio value="wclosed">Closed</Radio>
               <Radio value="w9-3">9.00 AM - 3.00 PM</Radio>
@@ -175,19 +184,19 @@ function Register() {
               <Radio value="w10-7">10.00 AM - 7.00 PM</Radio>
             </Radio.Group>
           </Form.Item>
-          <Form.Item label="Do You Work On Public Holidays?" name="ptime" rules={[{ required: true, message: 'Please Select ' }]}>
+          <Form.Item label="Do You Work On Public Holidays?" name="publicHoliday" rules={[{ required: true, message: 'Please select' }]}>
             <Radio.Group>
               <Radio value="yes">Yes</Radio>
               <Radio value="no">No</Radio>
             </Radio.Group>
           </Form.Item>
-          <Form.Item label="Availability Of Emergency Or 24/7 Service" name="etime" rules={[{ required: true, message: 'Please Select ' }]}>
+          <Form.Item label="Availability Of Emergency Or 24/7 Service" name="emergencyService" rules={[{ required: true, message: 'Please select' }]}>
             <Radio.Group>
               <Radio value="yes">Yes</Radio>
               <Radio value="no">No</Radio>
             </Radio.Group>
           </Form.Item>
-          <Form.Item label="Service Station Scale" name="scale" rules={[{ required: true, message: 'Please Select Scale Of Service Station' }]}>
+          <Form.Item label="Service Station Scale" name="serviceScale" rules={[{ required: true, message: 'Please select scale of service station' }]}>
             <Radio.Group>
               <Radio value="small">Small</Radio>
               <Radio value="medium">Medium</Radio>
@@ -195,61 +204,67 @@ function Register() {
             </Radio.Group>
           </Form.Item>
         </div>
-        <Form.Item label="Website" name="website" rules={[{ required: true, message: 'Please enter a Website Link' }]}>
-          <Input placeholder="Website Link" />
+        <Form.Item label="Website" name="website" rules={[{ required: true, message: 'Please enter the website URL' }]}>
+          <Input />
         </Form.Item>
-        <Form.Item label="Facebook" name="facebook" rules={[{ required: true, message: 'Please enter a Facebook Link' }]}>
-          <Input placeholder="Facebook Link" />
+        <Form.Item label="Facebook" name="facebook">
+          <Input />
         </Form.Item>
-        <Form.Item label="Instagram" name="instagram" rules={[{ required: true, message: 'Please enter a Instagram Link' }]}>
-          <Input placeholder="Instagram Link" />
+        <Form.Item label="Instagram" name="instagram">
+          <Input />
         </Form.Item>
-        <Form.Item label="Twitter" name="twitter" rules={[{ required: true, message: 'Please enter a Twitter Link' }]}>
-          <Input placeholder="Twitter Link" />
+        <Form.Item label="Twitter" name="twitter">
+          <Input />
         </Form.Item>
-        <Form.Item label="Description Of Service Station" name="description" rules={[{ required: true, message: 'Please enter a Description' }]}>
+        <Form.Item label="Service Station Description" name="garageDescription" rules={[{ required: true, message: 'Please provide a description' }]}>
           <Input.TextArea />
         </Form.Item>
-        <Form.Item label="Image 1">
-          <Upload
-            name="image1"
-            listType="picture"
-            showUploadList={false}
-            beforeUpload={() => false}
-            onChange={handleImage}
-          >
-            <Button icon={<UploadOutlined />}>Upload Image 1</Button>
-          </Upload>
-          {imagePreviews.image1 && <img src={imagePreviews.image1} alt="Reception Area" style={{ width: '100px', height: '100px', marginTop: '10px' }} />}
-        </Form.Item>
-        <Form.Item label="Image 2" rules={[{ required: true, message: 'Please Upload A Service Station Picture' }]}>
-          <Upload
-            name="image2"
-            listType="picture"
-            showUploadList={false}
-            beforeUpload={() => false}
-            onChange={handleImage}
-          >
-            <Button icon={<UploadOutlined />}>Upload Image 2</Button>
-          </Upload>
-          {imagePreviews.image2 && <img src={imagePreviews.image2} alt="Service Bays" style={{ width: '100px', height: '100px', marginTop: '10px' }} />}
-        </Form.Item>
-        <Form.Item label="Image 3">
-          <Upload
-            name="image3"
-            listType="picture"
-            showUploadList={false}
-            beforeUpload={() => false}
-            onChange={handleImage}
-          >
-            <Button icon={<UploadOutlined />}>Upload Image 3</Button>
-          </Upload>
-          {imagePreviews.image3 && <img src={imagePreviews.image3} alt="Waiting Area" style={{ width: '100px', height: '100px', marginTop: '10px' }} />}
-        </Form.Item>
+        <div className='row'>
+          <div className='column'>
+            <Form.Item label="Upload Image 1">
+              <Upload
+                listType="picture"
+                maxCount={1}
+                beforeUpload={() => false}
+                onChange={handleImage}
+                name="image1"
+              >
+                <Button icon={<UploadOutlined />}>Upload Image 1</Button>
+              </Upload>
+              {imagePreviews.image1 && <img src={imagePreviews.image1} alt="Preview" className="image-preview" />}
+            </Form.Item>
+          </div>
+          <div className='column'>
+            <Form.Item label="Upload Image 2">
+              <Upload
+                listType="picture"
+                maxCount={1}
+                beforeUpload={() => false}
+                onChange={handleImage}
+                name="image2"
+              >
+                <Button icon={<UploadOutlined />}>Upload Image 2</Button>
+              </Upload>
+              {imagePreviews.image2 && <img src={imagePreviews.image2} alt="Preview" className="image-preview" />}
+            </Form.Item>
+          </div>
+          <div className='column'>
+            <Form.Item label="Upload Image 3">
+              <Upload
+                listType="picture"
+                maxCount={1}
+                beforeUpload={() => false}
+                onChange={handleImage}
+                name="image3"
+              >
+                <Button icon={<UploadOutlined />}>Upload Image 3</Button>
+              </Upload>
+              {imagePreviews.image3 && <img src={imagePreviews.image3} alt="Preview" className="image-preview" />}
+            </Form.Item>
+          </div>
+        </div>
         <Form.Item>
-          <Button type="primary" htmlType="submit">
-            Submit
-          </Button>
+          <Button type="primary" htmlType="submit">Submit</Button>
         </Form.Item>
       </Form>
     </div>
