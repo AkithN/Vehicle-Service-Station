@@ -3,10 +3,10 @@ import { Card, CardContent, Typography, Avatar, Grid } from '@mui/material';
 
 const ProfileManagement = () => {
   const profileData = {
-    name: "John Doe",
-    email: "johndoe@example.com",
-    role: "Administrator",
-    avatarUrl: "https://via.placeholder.com/150",
+    name: localStorage.getItem('fullName'),
+    email: localStorage.getItem('email'),
+    role: JSON.parse(localStorage.getItem('userType')), // Assuming role is saved as a string
+    avatarUrl: "https://via.placeholder.com/150", // Placeholder avatar image
   };
 
   return (

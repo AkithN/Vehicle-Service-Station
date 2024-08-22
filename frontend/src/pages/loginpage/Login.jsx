@@ -14,12 +14,13 @@ const Login = () => {
     try {
       const response = await axios.post('http://localhost:5000/api/auth/login', { email, password });
       
-      const { token, userType } = response.data;
+      const { token, userType, fullName } = response.data;
 
       localStorage.setItem('token', token);
       localStorage.setItem('email', email);
       localStorage.setItem('userType', JSON.stringify(userType));
-  
+      localStorage.setItem('fullName', fullName); // Save the user's full name
+      
       if (userType === 'VehicleOwner') {
         navigate("/vehicleowner");
       } else if (userType === 'GarageOwner') {
