@@ -49,3 +49,14 @@
 .Guest-News-card-description {
     color: #555;
 }
+
+@media (max-width: 480px) {
+    .Guest-News-container{
+        background-color: #001529;
+        margin-bottom: -10px;
+    }
+
+    .Guest-News-heading {
+        color: #fff;
+    }
+}

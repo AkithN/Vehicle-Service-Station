@@ -72,3 +72,47 @@
 .contact-submit:hover {
   background-color: #002529;
 }
+
+@media (max-width: 480px) {
+  .contact {
+    padding: 0;
+    background-position: center;
+    background-size: cover;
+    background-position-x: 70%;
+  }
+
+  .contact-form {
+    padding: 0;
+    margin-top: 30%;
+    box-shadow: none;
+  }
+
+  .contact-title {
+    font-size: 24px;
+  }
+
+  .contact-label {
+    font-size: 14px;
+    margin-bottom: 8px;
+    color: #001529;
+  }
+
+  .contact-input::placeholder,
+  .contact-textarea::placeholder {
+    color: #001529;
+    opacity: 1;
+  }
+
+  .contact-input,
+  .contact-textarea {
+    padding: 10px;
+    font-size: 14px;
+    margin-bottom: 15px;
+    color: #001529;
+  }
+
+  .contact-submit {
+    padding: 10px;
+    font-size: 14px;
+  }
+}

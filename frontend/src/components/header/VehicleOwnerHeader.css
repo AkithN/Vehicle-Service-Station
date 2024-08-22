@@ -45,3 +45,23 @@
 .vehicle-owner-card-button:hover {
     background-color: #0056b3;
 }
+
+@media (max-width: 480px) {
+    .vehicle-owner-header-container {
+        height: 50vh;
+        background-position: center;
+        background-position-x: 60%;
+        margin-bottom: 450px;
+    }
+
+    .vehicle-owner-card {
+        min-width: 400px;
+        margin-left: -30px;
+        margin-top: 85%;
+    }
+
+    .vehicle-owner-card .vehicle-owner-card-button {
+        margin-left: 25%;
+    }
+
+}

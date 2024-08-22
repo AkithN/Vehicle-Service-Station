@@ -6,7 +6,7 @@
     max-width: 1500px;
     position: fixed;
     top: 0;
-    left: 50%;
+    left: 18%;
     transform: translateX(-10%);
 }
 
@@ -21,22 +21,21 @@
 
 .vehicle-owner-logo {
     height: 100px;
-    min-width: 140px;
-    margin-right: 120px;
+    min-width: 150px;
     margin-left: -10rem;
     margin-top: 0%;
 }
 
 .vehicle-owner-menu {
     display: flex;
-    gap: 32px;
+    gap: 30px;
+    margin-right: 130px;
 }
 
 .vehicle-owner-menu-item {
     font-size: 1rem;
     color: #fff;
     text-transform: uppercase;
-    font-weight: bold;
     transition: color 0.3s ease;
 }
 
@@ -44,25 +43,44 @@
     color: #007bff;
 }
 
-.vehicle-owner-search {
+.logout-icon {
     display: flex;
     align-items: center;
-    border-radius: 15px;
-    background-color: white;
-    padding: 0 10px;
-    margin-right: -10rem;
+    margin-right: -300px;
 }
 
-.search-icon {
-    color: #333;
-    margin-right: 8px;
-}
 
-.search-input-root {
-    width: 180px;
-}
+@media (max-width: 480px) {
+    .vehicle-owner-navbar {
+        margin-top: 10px;
+        max-width: 90%;
+        width: 100%;
+        position: fixed;
+        margin-right: -4%;
+    }
 
-.search-input {
-    color: #333;
-    width: 100%;
+    .vehicle-owner-toolbar {
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+
+    .vehicle-owner-menu {
+        display: none;
+    }
+
+    .logout-icon {
+        margin-right: 0;
+    }
+
+    .vehicle-owner-menu-item {
+        font-size: 0.875rem;        
+    }
+
+    .vehicle-owner-search {
+        width: 100%;
+    }
+
+    .search-input-root {
+        width: 100%;
+    }
 }

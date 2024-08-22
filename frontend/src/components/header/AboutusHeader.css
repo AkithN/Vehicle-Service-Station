@@ -1,7 +1,15 @@
-.aboutus-header-container{
+.aboutus-header-container {
     height: 70vh;
     background-image: url('../../assets/aboutus1.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+}
+
+@media (max-width: 480px) {
+    .aboutus-header-container {
+        height: 50vh;
+        background-position: center;
+
+    }
 }

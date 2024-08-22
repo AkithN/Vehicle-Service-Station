@@ -4,3 +4,11 @@
     background-size: cover;
     background-repeat: no-repeat;
 }
+
+@media (max-width: 480px) {
+    .services-header-container{
+        height: 50vh;
+        background-position: center;
+        background-position-y: 80px;
+    }
+}

@@ -15,7 +15,7 @@ function Services() {
         <strong>Profile Management:</strong> Manage your profile, view your service history, and track ongoing service requests.<br>
         Customer Support<br>
         <strong>24/7 Assistance:</strong> Access round-the-clock customer support for any queries or issues.<br>
-        <strong>Feedback and Reviews:</strong> Provide feedback and reviews on the services received to help others make informed decisions.<br>
+        <strong>Feedback and Reviews:</strong> Provide feedback and reviews on the services received to help others make informed decisions.
     `;
 
     const serviceStationOwnersServices = `
@@ -30,7 +30,7 @@ function Services() {
         <strong>Analytics:</strong> Access insights and analytics to understand customer behavior and improve your services.<br>
         Seamless Payment Solutions<br>
         <strong>Subscription Payments:</strong> Easily manage your subscription payments through a secure payment gateway.<br>
-        <strong>Service Payments:</strong> Offer various payment options to your customers for hassle-free transactions.<br>
+        <strong>Service Payments:</strong> Offer various payment options to your customers for hassle-free transactions.
     `;
 
     return (
@@ -54,7 +54,7 @@ function Services() {
                             <p className="section-subtitle" dangerouslySetInnerHTML={{ __html: serviceStationOwnersServices }}></p>
                         </div>
                     </div>
-                </div>
+                </div>      
             </div>
         </section>
     );

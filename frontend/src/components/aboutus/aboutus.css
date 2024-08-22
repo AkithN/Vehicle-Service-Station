@@ -119,9 +119,10 @@
   font-size: 60%;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 480px) {
   .about-us-container {
     padding: 20px;
+    
   }
 
   .about-us-heading h1 {
@@ -130,6 +131,7 @@
 
   .about-us-content {
     flex-direction: column;
+    min-height: 750px;
   }
 
   .about-us-description {
@@ -138,8 +140,12 @@
 
   .about-us-image-container {
     margin-right: 0;
-    margin-bottom: 20px;
-    max-width: 300px; 
+    margin-bottom: 50px;
+    max-width: 320px; 
     max-height: 200px; 
+  }
+
+  .read-more-dis-button{
+    margin-left: 0;
   }
 }

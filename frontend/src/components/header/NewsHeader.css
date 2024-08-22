@@ -1,13 +1,14 @@
-.contactus-header-container{
+.news-header-container{
     height: 70vh;
-    background-image: url('../../assets/ContactUs1.jpg');
+    background-image: url('../../assets/news.jpg');
     background-size: cover;
     background-repeat: no-repeat;
 }
 
 @media (max-width: 480px) {
-    .contactus-header-container {
+    .news-header-container {
         height: 50vh;
         background-position: center;
+        margin-bottom: -21px;
     }
 }

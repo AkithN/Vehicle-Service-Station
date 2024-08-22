@@ -1,10 +1,38 @@
 import React, { useState } from 'react';
+import { Grid, Typography, Box } from '@mui/material';
+import PhoneIphoneSharpIcon from '@mui/icons-material/PhoneIphoneSharp';
+import DraftsSharpIcon from '@mui/icons-material/DraftsSharp';
+import LocationOnSharpIcon from '@mui/icons-material/LocationOnSharp';
+import EventAvailableSharpIcon from '@mui/icons-material/EventAvailableSharp';
 import './contact.css';
 
 const Contact = () => {
   const [userName, setUserName] = useState('');
   const [userEmail, setUserEmail] = useState('');
   const [message, setMessage] = useState('');
+
+  const contactDetails = [
+    {
+      icon: <PhoneIphoneSharpIcon color="primary" sx={{ fontSize: 50 }} />,
+      label: 'Phone No.',
+      value: '1-232-131-1400',
+    },
+    {
+      icon: <LocationOnSharpIcon color="primary" sx={{ fontSize: 50 }} />,
+      label: 'Address',
+      value: '2830 Patrick Street, Victoria TX, United States',
+    },
+    {
+      icon: <DraftsSharpIcon color="primary" sx={{ fontSize: 50 }} />,
+      label: 'E-mail',
+      value: 'mail@company.com',
+    },
+    {
+      icon: <EventAvailableSharpIcon color="primary" sx={{ fontSize: 50 }} />,
+      label: 'Opening Hours',
+      value: 'Monday - Friday (9:00 AM to 5:00 PM)',
+    },
+  ];
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -31,9 +59,23 @@ const Contact = () => {
   }
 
   return (
-    <section className="contact">
+    <>
+      <Box sx={{ mt: 4 , backgroundColor: '#001529'}}>
+        <Grid container spacing={4} justifyContent="center">
+          {contactDetails.map((detail, index) => (
+            <Grid item xs={12} md={2} key={index} textAlign="center">
+              {detail.icon}
+              <Typography variant="h6" sx={{ mt: 1 ,color: '#fff'}}>
+                {detail.label}
+              </Typography>
+              <Typography variant="body1" sx={{ mt: 1 ,mb: 2,color: '#fff' }}>{detail.value}</Typography>
+            </Grid>
+          ))}
+        </Grid>
+      </Box>
+
+      <section className="contact">
         <form onSubmit={handleSubmit} className="contact-form">
-          <h2 className="contact-title">Contact Us</h2>
 
           <label htmlFor="user_name" className="contact-label">Name</label>
           <input
@@ -75,7 +117,8 @@ const Contact = () => {
             Send
           </button>
         </form>
-    </section>
+      </section>
+    </>
   );
 };
 

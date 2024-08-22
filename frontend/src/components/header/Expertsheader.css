@@ -28,3 +28,22 @@
     font-size: 1rem;
     text-align: justify;
 }
+
+@media (max-width: 480px) {
+    .experts-header-container {
+        height: 50vh;
+        background-position: center;
+        background-position-x: 70%;
+        margin-bottom: 550px;
+    }
+
+    .experts-card {
+        min-width: 400px;
+        margin-left: -30px;
+        margin-top: 95%;
+    }
+
+    .experts-card-content p {
+        margin-bottom: -20px;
+    }
+}

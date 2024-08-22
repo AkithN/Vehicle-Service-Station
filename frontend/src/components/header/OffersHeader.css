@@ -29,3 +29,24 @@
     text-align: justify;
     margin-bottom: 20px;
 }
+
+@media (max-width: 480px) {
+    .offers-header-container {
+        height: 50vh;
+        background-position: center;
+        background-position-x: 70%;
+        margin-bottom: 460px;
+    }
+
+    .offers-card {
+        min-width: 400px;
+        margin-left: -30px;
+        margin-top: 86%;
+        margin-bottom: 20%;
+    }
+
+    .offers-card-content p 
+    {
+        margin-bottom: -20px;
+    }
+}

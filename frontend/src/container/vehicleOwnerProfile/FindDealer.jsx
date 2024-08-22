@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Typography, Button, TextField, MenuItem, Radio, RadioGroup, FormControlLabel, FormControl, FormLabel } from '@mui/material';
 import { styled } from '@mui/material/styles';
-import './FindDealer.css'; // Assuming you will add the CSS classes here
+import './FindDealer.css';
 
 const SearchContainer = styled('div')(({ theme }) => ({
   backgroundColor: theme.palette.background.paper,
@@ -9,6 +9,8 @@ const SearchContainer = styled('div')(({ theme }) => ({
   borderRadius: theme.shape.borderRadius,
   boxShadow: theme.shadows[4],
   textAlign: 'center',
+  maxWidth: '1800px',
+  margin: '0 auto',
 }));
 
 const SearchFilters = styled('div')(({ theme }) => ({
@@ -18,14 +20,22 @@ const SearchFilters = styled('div')(({ theme }) => ({
   gap: theme.spacing(2),
   width: '100%',
   marginTop: theme.spacing(2),
+
+  [theme.breakpoints.up('sm')]: {
+    flexDirection: 'row',
+  },
 }));
 
 const FilterOptions = styled('div')(({ theme }) => ({
   display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'space-between',
+  flexDirection: 'column',
   gap: theme.spacing(2),
   width: '100%',
+
+  [theme.breakpoints.up('sm')]: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
 }));
 
 const FindDealer = () => {
@@ -49,65 +59,58 @@ const FindDealer = () => {
             value={searchOption}
             onChange={handleSearchOptionChange}
             row
+            sx={{ justifyContent: 'center' }}
           >
             <FormControlLabel value="location" control={<Radio />} label="Location" />
             <FormControlLabel value="dealerName" control={<Radio />} label="Dealer Name" />
           </RadioGroup>
         </FormControl>
         <SearchFilters>
-          {searchOption === 'location' ? (
-            <FilterOptions>
-              <TextField
-                label="Zip Code, City, or State"
-                variant="outlined"
-                fullWidth
-              />
-              <TextField
-                select
-                label="Miles Radius"
-                variant="outlined"
-                fullWidth
-              >
-                <MenuItem value="50 miles">50 Miles</MenuItem>
-                <MenuItem value="25 miles">25 Miles</MenuItem>
-                <MenuItem value="100 miles">100 Miles</MenuItem>
-              </TextField>
-              <TextField
-                select
-                label="Brand"
-                variant="outlined"
-                fullWidth
-              >
-                <MenuItem value="brand1">Brand 1</MenuItem>
-                <MenuItem value="brand2">Brand 2</MenuItem>
-              </TextField>
-            </FilterOptions>
-          ) : (
-            <FilterOptions>
-              <TextField
-                label="Dealer Name"
-                variant="outlined"
-                fullWidth
-              />
-              <TextField
-                select
-                label="Brand"
-                variant="outlined"
-                fullWidth
-              >
-                <MenuItem value="brand1">Brand 1</MenuItem>
-                <MenuItem value="brand2">Brand 2</MenuItem>
-              </TextField>
-            </FilterOptions>
-          )}
+          <FilterOptions>
+            {searchOption === 'location' ? (
+              <>
+                <TextField
+                  label="City or Province"
+                  variant="outlined"
+                  fullWidth
+                />
+                <TextField
+                  select
+                  label="Service Type"
+                  variant="outlined"
+                  fullWidth
+                >
+                  <MenuItem value="type1">Type 1</MenuItem>
+                  <MenuItem value="type2">Type 2</MenuItem>
+                </TextField>
+              </>
+            ) : (
+              <>
+                <TextField
+                  label="Dealer Name"
+                  variant="outlined"
+                  fullWidth
+                />
+                <TextField
+                  select
+                  label="Service Type"
+                  variant="outlined"
+                  fullWidth
+                >
+                  <MenuItem value="type1">Type 1</MenuItem>
+                  <MenuItem value="type2">Type 2</MenuItem>
+                </TextField>
+              </>
+            )}
+          </FilterOptions>
+          <Button 
+            variant="contained" 
+            color="primary" 
+            sx={{ width: '100%', maxWidth: '300px', height: '55px' }}
+          >
+            Find A Dealer
+          </Button>
         </SearchFilters>
-        <Button 
-          variant="contained" 
-          color="primary" 
-          sx={{ marginTop: 3 }}
-        >
-          Find Dealer Near You
-        </Button>
       </SearchContainer>
     </div>
   );

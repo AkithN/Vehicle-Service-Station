@@ -122,3 +122,64 @@
   margin-bottom: 10px;
   font-weight: 400;
 }
+
+/* Mobile Responsiveness */
+@media (max-width: 480px) {
+  .scroll-container{
+    margin-top: 20px;
+  }
+
+  .scroll-content {
+    animation: logo-slider 20s linear infinite;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+  }
+
+  .scroll-content img {
+    min-height: 100px;
+    min-width: 100px;
+    margin: 20px 20px;
+  }
+
+  .review-container {
+    flex-direction: column;
+    max-height: 50%;
+    padding: 20px;
+    margin-top: 10px;
+  }
+
+  .review-box {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  .review-box img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .review-box h1 {
+    font-size: 24px;
+  }
+
+  .review-box h2 {
+    font-size: 18px;
+  }
+
+  .review-box p {
+    font-size: 16px;
+  }
+
+  .review-container .icon {
+    font-size: 30px;
+    top: 45%;
+  }
+
+  .review-container .icon.left {
+    left: 20px;
+  }
+
+  .review-container .icon.right {
+    right: 20px;
+  }
+}

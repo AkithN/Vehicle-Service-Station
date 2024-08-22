@@ -30,12 +30,18 @@ ul {
   padding: 70px 0;
 }
 
-.footer-company, .footer-help, .footer-shop, .footer-social {
+.footer-company,
+.footer-help,
+.footer-shop,
+.footer-social {
   width: 25%;
   padding: 0 15px;
 }
 
-.footer-company h4, .footer-help h4, .footer-shop h4, .footer-social h4 {
+.footer-company h4,
+.footer-help h4,
+.footer-shop h4,
+.footer-social h4 {
   font-size: 18px;
   color: #ffffff;
   text-transform: capitalize;
@@ -44,7 +50,10 @@ ul {
   position: relative;
 }
 
-.footer-company h4::before, .footer-help h4::before, .footer-shop h4::before, .footer-social h4::before {
+.footer-company h4::before,
+.footer-help h4::before,
+.footer-shop h4::before,
+.footer-social h4::before {
   content: '';
   position: absolute;
   left: 0;
@@ -55,11 +64,15 @@ ul {
   width: 50px;
 }
 
-.footer-company ul li:not(:last-child), .footer-help ul li:not(:last-child), .footer-shop ul li:not(:last-child) {
+.footer-company ul li:not(:last-child),
+.footer-help ul li:not(:last-child),
+.footer-shop ul li:not(:last-child) {
   margin-bottom: 10px;
 }
 
-.footer-company ul li a, .footer-help ul li a, .footer-shop ul li a {
+.footer-company ul li a,
+.footer-help ul li a,
+.footer-shop ul li a {
   font-size: 16px;
   text-transform: capitalize;
   color: #ffffff;
@@ -70,7 +83,9 @@ ul {
   transition: all 0.3s ease;
 }
 
-.footer-company ul li a:hover, .footer-help ul li a:hover, .footer-shop ul li a:hover {
+.footer-company ul li a:hover,
+.footer-help ul li a:hover,
+.footer-shop ul li a:hover {
   color: #ffffff;
   padding-left: 8px;
 }
@@ -95,14 +110,73 @@ ul {
 
 /* responsive */
 @media (max-width: 767px) {
-  .footer-company, .footer-help, .footer-shop, .footer-social {
+
+  .footer-company,
+  .footer-help,
+  .footer-shop,
+  .footer-social {
     width: 50%;
     margin-bottom: 30px;
   }
 }
 
 @media (max-width: 574px) {
-  .footer-company, .footer-help, .footer-shop, .footer-social {
+
+  .footer-company,
+  .footer-help,
+  .footer-shop,
+  .footer-social {
     width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-section {
+    padding: 30px 20px;
+    /* Reduced padding for smaller screens */
+    text-align: center;
+  }
+
+  .footer-row {
+    display: block;
+    text-align: center;
+  }
+
+  .footer-company,
+  .footer-help,
+  .footer-shop,
+  .footer-social {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 0;
+  }
+
+  .footer-company h4::before,
+  .footer-help h4::before,
+  .footer-shop h4::before,
+  .footer-social h4::before {
+    background-color: #e91e63;
+    height: 2px;
+    justify-content: center;
+    margin-left: 43%;
+  }
+
+  .footer-company ul li a,
+  .footer-help ul li a,
+  .footer-shop ul li a {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+
+  .footer-company h4,
+  .footer-help h4,
+  .footer-shop h4,
+  .footer-social h4 {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+
+  .footer-social .social-links a {
+    margin: 0 5px 10px 5px;
   }
 }

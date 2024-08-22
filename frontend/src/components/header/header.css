@@ -1,7 +1,7 @@
 .header-container {
   position: relative;
   width: 100%;
-  height: 100vh; /* Adjust this value as needed */
+  height: 100vh;
   overflow: hidden;
 }
 
@@ -47,4 +47,25 @@
   font-weight: 300;
   line-height: 1.5;
   color: #ffffff;
+}
+
+/* Mobile Responsiveness */
+
+@media (max-width: 480px) {
+  .home {
+    padding: 20px;
+    text-align: center;
+  }
+
+  /* .home h1 {
+    font-size: 1.8rem;
+    margin-top: 150%;
+  } */
+
+  .home h3 {
+    font-size: 1.2rem;
+    margin-top: 30%;
+    line-height: 1.5;
+    font-weight: 400;
+  }
 }
