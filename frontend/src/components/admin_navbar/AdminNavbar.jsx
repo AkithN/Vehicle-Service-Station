@@ -30,6 +30,9 @@ const AdminNavbar = () => {
         <li>
           <Link to="/admin/manage-contacts">Manage Contacts</Link>
         </li>
+        <li>
+          <Link to="/admin/manage-offers">Manage Offers</Link>
+        </li>
       </ul>
 
       <ul className="right-nav">

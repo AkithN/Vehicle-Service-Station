@@ -21,10 +21,13 @@ import Admin from './pages/adminpages/Admin';
 import ManageUsers from './pages/adminpages/users/ManageUsers';
 import UpdateUsers from './pages/adminpages/users/UpdateUsers';
 import ManageGarages from './pages/adminpages/garages/ManageGarages';
+import ManageOffers from './pages/adminpages/offers/ManageOffers';
 import ManageRoles from './pages/adminpages/roles/ManageRoles';
 import ManageContacts from './pages/adminpages/contact/ManageContacts';
 import AddRoles from './pages/adminpages/roles/AddRoles';
 import UpdateRoles from './pages/adminpages/roles/UpdateRoles';
+import AddOffers from './pages/adminpages/offers/AddOffers';
+import UpdateOffers from './pages/adminpages/offers/UpdateOffers';
 import VehicleOwnerFeatures from './pages/vehicleownerpage/Features';
 import Experts from "./pages/vehicleownerpage/Experts";
 import Aboutus from './pages/guestpage/Aboutus';
@@ -63,6 +66,9 @@ function App() {
           <Route path='/admin/update-users' element={<UpdateUsers />} />
           <Route path='/admin/manage-garages' element={<ManageGarages />} />
           <Route path='/admin/manage-roles' element={<ManageRoles />} />
+          <Route path='/admin/manage-offers' element={<ManageOffers />} />
+          <Route path='/admin/add-offers' element={<AddOffers />} />
+          <Route path='/admin/update-offers' element={<UpdateOffers />} />
           <Route path='/admin/manage-contacts' element={<ManageContacts />} />
           <Route path='/admin/add-roles' element={<AddRoles />} />
           <Route path='/admin/update-roles' element={<UpdateRoles />} />
