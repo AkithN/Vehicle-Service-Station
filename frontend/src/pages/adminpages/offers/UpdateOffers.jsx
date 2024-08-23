@@ -158,7 +158,7 @@ const UpdateOffer = () => {
               <Button
                 variant="outlined"
                 color="secondary"
-                onClick={() => navigate('/admin/manage-offers')}
+                onClick={() => navigate('/garageowner')}
                 sx={{ ml: 2 }}
               >
                 Cancel

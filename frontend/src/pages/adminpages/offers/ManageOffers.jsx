@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import {
   Table,
   TableBody,
@@ -53,6 +53,8 @@ const ManageOffers = () => {
   const [snackbarMessage, setSnackbarMessage] = useState('');
   const [snackbarSeverity, setSnackbarSeverity] = useState('success');
 
+  const navigate = useNavigate();
+
   useEffect(() => {
     fetchOffers();
   }, []);
@@ -91,6 +93,10 @@ const ManageOffers = () => {
   const formatDate = (dateString) => {
     const date = new Date(dateString);
     return date.toISOString().split('T')[0];
+  };
+
+  const handleBack = () => {
+    navigate(-1); // This will navigate back to the previous page
   };
 
   return (
@@ -174,8 +180,16 @@ const ManageOffers = () => {
               variant="contained"
               color="secondary"
               onClick={() => window.print()}
+              sx={{ mr: 2 }} // Adds margin-right to separate the buttons
             >
               Print
+            </Button>
+            <Button
+              variant="contained"
+              color="primary"
+              onClick={() => navigate('/garageowner')}
+            >
+              Back
             </Button>
           </Box>
         </Container>
