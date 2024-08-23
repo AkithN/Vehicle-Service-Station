@@ -1,0 +1,14 @@
+.selected-garage-header-container{
+    height: 70vh;
+    background-image: url('../../assets/garageheader.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+@media (max-width: 480px) {
+    .selected-garage-header-container{
+        height: 50vh;
+        background-position: center;
+        background-position-y: 80px;
+    }
+}

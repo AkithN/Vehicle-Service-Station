@@ -1,0 +1,26 @@
+.booking-container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #001529;
+  }
+  
+  .booking-form {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .booking-card {
+    margin-top: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+  }
+  
+  .booking-card p {
+    margin: 8px 0;
+  }
+  

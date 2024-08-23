@@ -30,7 +30,7 @@ const GuestNews = () => {
             <Typography variant="h2" className="Guest-News-heading" gutterBottom>
                 News
             </Typography>
-            <Grid container spacing={2}>
+            <Grid container spacing={6}>
                 {newsItems.map((item, index) => (
                     <Grid item xs={12} sm={6} md={4} key={index}>
                         <Card className="Guest-News-card" sx={{ maxWidth: 345 }}>

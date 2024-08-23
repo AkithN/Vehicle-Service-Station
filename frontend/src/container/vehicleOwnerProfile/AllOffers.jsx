@@ -7,8 +7,8 @@ const AllOffers = () => {
     return (
         <div className="offers-background">
             <h1 className="offers-title">ADDITIONAL OFFERS & REBATES</h1>
-            <Box sx={{ flexGrow: 1, paddingBottom: 5 ,marginLeft: 10, marginRight: 10}}>
-                <Grid container spacing={8} justifyContent="center" >
+            <Box sx={{ flexGrow: 1, paddingBottom: 5 ,marginLeft: 3, marginRight: 3}}>
+                <Grid container spacing={2} justifyContent="center" >
                     {[...Array(12)].map((_, index) => (
                         <Grid item xs={12} sm={6} md={3} key={index}>
                             <Offers />

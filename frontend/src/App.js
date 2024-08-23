@@ -39,8 +39,8 @@ import Packages from './pages/guestpage/Packages';
 import News from './pages/guestpage/News';
 import Contactus from './pages/guestpage/Contactus';
 import VContact from './pages/vehicleownerpage/Contact';
-import BookingForm from './container/vehicleOwnerProfile/InquiryForm';
 import Dealer from './pages/vehicleownerpage/FindDealer';
+import VSelectedGarage from './pages/vehicleownerpage/SelectedGarage';
 
 function App() {
   return (
@@ -86,7 +86,7 @@ function App() {
           <Route path='/news' element={<News/>}/>
           <Route path='/contact' element={<Contactus/>}/>
           <Route path='/contactus' element={<VContact/>}/>
-          <Route path='/BookingForm' element={<BookingForm />} />
+          <Route path='/selectedGarage' element={<VSelectedGarage />} />
         </Routes>
       </div>
     </Router>

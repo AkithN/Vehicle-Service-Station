@@ -50,7 +50,6 @@
 }
 
 .read-more-button {
-  margin-top: 10px;
   background-color: #1890ff;
   border: none;
   color: white;
@@ -58,6 +57,7 @@
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s, transform 0.3s;
+  margin-left: 180px;
 }
 
 .read-more-button:hover {

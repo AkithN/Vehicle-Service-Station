@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Button, Card } from 'antd';
 import './features.css';
 import mission from '../../assets/mission.jpg';
@@ -8,14 +9,10 @@ import team from '../../assets/team.jpg';
 import joinus from '../../assets/joinus.jpg';
 
 const Features = () => {
-  const [showModal, setShowModal] = useState(false);
+  const navigate = useNavigate();
 
   const handleReadMoreClick = () => {
-    setShowModal(true);
-  };
-
-  const handleCloseModal = () => {
-    setShowModal(false);
+    navigate('/aboutus');
   };
 
   return (
@@ -44,7 +41,7 @@ const Features = () => {
           <div className="image-container">
             <img src={offer} alt="What We Offer" />
           </div>
-          <p>We offer a wide range of service providers, from large dealerships to small, local garages. Our comprehensive listings ensure that you can find the right service provider for your needs.</p>
+          <p>We offer a wide range of service providers, from large dealerships to small, local garages. Our comprehensive listings ensure that you can find the right service provider for your needs.Our platform connects you with trusted professionals for vehicle services.</p>
           <Button type="primary" className="read-more-button" onClick={handleReadMoreClick}>Read More</Button>
         </Card>
       </div>
@@ -64,19 +61,10 @@ const Features = () => {
           <div className="image-container">
             <img src={joinus} alt="Join Us" />
           </div>
-          <p>Whether you are a vehicle owner looking for reliable services or a service provider aiming to reach more customers, CarCraft is here to help. Join us today and experience the future of vehicle maintenance.</p>
+          <p>Whether you are a vehicle owner looking for reliable services or a service provider aiming to reach more customers, CarCraft is here to help. Join us today and experience the future of vehicle maintenance.CarCraft connects vehicle owners with reliable services and helps service providers reach more customers.</p>
           <Button type="primary" className="read-more-button" onClick={handleReadMoreClick}>Read More</Button>
         </Card>
       </div>
-
-      {showModal && (
-        <div className="modal">
-          <div className="modal-content">
-            <span className="close-button" onClick={handleCloseModal}>&times;</span>
-              <p>Content goes here....</p>
-          </div>
-        </div>
-      )}
     </section>
   );
 };
