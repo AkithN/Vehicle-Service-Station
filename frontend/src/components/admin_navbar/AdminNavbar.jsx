@@ -22,9 +22,6 @@ const AdminNavbar = () => {
           <Link to="/admin/manage-users">Manage Users</Link>
         </li>
         <li>
-          <Link to="/admin/manage-garages">Manage Garages</Link>
-        </li>
-        <li>
           <Link to="/admin/manage-roles">Manage Roles</Link>
         </li>
         <li>

@@ -20,7 +20,6 @@ import VehicleOffers from './pages/vehicleownerpage/Offers';
 import Admin from './pages/adminpages/Admin';
 import ManageUsers from './pages/adminpages/users/ManageUsers';
 import UpdateUsers from './pages/adminpages/users/UpdateUsers';
-import ManageGarages from './pages/adminpages/garages/ManageGarages';
 import ManageOffers from './pages/adminpages/offers/ManageOffers';
 import ManageRoles from './pages/adminpages/roles/ManageRoles';
 import ManageContacts from './pages/adminpages/contact/ManageContacts';
@@ -67,7 +66,6 @@ function App() {
           <Route path='/vehicleowner' element={< Vehicleowner />} />
           <Route path='/admin/manage-users' element={<ManageUsers />} />
           <Route path='/admin/update-users' element={<UpdateUsers />} />
-          <Route path='/admin/manage-garages' element={<ManageGarages />} />
           <Route path='/admin/manage-roles' element={<ManageRoles />} />
           <Route path='/admin/manage-offers' element={<ManageOffers />} />
           <Route path='/admin/add-offers' element={<AddOffers />} />
