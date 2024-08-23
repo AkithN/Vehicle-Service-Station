@@ -30,6 +30,9 @@ const AdminNavbar = () => {
         <li>
           <Link to="/admin/manage-packages">Manage Packages</Link>
         </li>
+        <li>
+          <Link to="/admin/manage-news">News</Link>
+        </li>
       </ul>
 
       <ul className="right-nav">

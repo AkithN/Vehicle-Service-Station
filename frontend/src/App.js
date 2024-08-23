@@ -40,7 +40,8 @@ import Contactus from './pages/guestpage/Contactus';
 import VContact from './pages/vehicleownerpage/Contact';
 import Dealer from './pages/vehicleownerpage/FindDealer';
 import VSelectedGarage from './pages/vehicleownerpage/SelectedGarage';
-
+import AddNews from './pages/adminpages/news/AddNews';
+import ManageNews from './pages/adminpages/news/ManageNews';
 
 
 function App() {
@@ -87,6 +88,8 @@ function App() {
           <Route path='/contact' element={<Contactus/>}/>
           <Route path='/contactus' element={<VContact/>}/>
           <Route path='/selectedGarage' element={<VSelectedGarage />} />
+          <Route path='/admin/add-news' element={<AddNews />} />
+          <Route path='/admin/manage-news' element={<ManageNews />} />
         </Routes>
       </div>
     </Router>
