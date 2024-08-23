@@ -95,10 +95,6 @@ const ManageOffers = () => {
     return date.toISOString().split('T')[0];
   };
 
-  const handleBack = () => {
-    navigate(-1); // This will navigate back to the previous page
-  };
-
   return (
     <ThemeProvider theme={theme}>
       <Box

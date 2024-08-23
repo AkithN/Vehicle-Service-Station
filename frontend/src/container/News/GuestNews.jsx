@@ -1,29 +1,21 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import { Container, Grid, Card, CardContent, Typography, CardMedia } from '@mui/material';
 import './GuestNews.css';
-import image1 from '../../assets/News1.jpg';
-import image2 from '../../assets/News2.jpg';
-import image3 from '../../assets/News3.jpg';
 
 const GuestNews = () => {
+    const [newsItems, setNewsItems] = useState([]);
 
-    const newsItems = [
-        {
-            title: 'Breaking News: React 18 Released',
-            description: 'React 18 introduces new features and improvements to enhance the user experience.',
-            image: image1,
-        },
-        {
-            title: 'Event: React Conference 2024',
-            description: 'Join us for a comprehensive conference featuring talks and workshops on React.',
-            image: image2,
-        },
-        {
-            title: 'New Update: Material UI v5',
-            description: 'Material UI has released a new version with enhanced components and theming capabilities.',
-            image: image3,
-        },
-    ];
+    useEffect(() => {
+        // Fetch news data from the backend
+        axios.get('http://localhost:5000/api/news')
+            .then(response => {
+                setNewsItems(response.data);
+            })
+            .catch(error => {
+                console.error('Error fetching news data:', error);
+            });
+    }, []);
 
     return (
         <Container className="Guest-News-container">
@@ -31,13 +23,20 @@ const GuestNews = () => {
                 News
             </Typography>
             <Grid container spacing={6}>
-                {newsItems.map((item, index) => (
-                    <Grid item xs={12} sm={6} md={4} key={index}>
+                {newsItems.map((item) => (
+                    <Grid item xs={12} sm={6} md={4} key={item.newsId}>
                         <Card className="Guest-News-card" sx={{ maxWidth: 345 }}>
-                            {item.image && <CardMedia component="img" className="Guest-News-card-media" image={item.image} alt={item.title} />}
+                            {item.image && (
+                                <CardMedia
+                                    component="img"
+                                    className="Guest-News-card-media"
+                                    image={`http://localhost:5000${item.image}`}
+                                    alt={item.topic}
+                                />
+                            )}
                             <CardContent>
                                 <Typography gutterBottom variant="h5" component="div" className="Guest-News-card-title">
-                                    {item.title}
+                                    {item.topic}
                                 </Typography>
                                 <Typography variant="body2" className="Guest-News-card-description">
                                     {item.description}

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Form, Input, Select, Checkbox, Button, DatePicker, TimePicker, Row, Col, Card } from 'antd';
+import { Form, Input, Select, Checkbox, Button, DatePicker, TimePicker, Row, Col, Card, message } from 'antd';
+import axios from 'axios';
 import './InquiryForm.css';
 
 const { TextArea } = Input;
@@ -21,9 +22,16 @@ const BookingForm = () => {
   const [submittedData, setSubmittedData] = useState(null);
 
   const onFinish = (values) => {
-    setSubmittedData(values);
+    console.log('Form Data:', values);
+    axios.post('http://localhost:5000/api/inquiries', values)
+      .then(response => {
+        console.log('Success:', response);
+      })
+      .catch(error => {
+        console.error('There was an error!', error);
+      });
   };
-
+  
   return (
     <div className="booking-container">
       <Form 
@@ -46,7 +54,7 @@ const BookingForm = () => {
           </Col>
           <Col span={12}>
             <Form.Item 
-              name="phone" 
+              name="phoneNumber" 
               label="Phone Number" 
               rules={[{ required: true, message: 'Please input your phone number!' }]}
             >
@@ -139,12 +147,12 @@ const BookingForm = () => {
       {submittedData && (
         <Card title="Booking Summary" className="booking-card">
           <p><strong>Name:</strong> {submittedData.name}</p>
-          <p><strong>Phone Number:</strong> {submittedData.phone}</p>
+          <p><strong>Phone Number:</strong> {submittedData.phoneNumber}</p>
           <p><strong>Vehicle Type:</strong> {submittedData.vehicleType}</p>
           <p><strong>Vehicle Number:</strong> {submittedData.vehicleNumber}</p>
           <p><strong>Selected Services:</strong> {submittedData.services ? submittedData.services.join(', ') : 'None'}</p>
-          <p><strong>Date:</strong> {submittedData.date ? submittedData.date.format('YYYY-MM-DD') : ''}</p>
-          <p><strong>Time:</strong> {submittedData.time ? submittedData.time.format('HH:mm') : ''}</p>
+          <p><strong>Date:</strong> {submittedData.selectDate}</p>
+          <p><strong>Time:</strong> {submittedData.selectTime}</p>
           <p><strong>Additional Services:</strong> {submittedData.additionalServices}</p>
         </Card>
       )}

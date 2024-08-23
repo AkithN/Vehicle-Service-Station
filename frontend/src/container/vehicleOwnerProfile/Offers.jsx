@@ -11,7 +11,6 @@ const Offers = () => {
   const [offers, setOffers] = useState([]);
 
   useEffect(() => {
-    // Fetch offers from backend
     const fetchOffers = async () => {
       try {
         const response = await fetch('http://localhost:5000/api/offers');
