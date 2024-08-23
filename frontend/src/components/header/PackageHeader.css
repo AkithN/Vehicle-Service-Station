@@ -1,0 +1,16 @@
+.package-header-container {
+    height: 70vh;
+    background-image: url('../../assets/packages-header.jpg');
+    background-size: cover;
+    background-position: -80px;
+    background-position-y: 70px;
+}
+
+@media (max-width: 480px) {
+    .package-header-container {
+        height: 50vh;
+        background-position: center;
+        background-position-y: 70px;
+        background-position-x: 500px;
+    }
+}
