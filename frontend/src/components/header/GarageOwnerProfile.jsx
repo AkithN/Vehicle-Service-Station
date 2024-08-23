@@ -133,7 +133,7 @@ export default function GarageOwnerProfile({ children }) {
         navigate('/account');
         break;
       case 'Logout':
-        navigate('/login');
+        navigate('/');
         break;
       default:
         break;

@@ -2,14 +2,14 @@ import React from 'react'
 import Navbar from '../../components/navbar/Navbar'
 import Footer from '../../components/footer/Footer'
 import ServicesHeader from '../../components/header/ServicesHeader'
-import Services from '../../container/services/Services'
+import VehicleOwnerFeature from '../../container/vehicleOwnerProfile/vehicleOwnerFeatures'
 
 const VServices = () => {
   return (
     <div>
       <Navbar />
       <ServicesHeader />
-      <Services />
+      <VehicleOwnerFeature />
       <Footer />
     </div>
   )
