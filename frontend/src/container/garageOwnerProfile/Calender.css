@@ -1,0 +1,33 @@
+.calendar-container {
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 100%;
+  }
+  
+  @media (min-width: 768px) {
+    .calendar-container {
+      height: 900px;
+    }
+  }
+  
+  @media (max-width: 767px) {
+    .calendar-container {
+      height: 600px;
+    }
+  
+    .rbc-calendar {
+      font-size: 0.9em;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .calendar-container {
+        max-width: 500px;
+        height: 800px;
+    }
+  
+    .rbc-calendar {
+      font-size: 0.8em;
+    }
+  }
+  

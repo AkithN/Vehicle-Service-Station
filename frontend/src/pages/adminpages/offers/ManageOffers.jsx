@@ -15,7 +15,6 @@ import {
   Snackbar,
   Alert,
 } from '@mui/material';
-import AdminNavbar from '../../../components/admin_navbar/AdminNavbar';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import axios from 'axios';
 
@@ -104,7 +103,6 @@ const ManageOffers = () => {
           flexDirection: 'column',
         }}
       >
-        <AdminNavbar />
         <Container maxWidth="lg" sx={{ mt: 4 }}>
           <Typography variant="h2" align="center" gutterBottom>
             Manage Offers

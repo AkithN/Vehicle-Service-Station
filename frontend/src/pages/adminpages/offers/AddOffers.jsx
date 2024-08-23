@@ -9,8 +9,7 @@ import {
   Alert,
 } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { useNavigate } from 'react-router-dom';
-import AdminNavbar from '../../../components/admin_navbar/AdminNavbar';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate
 
 const theme = createTheme({
   palette: {
@@ -91,7 +90,6 @@ const AddOffers = () => {
           flexDirection: 'column',
         }}
       >
-        <AdminNavbar />
         <Container maxWidth="sm" sx={{ mt: 4 }}>
           <Typography variant="h2" align="center">
             Add New Offer

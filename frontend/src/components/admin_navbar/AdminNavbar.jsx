@@ -28,9 +28,6 @@ const AdminNavbar = () => {
           <Link to="/admin/manage-contacts">Manage Contacts</Link>
         </li>
         <li>
-          <Link to="/admin/manage-offers">Manage Offers</Link>
-        </li>
-        <li>
           <Link to="/admin/manage-packages">Manage Packages</Link>
         </li>
       </ul>

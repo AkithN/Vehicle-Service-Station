@@ -1,13 +1,13 @@
 import React from 'react'
 import GarageOwnerProfile from '../../components/header/GarageOwnerProfile'
-import Subscription from '../../container/garageOwnerProfile/Subscription'
+import Packages from '../../container/packages/GuestPackages'
 import Footer from '../../components/footer/Footer'
 
 const GarageSubscription = () => {
   return (
     <div>
         <GarageOwnerProfile>
-            <Subscription />
+            <Packages />
             
         </GarageOwnerProfile>
         < Footer />

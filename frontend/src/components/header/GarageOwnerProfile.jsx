@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import avatar from '../../assets/avatar.jpg';
 import { styled } from '@mui/material/styles';
@@ -34,23 +35,10 @@ import Paper from '@mui/material/Paper';
 import moment from 'moment';
 
 import './garageOwnerProfile.css';
+import { message } from 'antd';
 
 const drawerWidth = 240;
-
 const settings = ['Profile', 'Account', 'Logout'];
-
-const notifications = [
-  { id: 1, message: "New customer booked a service.", time: moment().subtract(2, 'hours') },
-  { id: 2, message: "Subscription payment is due.", time: moment().subtract(1, 'day') },
-  { id: 3, message: "Your monthly report is ready.", time: moment().subtract(3, 'days') },
-  { id: 4, message: "New offer created successfully.", time: moment().subtract(5, 'hours') },
-  { id: 5, message: "Your monthly report is ready.", time: moment().subtract(1, 'hours') },
-  { id: 6, message: "New customer booked a service.", time: moment().subtract(2, 'days') },
-  { id: 7, message: "New offer created successfully.", time: moment().subtract(4, 'hours') },
-  { id: 8, message: "Subscription payment is due.", time: moment().subtract(6, 'days') },
-  { id: 9, message: "Your monthly report is ready.", time: moment().subtract(3, 'hours') },
-  { id: 10, message: "New customer booked a service.", time: moment().subtract(2, 'days') },
-];
 
 const AppBar = styled(MuiAppBar, {
   shouldForwardProp: (prop) => prop !== 'open',
@@ -98,10 +86,27 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
 );
 
 export default function GarageOwnerProfile({ children }) {
-  const [open, setOpen] = React.useState(false);
-  const [anchorElNotifications, setAnchorElNotifications] = React.useState(null);
-  const [anchorElUser, setAnchorElUser] = React.useState(null);
+  const [open, setOpen] = useState(false);
+  const [anchorElNotifications, setAnchorElNotifications] = useState(null);
+  const [anchorElUser, setAnchorElUser] = useState(null);
+  const [notifications, setNotifications] = useState([]);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    axios.get('http://localhost:5000/api/inquiries')
+      .then((response) => {
+        const fetchedNotifications = response.data.map((inquiry) => ({
+          id: inquiry.inquiry_id,
+          subject: inquiry.subject,
+          message: inquiry.message,
+          time: inquiry.created_at,
+        }));
+        setNotifications(fetchedNotifications);
+      })
+      .catch((error) => {
+        console.error('Error fetching notifications:', error);
+      });
+  }, []);
 
   const toggleDrawer = () => {
     setOpen(!open);
@@ -161,11 +166,11 @@ export default function GarageOwnerProfile({ children }) {
             variant="h6"
             color="inherit"
             noWrap
-            sx={{ flexGrow: 1 }}         
+            sx={{ flexGrow: 1 }}
           >
             CarCraft
           </Typography>
-        
+
           <Box sx={{ flexGrow: 0 }}>
             <Button onClick={() => handleNavigation('/RegisterForm')} variant="contained">Register Form</Button>
             <Tooltip title="Open notifications">
@@ -199,11 +204,10 @@ export default function GarageOwnerProfile({ children }) {
                 elevation={0}
                 sx={{ maxWidth: 320, maxHeight: 200, overflowY: 'auto' }}
               >
-                {notifications.map((notification, index) => (
+                {notifications.map((notification) => (
                   <MenuItem
                     key={notification.id}
                     onClick={handleCloseNotificationsMenu}
-                    sx={{ display: index < 0 ? 'flex' : 'block' }}
                   >
                     <Typography variant="body2" sx={{ marginRight: '10px' }}>
                       {notification.message}
@@ -277,6 +281,12 @@ export default function GarageOwnerProfile({ children }) {
             </ListItemIcon>
             <ListItemText primary="Customers" />
           </ListItemButton>
+          <ListItemButton onClick={() => handleNavigation('/garagesubscription')}>
+            <ListItemIcon>
+              <SubscriptionsIcon />
+            </ListItemIcon>
+            <ListItemText primary="Subscriptions" />
+          </ListItemButton>
           <ListItemButton onClick={() => handleNavigation('/garageoffers')}>
             <ListItemIcon>
               <LocalOfferRoundedIcon />
@@ -288,12 +298,6 @@ export default function GarageOwnerProfile({ children }) {
               <BarChartIcon />
             </ListItemIcon>
             <ListItemText primary="Reports" />
-          </ListItemButton>
-          <ListItemButton onClick={() => handleNavigation('/garagesubscription')}>
-            <ListItemIcon>
-              <SubscriptionsIcon />
-            </ListItemIcon>
-            <ListItemText primary="Subscriptions" />
           </ListItemButton>
           <Divider sx={{ my: 1 }} />
           <ListSubheader component="div" inset>
@@ -319,6 +323,7 @@ export default function GarageOwnerProfile({ children }) {
           </ListItemButton>
         </List>
       </Drawer>
+
       <Box
         component="main"
         sx={{
@@ -327,11 +332,10 @@ export default function GarageOwnerProfile({ children }) {
           flexGrow: 1,
           height: '100vh',
           overflow: 'auto',
-          marginTop: '50px',
         }}
       >
         <Toolbar />
-        {children}
+        <Box sx={{ p: 3 }}>{children}</Box>
       </Box>
     </Box>
   );
