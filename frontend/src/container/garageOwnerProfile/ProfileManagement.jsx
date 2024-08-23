@@ -10,18 +10,48 @@ const ProfileManagement = () => {
   };
 
   return (
-    <Grid container justifyContent="center" alignItems="center" style={{ minHeight: '100vh' }}>
+    <Grid
+      container
+      justifyContent="center"
+      alignItems="center"
+      style={{
+        minHeight: '100vh',
+        background: 'linear-gradient(135deg, #72edf2 10%, #5151e5 100%)',
+        padding: '20px',
+      }}
+    >
       <Grid item xs={12} md={4}>
-        <Card>
+        <Card
+          style={{
+            borderRadius: '15px',
+            boxShadow: '0 10px 30px rgba(0, 0, 0, 0.1)',
+            backgroundColor: '#ffffff',
+          }}
+        >
           <CardContent>
             <Grid container spacing={2} alignItems="center">
               <Grid item>
-                <Avatar src={profileData.avatarUrl} alt={profileData.name} sx={{ width: 56, height: 56 }} />
+                <Avatar
+                  src={profileData.avatarUrl}
+                  alt={profileData.name}
+                  sx={{
+                    width: 80,
+                    height: 80,
+                    border: '3px solid #5151e5',
+                    backgroundColor: '#e0e0e0',
+                  }}
+                />
               </Grid>
               <Grid item>
-                <Typography variant="h5">{profileData.name}</Typography>
-                <Typography variant="body2" color="textSecondary">{profileData.email}</Typography>
-                <Typography variant="body2" color="textSecondary">{profileData.role}</Typography>
+                <Typography variant="h5" style={{ fontWeight: 'bold', color: '#333' }}>
+                  {profileData.name || 'User Name'}
+                </Typography>
+                <Typography variant="body2" style={{ color: '#777' }}>
+                  {profileData.email || 'user@example.com'}
+                </Typography>
+                <Typography variant="body2" style={{ color: '#999' }}>
+                  {profileData.role || 'Role'}
+                </Typography>
               </Grid>
             </Grid>
           </CardContent>
