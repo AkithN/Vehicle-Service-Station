@@ -37,7 +37,7 @@ const GuestPackages = () => {
                 <CardMedia
                   component="img"
                   className="Guest-Packages-card-media"
-                  image={`http://localhost:5000/{pkg.packageImage}`}
+                  image={`http://localhost:5000${pkg.packageImage}`}  // Corrected line
                   alt={pkg.packageName}
                 />
               )}

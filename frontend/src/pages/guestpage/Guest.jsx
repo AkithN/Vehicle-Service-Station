@@ -9,6 +9,7 @@ import Services from '../../container/services/Services';
 import Reviews from '../../container/reviews/CustomerReviews';
 import Features from '../../container/features/Features';
 import GuestNews from '../../container/News/GuestNews';
+import Packages from '../../container/packages/GuestPackages';
 
 const Guest = () => {
   return (
@@ -19,6 +20,7 @@ const Guest = () => {
       <Features />
       <AboutBox />
       <Services />
+      <Packages />
       <Reviews />
       <GuestNews />
       <Contact />

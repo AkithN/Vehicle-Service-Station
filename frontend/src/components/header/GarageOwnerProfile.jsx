@@ -35,7 +35,6 @@ import Paper from '@mui/material/Paper';
 import moment from 'moment';
 
 import './garageOwnerProfile.css';
-import { message } from 'antd';
 
 const drawerWidth = 240;
 const settings = ['Profile', 'Account', 'Logout'];
