@@ -77,7 +77,7 @@ function App() {
           <Route path='/admin/update-roles' element={<UpdateRoles />} />
           <Route path='/admin/manage-packages' element={<ManagePackages />} />
           <Route path='/admin/add-packages' element={<AddPackages />} />
-          <Route path='/admin/update-packages' element={<UpdatePackages />} />
+          <Route path='/admin/update-packages/:id' element={<UpdatePackages />} />
           <Route path='/features' element={<VehicleOwnerFeatures />} />
           <Route path='/experts' element={<Experts />} />
           <Route path='/aboutus' element={<Aboutus/>}/>

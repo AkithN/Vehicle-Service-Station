@@ -9,100 +9,100 @@ import {
   Alert,
 } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import AdminNavbar from '../../../components/admin_navbar/AdminNavbar';
 
 const theme = createTheme({
   palette: {
-    primary: {
-      main: '#1a237e',
-    },
-    secondary: {
-      main: '#ff7043',
-    },
-    error: {
-      main: '#d32f2f',
-    },
-    background: {
-      default: '#f5f5f5',
-      paper: '#ffffff',
-    },
+    primary: { main: '#1a237e' },
+    secondary: { main: '#ff7043' },
+    error: { main: '#d32f2f' },
+    background: { default: '#f5f5f5', paper: '#ffffff' },
   },
   typography: {
     fontFamily: 'Roboto, sans-serif',
-    h2: {
-      fontWeight: 'bold',
-      color: '#333',
-      marginBottom: '1rem',
-    },
-    button: {
-      textTransform: 'none',
-    },
+    h2: { fontWeight: 'bold', color: '#333', marginBottom: '1rem' },
+    button: { textTransform: 'none' },
   },
 });
 
 const UpdatePackages = () => {
-  const location = useLocation();
-  const navigate = useNavigate();
-  const packageToUpdate = location.state?.pkg || {};
-
-  const [packageName, setPackageName] = useState(packageToUpdate.packageName || '');
-  const [packageDescription, setPackageDescription] = useState(packageToUpdate.packageDescription || '');
-  const [price, setPrice] = useState(packageToUpdate.price || '');
+  const [packageName, setPackageName] = useState('');
+  const [packageDescription, setPackageDescription] = useState('');
+  const [price, setPrice] = useState('');
+  const [packageImage, setPackageImage] = useState(null);
   const [openSnackbar, setOpenSnackbar] = useState(false);
   const [snackbarMessage, setSnackbarMessage] = useState('');
   const [snackbarSeverity, setSnackbarSeverity] = useState('success');
+  const { id } = useParams(); // Extract package ID from URL
+  const navigate = useNavigate();
 
   useEffect(() => {
-    if (!packageToUpdate.packageId) {
-      navigate('/admin/manage-packages');
-    }
-  }, [packageToUpdate.packageId, navigate]);
-
-  const handleUpdate = async (e) => {
-    e.preventDefault();
-  
-    const updatedPackage = {
-      packageName,
-      packageDescription,
-      price,
-    };
-  
-    try {
-      const response = await fetch(
-        `http://localhost:5000/api/packages/${packageToUpdate.packageId}`,
-        {
-          method: 'PUT',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(updatedPackage),
+    const fetchPackage = async () => {
+      try {
+        const response = await fetch(`http://localhost:5000/api/packages/${id}`);
+        if (response.ok) {
+          const packageData = await response.json();
+          setPackageName(packageData.packageName);
+          setPackageDescription(packageData.packageDescription);
+          setPrice(packageData.price);
+        } else {
+          setSnackbarMessage('Failed to load package details');
+          setSnackbarSeverity('error');
+          setOpenSnackbar(true);
         }
-      );
-  
+      } catch (error) {
+        console.error('Error:', error);
+        setSnackbarMessage('An error occurred while fetching package details');
+        setSnackbarSeverity('error');
+        setOpenSnackbar(true);
+      }
+    };
+
+    fetchPackage();
+  }, [id]);
+
+  const handleImageChange = (e) => {
+    setPackageImage(e.target.files[0]);
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const formData = new FormData();
+    formData.append('packageName', packageName);
+    formData.append('packageDescription', packageDescription);
+    formData.append('price', price);
+    if (packageImage) {
+      formData.append('packageImage', packageImage);
+    }
+
+    try {
+      const response = await fetch(`http://localhost:5000/api/packages/${id}`, {
+        method: 'PUT',
+        body: formData,
+      });
+
       if (response.ok) {
         setSnackbarMessage('Package updated successfully');
         setSnackbarSeverity('success');
-        setOpenSnackbar(true);
-        setTimeout(() => {
-          navigate('/admin/manage-packages'); // Redirect to ManagePackages.jsx
-        }, 2000); // Delay to show the snackbar message
+        navigate('/admin/manage-packages'); // Redirect to the packages list
       } else {
-        setSnackbarMessage('Failed to update package');
+        const errorData = await response.json();
+        setSnackbarMessage(errorData.message || 'Failed to update package');
         setSnackbarSeverity('error');
-        setOpenSnackbar(true);
       }
     } catch (error) {
       console.error('Error:', error);
       setSnackbarMessage('An error occurred');
       setSnackbarSeverity('error');
+    } finally {
       setOpenSnackbar(true);
     }
   };
-  
 
   const handleCancel = () => {
-    navigate(-1);
+    navigate('/admin/manage-packages'); // Redirect to the packages list
   };
 
   return (
@@ -120,7 +120,7 @@ const UpdatePackages = () => {
           <Typography variant="h2" align="center">
             Update Package
           </Typography>
-          <Box component="form" onSubmit={handleUpdate} sx={{ mt: 3 }}>
+          <Box component="form" onSubmit={handleSubmit} sx={{ mt: 3 }}>
             <TextField
               fullWidth
               label="Package Name"
@@ -147,6 +147,13 @@ const UpdatePackages = () => {
               onChange={(e) => setPrice(e.target.value)}
               margin="normal"
               required
+            />
+            <TextField
+              fullWidth
+              type="file"
+              onChange={handleImageChange}
+              margin="normal"
+              inputProps={{ accept: 'image/*' }}
             />
             <Box sx={{ textAlign: 'center', mt: 2 }}>
               <Button variant="contained" color="primary" type="submit">

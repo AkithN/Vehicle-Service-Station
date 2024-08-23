@@ -14,30 +14,15 @@ import AdminNavbar from '../../../components/admin_navbar/AdminNavbar';
 
 const theme = createTheme({
   palette: {
-    primary: {
-      main: '#1a237e',
-    },
-    secondary: {
-      main: '#ff7043',
-    },
-    error: {
-      main: '#d32f2f',
-    },
-    background: {
-      default: '#f5f5f5',
-      paper: '#ffffff',
-    },
+    primary: { main: '#1a237e' },
+    secondary: { main: '#ff7043' },
+    error: { main: '#d32f2f' },
+    background: { default: '#f5f5f5', paper: '#ffffff' },
   },
   typography: {
     fontFamily: 'Roboto, sans-serif',
-    h2: {
-      fontWeight: 'bold',
-      color: '#333',
-      marginBottom: '1rem',
-    },
-    button: {
-      textTransform: 'none',
-    },
+    h2: { fontWeight: 'bold', color: '#333', marginBottom: '1rem' },
+    button: { textTransform: 'none' },
   },
 });
 
@@ -45,24 +30,32 @@ const AddPackages = () => {
   const [packageName, setPackageName] = useState('');
   const [packageDescription, setPackageDescription] = useState('');
   const [price, setPrice] = useState('');
+  const [packageImage, setPackageImage] = useState(null);
   const [openSnackbar, setOpenSnackbar] = useState(false);
   const [snackbarMessage, setSnackbarMessage] = useState('');
   const [snackbarSeverity, setSnackbarSeverity] = useState('success');
-  
+
   const navigate = useNavigate();
+
+  const handleImageChange = (e) => {
+    setPackageImage(e.target.files[0]);
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const newPackage = { packageName, packageDescription, price };
+    const formData = new FormData();
+    formData.append('packageName', packageName);
+    formData.append('packageDescription', packageDescription);
+    formData.append('price', price);
+    if (packageImage) {
+      formData.append('packageImage', packageImage);
+    }
 
     try {
       const response = await fetch('http://localhost:5000/api/packages', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(newPackage),
+        body: formData,
       });
 
       if (response.ok) {
@@ -71,8 +64,11 @@ const AddPackages = () => {
         setPackageName('');
         setPackageDescription('');
         setPrice('');
+        setPackageImage(null);
+        navigate('/admin/manage-packages'); // Redirect to the packages list
       } else {
-        setSnackbarMessage('Failed to add package');
+        const errorData = await response.json();
+        setSnackbarMessage(errorData.message || 'Failed to add package');
         setSnackbarSeverity('error');
       }
     } catch (error) {
@@ -85,7 +81,7 @@ const AddPackages = () => {
   };
 
   const handleCancel = () => {
-    navigate(-1);
+    navigate('/admin/manage-packages'); // Redirect to the packages list
   };
 
   return (
@@ -131,6 +127,13 @@ const AddPackages = () => {
               margin="normal"
               required
             />
+            <TextField
+              fullWidth
+              type="file"
+              onChange={handleImageChange}
+              margin="normal"
+              inputProps={{ accept: 'image/*' }}
+            />
             <Box sx={{ textAlign: 'center', mt: 2 }}>
               <Button variant="contained" color="primary" type="submit">
                 Add Package
@@ -166,4 +169,3 @@ const AddPackages = () => {
 };
 
 export default AddPackages;
-
