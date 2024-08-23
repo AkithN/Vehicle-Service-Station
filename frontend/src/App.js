@@ -25,6 +25,9 @@ import ManageOffers from './pages/adminpages/offers/ManageOffers';
 import ManageRoles from './pages/adminpages/roles/ManageRoles';
 import ManageContacts from './pages/adminpages/contact/ManageContacts';
 import AddRoles from './pages/adminpages/roles/AddRoles';
+import ManagePackages from './pages/adminpages/packages/ManagePackages';
+import AddPackages from './pages/adminpages/packages/AddPackages';
+import UpdatePackages from './pages/adminpages/packages/UpdatePackages';
 import UpdateRoles from './pages/adminpages/roles/UpdateRoles';
 import AddOffers from './pages/adminpages/offers/AddOffers';
 import UpdateOffers from './pages/adminpages/offers/UpdateOffers';
@@ -72,6 +75,9 @@ function App() {
           <Route path='/admin/manage-contacts' element={<ManageContacts />} />
           <Route path='/admin/add-roles' element={<AddRoles />} />
           <Route path='/admin/update-roles' element={<UpdateRoles />} />
+          <Route path='/admin/manage-packages' element={<ManagePackages />} />
+          <Route path='/admin/add-packages' element={<AddPackages />} />
+          <Route path='/admin/update-packages' element={<UpdatePackages />} />
           <Route path='/features' element={<VehicleOwnerFeatures />} />
           <Route path='/experts' element={<Experts />} />
           <Route path='/aboutus' element={<Aboutus/>}/>
