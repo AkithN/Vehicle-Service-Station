@@ -121,6 +121,7 @@ const ManageOffers = () => {
               <TableHead>
                 <TableRow>
                   <TableCell>Offer ID</TableCell>
+                  <TableCell>Image</TableCell>
                   <TableCell>Offer Name</TableCell>
                   <TableCell>Description</TableCell>
                   <TableCell>Expiry Date</TableCell>
@@ -134,6 +135,15 @@ const ManageOffers = () => {
                     sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                   >
                     <TableCell>{offer.offerId}</TableCell>
+                    <TableCell>
+                      {offer.imageName && (
+                        <img
+                          src={`http://localhost:5000/uploads/${offer.imageName}`}
+                          alt={offer.offerName}
+                          style={{ width: '100px', height: 'auto' }}
+                        />
+                      )}
+                    </TableCell>
                     <TableCell>{offer.offerName}</TableCell>
                     <TableCell>{offer.offerDescription}</TableCell>
                     <TableCell>{formatDate(offer.expiredate)}</TableCell>

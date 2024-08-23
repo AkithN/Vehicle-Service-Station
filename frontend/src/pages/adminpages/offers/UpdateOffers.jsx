@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import {
   Box,
@@ -13,7 +13,6 @@ import {
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import axios from 'axios';
 
-// Custom theme
 const theme = createTheme({
   palette: {
     primary: { main: '#1a237e' },
@@ -37,16 +36,24 @@ const UpdateOffer = () => {
   const [offerName, setOfferName] = useState(offer.offerName || '');
   const [offerDescription, setOfferDescription] = useState(offer.offerDescription || '');
   const [expiredate, setExpiredate] = useState(offer.expiredate || '');
+  const [image, setImage] = useState(null); // State for new image
   const [openSnackbar, setOpenSnackbar] = useState(false);
   const [snackbarMessage, setSnackbarMessage] = useState('');
   const [snackbarSeverity, setSnackbarSeverity] = useState('success');
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const updatedOffer = { offerName, offerDescription, expiredate };
+    
+    const formData = new FormData();
+    formData.append('offerName', offerName);
+    formData.append('offerDescription', offerDescription);
+    formData.append('expiredate', expiredate);
+    if (image) formData.append('image', image); // Append image if it exists
 
     try {
-      const response = await axios.put(`http://localhost:5000/api/offers/${offerId}`, updatedOffer);
+      const response = await axios.put(`http://localhost:5000/api/offers/${offerId}`, formData, {
+        headers: { 'Content-Type': 'multipart/form-data' },
+      });
       if (response.status === 200) {
         setSnackbarMessage('Offer updated successfully!');
         setSnackbarSeverity('success');
@@ -105,8 +112,10 @@ const UpdateOffer = () => {
               </Grid>
               <Grid item xs={12}>
                 <TextField
-                  label="Description"
+                  label="Offer Description"
                   variant="outlined"
+                  multiline
+                  rows={4}
                   value={offerDescription}
                   onChange={(e) => setOfferDescription(e.target.value)}
                   fullWidth
@@ -115,59 +124,66 @@ const UpdateOffer = () => {
               </Grid>
               <Grid item xs={12}>
                 <TextField
-                  label="Expiry Date"
+                  label="Expire Date"
                   variant="outlined"
                   type="date"
+                  InputLabelProps={{ shrink: true }}
                   value={expiredate}
                   onChange={(e) => setExpiredate(e.target.value)}
                   fullWidth
-                  InputLabelProps={{ shrink: true }}
                   required
                 />
               </Grid>
               <Grid item xs={12}>
                 <Button
-                  variant="contained"
-                  color="primary"
-                  type="submit"
-                  fullWidth
-                  sx={{ py: 1.5, mt: 2 }}
-                >
-                  Update Offer
-                </Button>
-              </Grid>
-              <Grid item xs={12}>
-                <Button
                   variant="outlined"
-                  color="secondary"
-                  onClick={() => navigate(-1)}
+                  component="label"
                   fullWidth
-                  sx={{ py: 1.5 }}
                 >
-                  Back
+                  Upload New Image
+                  <input
+                    type="file"
+                    hidden
+                    onChange={(e) => setImage(e.target.files[0])}
+                    accept="image/*" // Restrict to image files
+                  />
                 </Button>
               </Grid>
             </Grid>
-          </Box>
 
-          <Snackbar
-            open={openSnackbar}
-            autoHideDuration={4000}
-            onClose={handleSnackbarClose}
-            anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
-          >
-            <Alert
-              onClose={handleSnackbarClose}
-              severity={snackbarSeverity}
-              sx={{ width: '100%' }}
-            >
-              {snackbarMessage}
-            </Alert>
-          </Snackbar>
+            <Box sx={{ textAlign: 'center', mt: 3 }}>
+              <Button variant="contained" color="primary" type="submit">
+                Update Offer
+              </Button>
+              <Button
+                variant="outlined"
+                color="secondary"
+                onClick={() => navigate('/admin/manage-offers')}
+                sx={{ ml: 2 }}
+              >
+                Cancel
+              </Button>
+            </Box>
+          </Box>
         </Container>
+        <Snackbar
+          open={openSnackbar}
+          autoHideDuration={4000}
+          onClose={handleSnackbarClose}
+          anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
+        >
+          <Alert
+            onClose={handleSnackbarClose}
+            severity={snackbarSeverity}
+            sx={{ width: '100%' }}
+          >
+            {snackbarMessage}
+          </Alert>
+        </Snackbar>
       </Box>
     </ThemeProvider>
   );
 };
 
 export default UpdateOffer;
+
