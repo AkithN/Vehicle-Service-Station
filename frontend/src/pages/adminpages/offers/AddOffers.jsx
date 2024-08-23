@@ -9,36 +9,20 @@ import {
   Alert,
 } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { useNavigate } from 'react-router-dom'; // Import useNavigate
+import { useNavigate } from 'react-router-dom';
 import AdminNavbar from '../../../components/admin_navbar/AdminNavbar';
 
-// Custom theme
 const theme = createTheme({
   palette: {
-    primary: {
-      main: '#1a237e', // Deep Blue
-    },
-    secondary: {
-      main: '#ff7043', // Deep Orange
-    },
-    error: {
-      main: '#d32f2f', // Red
-    },
-    background: {
-      default: '#f5f5f5', // Light Gray for the page background
-      paper: '#ffffff', // White for paper components
-    },
+    primary: { main: '#1a237e' },
+    secondary: { main: '#ff7043' },
+    error: { main: '#d32f2f' },
+    background: { default: '#f5f5f5', paper: '#ffffff' },
   },
   typography: {
     fontFamily: 'Roboto, sans-serif',
-    h2: {
-      fontWeight: 'bold',
-      color: '#333',
-      marginBottom: '1rem',
-    },
-    button: {
-      textTransform: 'none',
-    },
+    h2: { fontWeight: 'bold', color: '#333', marginBottom: '1rem' },
+    button: { textTransform: 'none' },
   },
 });
 
@@ -46,25 +30,26 @@ const AddOffers = () => {
   const [offerName, setOfferName] = useState('');
   const [offerDescription, setOfferDescription] = useState('');
   const [expireDate, setExpireDate] = useState('');
+  const [image, setImage] = useState(null); // State for image
   const [openSnackbar, setOpenSnackbar] = useState(false);
   const [snackbarMessage, setSnackbarMessage] = useState('');
   const [snackbarSeverity, setSnackbarSeverity] = useState('success');
   
-  const navigate = useNavigate(); // Initialize useNavigate
+  const navigate = useNavigate(); 
 
-  // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    const newOffer = { offerName, offerDescription, expiredate: expireDate };
+    
+    const formData = new FormData();
+    formData.append('offerName', offerName);
+    formData.append('offerDescription', offerDescription);
+    formData.append('expiredate', expireDate);
+    if (image) formData.append('image', image); // Append image if it exists
 
     try {
       const response = await fetch('http://localhost:5000/api/offers', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(newOffer),
+        body: formData, // Send FormData object
       });
 
       if (response.ok) {
@@ -73,6 +58,8 @@ const AddOffers = () => {
         setOfferName('');
         setOfferDescription('');
         setExpireDate('');
+        setImage(null);
+        navigate('/admin/manage-offers'); // Redirect to ManageOffers page
       } else {
         setSnackbarMessage('Failed to add offer');
         setSnackbarSeverity('error');
@@ -86,12 +73,10 @@ const AddOffers = () => {
     }
   };
 
-  // Handle cancel button click
   const handleCancel = () => {
-    navigate(-1); // Navigate to the previous page
+    navigate(-1);
   };
 
-  // Handle snackbar close
   const handleSnackbarClose = () => {
     setOpenSnackbar(false);
   };
@@ -137,10 +122,16 @@ const AddOffers = () => {
               value={expireDate}
               onChange={(e) => setExpireDate(e.target.value)}
               margin="normal"
-              InputLabelProps={{
-                shrink: true,
-              }}
+              InputLabelProps={{ shrink: true }}
               required
+            />
+            <TextField
+              fullWidth
+              type="file"
+              onChange={(e) => setImage(e.target.files[0])}
+              margin="normal"
+              inputProps={{ accept: 'image/*' }}
+              helperText="Upload an image"
             />
             <Box sx={{ textAlign: 'center', mt: 2 }}>
               <Button variant="contained" color="primary" type="submit">
