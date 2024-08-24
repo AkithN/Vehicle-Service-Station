@@ -7,77 +7,85 @@ import './Calender.css';
 const localizer = momentLocalizer(moment);
 
 const MyCalendar = () => {
-  const [events] = useState([
-    {
-      title: 'Meeting with John',
-      start: new Date(2024, 6, 30, 10, 0),
-      end: new Date(2024, 6, 30, 11, 0),
-      allDay: false,
-    },
-    {
-      title: 'Conference',
-      start: new Date(2024, 6, 31, 9, 0), 
-      end: new Date(2024, 6, 31, 17, 0),
-      allDay: false,
-    },
-    {
-      title: 'Lunch with Sarah',
-      start: new Date(2024, 7, 1, 12, 0), 
-      end: new Date(2024, 7, 1, 13, 0),
-      allDay: false,
-    },
-    {
-      title: 'Team Meeting',
-      start: new Date(2024, 7, 2, 14, 0), 
-      end: new Date(2024, 7, 2, 15, 0),
-      allDay: false,
-    },
-    {
-      title: 'Project Deadline',
-      start: new Date(2024, 7, 3, 23, 0), 
-      end: new Date(2024, 7, 3, 23, 59),
-      allDay: false,
-    },
-    {
-      title: 'Birthday Party',
-      start: new Date(2024, 7, 4, 18, 0), 
-      end: new Date(2024, 7, 4, 21, 0),
-      allDay: false,
-    },
-    {
-      title: 'Dentist Appointment',
-      start: new Date(2024, 7, 5, 9, 0), 
-      end: new Date(2024, 7, 5, 10, 0),
-      allDay: false,
-    },
-    {
-      title: 'Interview',
-      start: new Date(2024, 7, 6, 11, 0), 
-      end: new Date(2024, 7, 6, 12, 0),
-      allDay: false,
-    },
-    {
-      title: 'Workshop',
-      start: new Date(2024, 7, 7, 13, 0),
-      end: new Date(2024, 7, 7, 16, 0),
-      allDay: false,
-    },
-    {
-      title: 'Client Call',
-      start: new Date(2024, 7, 8, 15, 0),
-      end: new Date(2024, 7, 8, 16, 0),
-      allDay: false,
-    },
-  ]);
+  const [events, setEvents] = useState([]);
+
+  const [newEvent, setNewEvent] = useState({ title: '', start: '', end: '' });
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setNewEvent({ ...newEvent, [name]: value });
+  };
+
+  const handleAddEvent = () => {
+    const { title, start, end } = newEvent;
+    if (title && start && end) {
+      setEvents([
+        ...events,
+        {
+          id: events.length, // Assign a unique id to each event
+          title,
+          start: new Date(start),
+          end: new Date(end),
+          allDay: false,
+        },
+      ]);
+      setNewEvent({ title: '', start: '', end: '' }); // Clear the form after adding
+    } else {
+      alert('Please fill in all fields.');
+    }
+  };
+
+  const handleDeleteEvent = (eventId) => {
+    setEvents(events.filter(event => event.id !== eventId));
+  };
+
+  const EventComponent = ({ event }) => (
+    <span>
+      {event.title}
+      <button
+        className="delete-event-button"
+        onClick={() => handleDeleteEvent(event.id)}
+      >
+        ❌
+      </button>
+    </span>
+  );
 
   return (
     <div className="calendar-container">
+      <div className="event-form">
+        <input
+          type="text"
+          name="title"
+          placeholder="Event Title"
+          value={newEvent.title}
+          onChange={handleInputChange}
+        />
+        <input
+          type="datetime-local"
+          name="start"
+          placeholder="Start Date"
+          value={newEvent.start}
+          onChange={handleInputChange}
+        />
+        <input
+          type="datetime-local"
+          name="end"
+          placeholder="End Date"
+          value={newEvent.end}
+          onChange={handleInputChange}
+        />
+        <button onClick={handleAddEvent}>Add Event</button>
+      </div>
       <Calendar
         localizer={localizer}
         events={events}
         startAccessor="start"
         endAccessor="end"
-        style={{ height: '100%' }}
+        style={{ height: '500px' }}
+        components={{
+          event: EventComponent,
+        }}
       />
     </div>
   );
