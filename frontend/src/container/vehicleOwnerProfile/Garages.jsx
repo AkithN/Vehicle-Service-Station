@@ -15,7 +15,8 @@ const Garages = () => {
                     justifyContent="flex-start" 
                     direction="row"
                     wrap="wrap"
-                    sx={{ justifyContent: 'center' }}
+                    gap={15}
+                    sx={{justifyContent: 'center' }}
                 >
                     <MediaCard />
                 </Grid>

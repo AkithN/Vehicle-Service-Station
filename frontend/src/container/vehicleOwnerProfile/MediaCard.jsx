@@ -35,9 +35,9 @@ export default function MediaCard() {
     <>
       {garages.map((garage) => (
         <Grid item key={garage.garageId} xs={12} sm={6} md={4} lg={3}>
-          <Card sx={{ width: 300, height: 450, display: 'flex', flexDirection: 'column' }}>
+          <Card sx={{ width: 350, height: 700, display: 'flex', flexDirection: 'column' }}>
             <CardMedia
-              sx={{ height: 200 }}
+              sx={{ minHeight: 300 }}
               image={`http://localhost:5000${garage.image1}` || '/default-image.jpg'}
               title={garage.garageName}
             />

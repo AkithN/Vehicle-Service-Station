@@ -71,3 +71,31 @@
 .rbc-today {
   background-color: #e9ecef;
 }
+
+@media (max-width: 480px) {
+  .calendar-container {
+    width: 115%;
+    padding: 10px;
+    margin-left: -20px;
+    box-shadow: none;
+  }
+
+  .event-form input,
+  .event-form button {
+    padding: 6px;
+    font-size: 12px;
+  }
+
+  .rbc-event {
+    font-size: 12px;
+  }
+
+  .rbc-calendar {
+    min-width: 365px;
+    margin-left: -10px;
+  }
+
+  .delete-event-button {
+    font-size: 12px;
+  }
+}
