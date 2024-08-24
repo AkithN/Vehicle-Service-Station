@@ -9,31 +9,31 @@ const Footer = () => {
       <div className="footer-container">
         <div className="footer-row">
           <div className="footer-company">
-            <h4>company</h4>
+            <h4>Need Help</h4>
             <ul>
-              <li><a href="/">about us</a></li>
-              <li><a href="/">our services</a></li>
-              <li><a href="/">privacy policy</a></li>
-              <li><a href="/">affiliate program</a></li>
+              <li><a href="/">Road Assistance</a></li>
+              <li><a href="/">For First Responders</a></li>
+              <li><a href="/">Chat with Us</a></li>
+              <li><a href="/">FAQs</a></li>
             </ul>
           </div>
           <div className="footer-help">
-            <h4>get help</h4>
+            <h4>Company </h4>
             <ul>
-              <li><a href="/">FAQ</a></li>
-              <li><a href="/">shipping</a></li>
-              <li><a href="/">returns</a></li>
-              <li><a href="/">order status</a></li>
-              <li><a href="/">payment options</a></li>
+              <li><a href="/">Careers</a></li>
+              <li><a href="/">Legal & Trademarks</a></li>
+              <li><a href="/">Copyright</a></li>
+              <li><a href="/">Terms of Use</a></li>
+              <li><a href="/">Accessibility</a></li>
             </ul>
           </div>
           <div className="footer-shop">
-            <h4>online shop</h4>
+            <h4>Resources</h4>
             <ul>
-              <li><a href="/">watch</a></li>
-              <li><a href="/">bag</a></li>
-              <li><a href="/">shoes</a></li>
-              <li><a href="/">dress</a></li>
+              <li><a href="/">Find a Dealer</a></li>
+              <li><a href="/">Recalls</a></li>
+              <li><a href="/">Maintenance Schedule</a></li>
+              <li><a href="/">Owners Manual</a></li>
             </ul>
           </div>
           <div className="footer-social">
