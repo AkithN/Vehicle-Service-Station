@@ -28,3 +28,19 @@
 .offer-card-img:hover {
   transform: scale(1.05);
 }
+
+.offers-container {
+  display: flex;
+  flex-wrap: nowrap; /* Prevent wrapping to the next line */
+  padding: 20px;
+  align-items: center; /* Vertically center the cards */
+  justify-content: center; /* Horizontally center the cards */
+}
+
+.offer-card {
+  flex: 0 0 auto; /* Prevent the cards from shrinking */
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  margin: 10px;
+  min-width: 300px; /* Adjust based on your design needs */
+}
