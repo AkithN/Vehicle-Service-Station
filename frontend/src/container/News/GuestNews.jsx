@@ -7,7 +7,6 @@ const GuestNews = () => {
     const [newsItems, setNewsItems] = useState([]);
 
     useEffect(() => {
-        // Fetch news data from the backend
         axios.get('http://localhost:5000/api/news')
             .then(response => {
                 setNewsItems(response.data);

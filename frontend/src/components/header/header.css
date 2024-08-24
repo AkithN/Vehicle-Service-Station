@@ -43,10 +43,12 @@
 }
 
 .home h3 {
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   font-weight: 300;
   line-height: 1.5;
   color: #ffffff;
+  margin-top: 130px;
+  text-align: center;
 }
 
 /* Mobile Responsiveness */

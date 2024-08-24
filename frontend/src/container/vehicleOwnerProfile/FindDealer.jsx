@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
-import { Typography, Button, TextField, MenuItem, Radio, RadioGroup, FormControlLabel, FormControl, FormLabel } from '@mui/material';
+import { Typography } from '@mui/material';
 import { styled } from '@mui/material/styles';
+import axios from 'axios';
+import { Input } from 'antd';
 import './FindDealer.css';
+
+const { Search } = Input;
 
 const SearchContainer = styled('div')(({ theme }) => ({
   backgroundColor: theme.palette.background.paper,
@@ -13,36 +17,16 @@ const SearchContainer = styled('div')(({ theme }) => ({
   margin: '0 auto',
 }));
 
-const SearchFilters = styled('div')(({ theme }) => ({
-  display: 'flex',
-  flexDirection: 'column',
-  alignItems: 'center',
-  gap: theme.spacing(2),
-  width: '100%',
-  marginTop: theme.spacing(2),
-
-  [theme.breakpoints.up('sm')]: {
-    flexDirection: 'row',
-  },
-}));
-
-const FilterOptions = styled('div')(({ theme }) => ({
-  display: 'flex',
-  flexDirection: 'column',
-  gap: theme.spacing(2),
-  width: '100%',
-
-  [theme.breakpoints.up('sm')]: {
-    flexDirection: 'row',
-    alignItems: 'center',
-  },
-}));
-
 const FindDealer = () => {
-  const [searchOption, setSearchOption] = useState('location');
+  const [results, setResults] = useState([]);
 
-  const handleSearchOptionChange = (event) => {
-    setSearchOption(event.target.value);
+  const handleSearch = async (value) => {
+    try {
+      const response = await axios.get(`http://localhost:5000/api/garages/search/${value}`);
+      setResults(response.data);
+    } catch (error) {
+      console.error('Error fetching search results:', error);
+    }
   };
 
   return (
@@ -51,66 +35,29 @@ const FindDealer = () => {
         <Typography variant="h4" fontWeight={700}>
           Find A Dealer
         </Typography>
-        <FormControl component="fieldset" sx={{ marginTop: 3 }}>
-          <FormLabel component="legend">Please Select a Dealership to View All Offers</FormLabel>
-          <RadioGroup
-            aria-label="search-option"
-            name="search-option"
-            value={searchOption}
-            onChange={handleSearchOptionChange}
-            row
-            sx={{ justifyContent: 'center' }}
-          >
-            <FormControlLabel value="location" control={<Radio />} label="Location" />
-            <FormControlLabel value="dealerName" control={<Radio />} label="Dealer Name" />
-          </RadioGroup>
-        </FormControl>
-        <SearchFilters>
-          <FilterOptions>
-            {searchOption === 'location' ? (
-              <>
-                <TextField
-                  label="City or Province"
-                  variant="outlined"
-                  fullWidth
-                />
-                <TextField
-                  select
-                  label="Service Type"
-                  variant="outlined"
-                  fullWidth
-                >
-                  <MenuItem value="type1">Type 1</MenuItem>
-                  <MenuItem value="type2">Type 2</MenuItem>
-                </TextField>
-              </>
-            ) : (
-              <>
-                <TextField
-                  label="Dealer Name"
-                  variant="outlined"
-                  fullWidth
-                />
-                <TextField
-                  select
-                  label="Service Type"
-                  variant="outlined"
-                  fullWidth
-                >
-                  <MenuItem value="type1">Type 1</MenuItem>
-                  <MenuItem value="type2">Type 2</MenuItem>
-                </TextField>
-              </>
-            )}
-          </FilterOptions>
-          <Button 
-            variant="contained" 
-            color="primary" 
-            sx={{ width: '100%', maxWidth: '300px', height: '55px' }}
-          >
-            Find A Dealer
-          </Button>
-        </SearchFilters>
+        <div style={{ marginTop: 20 }}>
+          <Search
+            placeholder="Search by Garage Name, City, or Province"
+            enterButton="Find A Dealer"
+            size="large"
+            onSearch={handleSearch}
+            style={{ maxWidth: 600 }}
+          />
+        </div>
+        {results.length > 0 && (
+          <div>
+            <Typography variant="h6" sx={{ marginTop: 4 }}>
+              Search Results:
+            </Typography>
+            <ul>
+              {results.map((garage) => (
+                <li key={garage.garageId}>
+                  {garage.garageName} - {garage.district}, {garage.province}
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
       </SearchContainer>
     </div>
   );

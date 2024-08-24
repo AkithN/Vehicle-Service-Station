@@ -6,6 +6,7 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import Grid from '@mui/material/Grid';
 import axios from 'axios';
 
 export default function MediaCard() {
@@ -26,40 +27,39 @@ export default function MediaCard() {
   }, []);
 
   const handleViewGarageClick = (garage) => {
-    // Store the selected garage data in local storage
     localStorage.setItem('selectedGarage', JSON.stringify(garage));
-    
-    // Navigate to the selected garage page
     navigate(`/selectedgarage`);
   };
 
   return (
     <>
       {garages.map((garage) => (
-        <Card key={garage.garageId} sx={{ maxWidth: 345, marginBottom: 2 }}>
-          <CardMedia
-            sx={{ height: 140 }}
-            image={`http://localhost:5000${garage.image1}` || '/default-image.jpg'} // Ensure correct URL
-            title={garage.garageName}
-          />
-          <CardContent>
-            <Typography gutterBottom variant="h5" component="div" sx={{ textAlign: 'center' }}>
-              {garage.garageName}
-            </Typography>
-            <Typography variant="body2" color="text.secondary" sx={{ textAlign: 'justify', marginBottom: 1 }}>
-              {garage.garageDescription}
-            </Typography>
-            <Typography variant="body2" color="text.secondary" sx={{ textAlign: 'justify', marginBottom: 1 }}>
-              {garage.district}
-            </Typography>
-            <Typography variant="body2" color="text.secondary" sx={{ textAlign: 'justify' }}>
-              {garage.mobileNum}
-            </Typography>
-          </CardContent>
-          <CardActions sx={{ justifyContent: 'center' }}>
-            <Button size="medium" onClick={() => handleViewGarageClick(garage)}>View Garage</Button>
-          </CardActions>
-        </Card>
+        <Grid item key={garage.garageId} xs={12} sm={6} md={4} lg={3}>
+          <Card sx={{ width: 300, height: 450, display: 'flex', flexDirection: 'column' }}>
+            <CardMedia
+              sx={{ height: 200 }}
+              image={`http://localhost:5000${garage.image1}` || '/default-image.jpg'}
+              title={garage.garageName}
+            />
+            <CardContent sx={{ flexGrow: 1 }}>
+              <Typography gutterBottom variant="h5" component="div" sx={{ textAlign: 'center' }}>
+                {garage.garageName}
+              </Typography>
+              <Typography variant="body2" color="text.secondary" sx={{ textAlign: 'justify', marginBottom: 1 }}>
+                {garage.garageDescription}
+              </Typography>
+              <Typography variant="body2" color="text.secondary" sx={{ textAlign: 'justify', marginBottom: 1 }}>
+                {garage.district}
+              </Typography>
+              <Typography variant="body2" color="text.secondary" sx={{ textAlign: 'justify' }}>
+                {garage.mobileNum}
+              </Typography>
+            </CardContent>
+            <CardActions sx={{ justifyContent: 'center' }}>
+              <Button size="medium" onClick={() => handleViewGarageClick(garage)}>View Garage</Button>
+            </CardActions>
+          </Card>
+        </Grid>
       ))}
     </>
   );

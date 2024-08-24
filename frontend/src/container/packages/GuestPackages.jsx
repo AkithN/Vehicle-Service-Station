@@ -6,7 +6,6 @@ const GuestPackages = () => {
   const [packages, setPackages] = useState([]);
 
   useEffect(() => {
-    // Fetch package details from backend
     const fetchPackages = async () => {
       try {
         const response = await fetch('http://localhost:5000/api/packages');
@@ -29,7 +28,7 @@ const GuestPackages = () => {
       <Typography variant="h2" className="Guest-Packages-heading" gutterBottom>
         Available Packages
       </Typography>
-      <Grid container spacing={2}>
+      <Grid container spacing={6}>
         {packages.map((pkg) => (
           <Grid item xs={12} sm={6} md={4} key={pkg.packageId}>
             <Card className="Guest-Packages-card" sx={{ maxWidth: 345 }}>
@@ -37,7 +36,7 @@ const GuestPackages = () => {
                 <CardMedia
                   component="img"
                   className="Guest-Packages-card-media"
-                  image={`http://localhost:5000${pkg.packageImage}`}  // Corrected line
+                  image={`http://localhost:5000${pkg.packageImage}`}
                   alt={pkg.packageName}
                 />
               )}

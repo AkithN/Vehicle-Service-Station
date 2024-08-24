@@ -8,13 +8,16 @@ const Garages = () => {
     return (
         <div className="garages-background">
             <h1 className="garages-title">Top Garages</h1>
-            <Box sx={{ flexGrow: 1, paddingBottom: 5, paddingLeft: 5, paddingRight: 2 }}>
-                <Grid container spacing={4} justifyContent="center">
-                    {[...Array(1)].map((_, index) => (
-                        <Grid item xs={12} sm={6} md={4} lg={3} key={index}>
-                            <MediaCard />
-                        </Grid>
-                    ))}
+            <Box sx={{ flexGrow: 1, paddingBottom: 5, paddingLeft: 5, paddingRight: 5 }}>
+                <Grid 
+                    container 
+                    spacing={4} 
+                    justifyContent="flex-start" 
+                    direction="row"
+                    wrap="wrap"
+                    sx={{ justifyContent: 'center' }}
+                >
+                    <MediaCard />
                 </Grid>
             </Box>
         </div>
